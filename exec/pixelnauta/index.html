@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>PIXELNAUTA</title>
+  
+
+  <style>
+    body {
+      background-image: url('background-landing-page.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh; 
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      color: #c2d6ff;
+    }
+
+    h2 {
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+      color: #ffffff;
+    }
+
+    p, li {
+      text-align: justify;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background-image: url('background-landing-page.png');
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .contact {
+      margin-top: 3rem;
+      border-top: 1px solid #444;
+      padding-top: 1.5rem;
+    }
+
+    .contact p {
+      margin: 0.5rem 0;
+    }
+
+    .highlight {
+      color: #8caaff;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #25d366;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1ebe57;
+    }
+
+    /* Botão flutuante do WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 30px;
+      right: 20px;
+      color: white;
+      border-radius: 80%;
+      text-align: center;
+      font-size: 28px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+    
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PIXELNAUTA</h1>
+    <div class="intro">
+      <p style="text-align: center;"><strong>Explore o poder da web: </strong><span class="highlight">crie, concretize, conquiste.</span></p>
+    </div>
+
+    <h2>SOBRE NÓS</h2>
+    <p>Na era digital, quem não tem uma presença online forte está fora do jogo. A <strong>Pixelnauta</strong> nasceu para transformar ideias em experiências digitais marcantes. Criamos <strong>sites</strong>, <strong>landing pages</strong> e <strong>e-commerces</strong> com foco em <strong>design</strong>, <strong>desempenho</strong> e <strong>conversão</strong>.</p>
+
+    <h2>O QUE FAZEMOS?</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Sites de Alta Performance</h3>
+        <p>Layouts modernos e otimizados para SEO, com excelente velocidade de carregamento.</p>
+      </div>
+      <div class="card">
+        <h3>Landing Pages Estratégicas</h3>
+        <p>Projetadas para conversão, com foco em resultados e experiência do usuário.</p>
+      </div>
+      <div class="card">
+        <h3>Lojas Virtuais</h3>
+        <p>Comércio eletrônico com design responsivo, funcionalidade e segurança.</p>
+      </div>
+    </div>
+
+    <h2>DIFERENCIAIS</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="sites/site-masioli.png" alt="Sites">
+        <p>Design único, feito sob medida.</p>
+      </div>
+      <div class="card">
+        <img src="sites/landing-page-gabriela.jpeg" alt="Landing Pages">
+        <p>Sites rápidos e com performance máxima.</p>
+      </div>
+      <div class="card">
+        <img src="sites/exemplo econmerce.png" alt="Loja Virtual">
+        <p>Facilidade para seu cliente encontrar o que procura.</p>
+      </div>
+    </div>
+
+    <h2>DEPOIMENTOS</h2>
+    <p>"Ótimo atendimento e resultado incrível. Superou minhas expectativas."<br>– Cliente Satisfeito</p>
+  </div>
+
+  <section class="container">
+    <h2>Entre em Contato</h2>
+    <p>Vamos criar algo único para a sua marca?</p>
+    <a href="https://wa.me/5527996271674" class="btn" target="_blank">Falar no WhatsApp</a>
+  </section>
+
+  <!-- BOTÃO DO ZAP -->
+  <a href="https://wa.me/5527996271674" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+  <img src="sites/logo-whatsapp.png" alt="WhatsApp" />
+</a>
+  </a>
+</body>
+</html>

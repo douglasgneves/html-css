@@ -89,6 +89,7 @@ a {
     justify-content: center;
     align-items: center;
     min-height: 500px; /* Altura mínima para dar destaque */
+    overflow-x: hidden; /* Para evitar scroll horizontal se elementos slide-in começarem fora */
 }
 
 /* Estilo padrão (tema claro) */
@@ -201,5 +202,56 @@ a {
     .hero-actions a {
         display: block; /* Faz os botões ocuparem a largura toda e ficarem um abaixo do outro */
         margin-bottom: 15px;
+    }
+}
+
+
+/* === ESTILOS DE ANIMAÇÃO === */
+
+/* Estado inicial para todos os elementos que serão animados ao rolar */
+.animate-on-scroll {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.8s; /* Duração padrão da animação */
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Easing mais "Apple-like" (pode ajustar) */
+    /* Um easing com um pouco de "overshoot" pode ser legal: cubic-bezier(0.175, 0.885, 0.32, 1.275) */
+    /* Ou um ease-out mais suave: cubic-bezier(0.25, 0.46, 0.45, 0.94) */
+}
+
+/* Tipos específicos de animação - estado inicial */
+.fade-in {
+    /* Apenas opacity já está em .animate-on-scroll */
+    /* Opcional: transform: scale(0.98); */
+}
+
+.fade-in-up {
+    transform: translateY(30px); /* Começa 30px abaixo */
+}
+
+.fade-in-down {
+    transform: translateY(-30px); /* Começa 30px acima */
+}
+
+.slide-in-left {
+    transform: translateX(-50px); /* Começa 50px à esquerda */
+}
+
+.slide-in-right {
+    transform: translateX(50px); /* Começa 50px à direita */
+}
+
+/* Estado final (visível) - quando a classe .is-visible é adicionada pelo JS */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1); /* Reseta todas as transformações */
+}
+
+/* Opcional: Respeitar a preferência do usuário por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+        transition: none; /* Remove a transição */
+        /* Garante que o elemento esteja visível se as animações estiverem desabilitadas */
+        opacity: 1;
+        transform: none;
     }
 }

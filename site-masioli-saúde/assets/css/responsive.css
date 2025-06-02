@@ -1,0 +1,522 @@
+/* ===============================================
+   CLÍNICA VIDA - CSS RESPONSIVO
+   Media queries para diferentes dispositivos
+   =============================================== */
+
+/* === BREAKPOINTS === */
+/* 
+   xs: 0-575px (Mobile)
+   sm: 576-767px (Mobile landscape)
+   md: 768-991px (Tablet)
+   lg: 992-1199px (Desktop)
+   xl: 1200px+ (Large desktop)
+*/
+
+/* === LARGE DESKTOP (1400px+) === */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* === DESKTOP (992px - 1199px) === */
+@media (max-width: 1199px) {
+    .hero h1 {
+        font-size: clamp(40px, 7vw, 60px);
+    }
+    
+    .section-title {
+        font-size: clamp(32px, 5vw, 48px);
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .about-stats {
+        gap: 30px;
+    }
+}
+
+/* === TABLET (768px - 991px) === */
+@media (max-width: 991px) {
+    /* Navigation */
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        gap: 15px;
+    }
+    
+    /* Hero */
+    .hero {
+        height: 80vh;
+        padding: 0 20px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Services */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .service-card {
+        padding: 30px;
+    }
+    
+    /* About */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .about-stats {
+        justify-content: center;
+        gap: 40px;
+    }
+    
+    /* Contact */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    /* Floating elements */
+    .floating-element {
+        display: none;
+    }
+}
+
+/* === MOBILE LANDSCAPE (576px - 767px) === */
+@media (max-width: 767px) {
+    /* Typography */
+    .hero h1 {
+        font-size: clamp(36px, 8vw, 48px);
+    }
+    
+    .hero p {
+        font-size: clamp(16px, 4vw, 20px);
+    }
+    
+    .section-title {
+        font-size: clamp(28px, 6vw, 36px);
+        margin-bottom: 40px;
+    }
+    
+    /* Layout */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Header */
+    .nav {
+        padding: 0 15px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    /* Hero */
+    .hero {
+        height: 100vh;
+        padding: 0 15px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+    
+    /* Services */
+    .services {
+        padding: 60px 0;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 40px;
+    }
+    
+    .service-card {
+        padding: 25px;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    .service-card h3 {
+        font-size: 20px;
+    }
+    
+    /* About */
+    .about {
+        padding: 60px 0;
+    }
+    
+    .about-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .about-image {
+        height: 300px;
+    }
+    
+    /* Contact */
+    .contact {
+        padding: 60px 0;
+    }
+    
+    .contact-form {
+        padding: 25px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+/* === MOBILE PORTRAIT (0px - 575px) === */
+@media (max-width: 575px) {
+    /* Typography */
+    .hero h1 {
+        font-size: clamp(32px, 10vw, 42px);
+        margin-bottom: 15px;
+    }
+    
+    .hero p {
+        font-size: clamp(14px, 4vw, 18px);
+        margin-bottom: 30px;
+    }
+    
+    .section-title {
+        font-size: clamp(24px, 8vw, 32px);
+        margin-bottom: 30px;
+    }
+    
+    /* Layout */
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Header */
+    .nav {
+        padding: 0 10px;
+    }
+    
+    .logo {
+        font-size: 18px;
+    }
+    
+    .logo img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .cta-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    /* Hero */
+    .hero-content {
+        padding: 0 10px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    /* Services */
+    .services {
+        padding: 40px 0;
+    }
+    
+    .services-grid {
+        margin-top: 30px;
+    }
+    
+    .service-card {
+        padding: 20px;
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .service-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .service-card p {
+        font-size: 14px;
+    }
+    
+    /* About */
+    .about {
+        padding: 40px 0;
+    }
+    
+    .about-content {
+        gap: 30px;
+    }
+    
+    .about-text h2 {
+        margin-bottom: 20px;
+    }
+    
+    .about-text p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .about-image {
+        height: 250px;
+    }
+    
+    .stat-number {
+        font-size: 24px;
+    }
+    
+    .stat-label {
+        font-size: 12px;
+    }
+    
+    /* Contact */
+    .contact {
+        padding: 40px 0;
+    }
+    
+    .contact-content {
+        margin-top: 30px;
+        gap: 30px;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .contact-item {
+        margin-bottom: 20px;
+    }
+    
+    .contact-item strong {
+        font-size: 14px;
+    }
+    
+    .contact-item p {
+        font-size: 14px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 30px 0 15px;
+    }
+    
+    .footer-logo {
+        font-size: 20px;
+    }
+    
+    .footer-logo img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .footer-section h4 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .footer-section p,
+    .footer-section ul li a {
+        font-size: 14px;
+    }
+    
+    .footer-bottom p,
+    .footer-links a {
+        font-size: 12px;
+    }
+}
+
+/* === MOBILE MENU ANIMATIONS === */
+@media (max-width: 991px) {
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .nav-links {
+        transition: all 0.3s ease;
+    }
+    
+    .nav-links.active {
+        animation: slideDown 0.3s ease;
+    }
+}
+
+/* === TOUCH DEVICES === */
+@media (hover: none) and (pointer: coarse) {
+    .service-card:hover {
+        transform: none;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .cta-button:hover {
+        transform: none;
+    }
+    
+    .about-image:hover img {
+        transform: none;
+    }
+}
+
+/* === ORIENTAÇÃO LANDSCAPE MOBILE === */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        padding: 20px 0;
+    }
+    
+    .hero-content {
+        max-width: 600px;
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        gap: 15px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: auto;
+    }
+}
+
+/* === PRINT STYLES === */
+@media print {
+    .header,
+    .floating-element,
+    .hero-buttons,
+    .btn-primary,
+    .btn-secondary,
+    .cta-button,
+    .contact-form,
+    .footer {
+        display: none !important;
+    }
+    
+    .hero {
+        height: auto;
+        padding: 20px 0;
+        background: white !important;
+    }
+    
+    .hero h1 {
+        color: black !important;
+        background: none !important;
+        -webkit-text-fill-color: black !important;
+    }
+    
+    .services,
+    .about,
+    .contact {
+        padding: 20px 0;
+    }
+    
+    .service-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    

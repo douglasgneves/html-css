@@ -1,0 +1,394 @@
+/* style-masikids.css */
+
+/* --- Reset Básico e Estilos Globais (herdado ou copiado de style-odontologia.css) --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Cores base da Masioli Odontologia */
+    --primary-color: #007bff; 
+    --secondary-color: #4A90E2;
+    --text-color: #333;
+    --light-text-color: #f8f9fa;
+    --bg-light-odontologia: #f9f9f9; /* Fundo claro da odonto geral */
+    
+    /* Cores específicas Masikids */
+    --masikids-primary: #FFD700; /* Amarelo Ouro (alegre) */
+    --masikids-secondary: #FF8C00; /* Laranja Escuro (para contraste) */
+    --masikids-accent: #87CEEB;   /* Azul Céu (calmo e infantil) */
+    --masikids-text: #4A4A4A;     /* Texto um pouco mais suave */
+    --masikids-bg-light: #FFFACD; /* Amarelo Limão muito claro (fundo suave) */
+
+    /* Fontes */
+    --heading-font: 'Merriweather', serif; /* Pode manter para títulos principais */
+    --body-font: 'Open Sans', sans-serif;
+    --masikids-font-fun: 'Nunito', sans-serif; /* Fonte mais arredondada e amigável */
+    --border-radius: 8px; /* Mantém o border-radius padrão */
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.7;
+    color: var(--masikids-text); /* Cor de texto padrão para Masikids */
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 48px; /* Espaço para o header fixo */
+}
+
+main { flex: 1; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; } /* Container um pouco menor para Masikids */
+
+/* === HEADER (Estilos idênticos aos de style-odontologia.css) === */
+.site-header { /* ... COPIE OS ESTILOS DO HEADER DA APPLE DAQUI ... */
+    background-color: rgba(40, 40, 40, 0.97); color: #f5f5f7; padding: 0 20px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.main-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; height: 48px; }
+.site-header .logo { font-size: 1.7em; font-weight: 600; color: #f5f5f7; margin-right: 25px; text-decoration: none; }
+.site-header .nav-links { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
+.site-header .nav-links li a { display: block; padding: 0 12px; font-size: 0.85em; color: #d2d2d7; line-height: 48px; text-decoration: none; transition: color 0.3s ease; }
+.site-header .nav-links li a:hover, .site-header .nav-links li a.active-nav-link { color: #fff; }
+.site-header .nav-icons { display: flex; }
+.site-header .nav-icons a { font-size: 1.2em; padding: 0 10px; color: #d2d2d7; text-decoration: none; transition: color 0.3s ease; line-height: 48px; }
+.site-header .nav-icons a:hover { color: #fff; }
+.mobile-menu-button { display: none; background: none; border: none; color: #f5f5f7; font-size: 1.5em; cursor: pointer; padding: 0 10px; }
+/* (COPIE TAMBÉM AS MEDIA QUERIES PARA O HEADER MOBILE DE style-odontologia.css) */
+@media (max-width: 768px) {
+    .site-header .nav-links { display: none; flex-direction: column; position: absolute; top: 48px; left: 0; right: 0; background-color: rgba(40, 40, 40, 0.99); padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow-y: auto; max-height: calc(100vh - 48px); }
+    .site-header .nav-links.active { display: flex; }
+    .site-header .nav-links li { width: 100%; text-align: center; }
+    .site-header .nav-links li a { padding: 15px 20px; line-height: 1.5; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .site-header .nav-links li:last-child a { border-bottom: none; }
+    .mobile-menu-button { display: block; margin-left: auto; }
+}
+
+
+/* --- Tipografia e Títulos Masikids --- */
+.section-title-masikids {
+    font-family: var(--masikids-font-fun); /* Fonte divertida para títulos */
+    font-size: 2.5em;
+    color: var(--masikids-secondary); /* Laranja */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 800; /* Nunito fica bem com peso maior */
+}
+.section-subtitle-masikids {
+    font-family: var(--body-font);
+    font-size: 1.15em;
+    color: #666;
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+/* --- Botões Masikids --- */
+.btn { /* Estilo base de botão, se necessário */
+    display: inline-block; padding: 12px 28px; border-radius: 25px; /* Mais arredondado */
+    text-decoration: none; font-weight: 700; transition: all 0.3s ease;
+    cursor: pointer; font-size: 1em; text-align: center;
+    font-family: var(--masikids-font-fun);
+}
+.btn-primary-masikids {
+    background-color: var(--masikids-primary); /* Amarelo */
+    color: var(--masikids-text);
+    border: 2px solid var(--masikids-primary);
+}
+.btn-primary-masikids:hover {
+    background-color: var(--masikids-secondary); /* Laranja */
+    color: #fff;
+    border-color: var(--masikids-secondary);
+    transform: translateY(-2px) scale(1.05);
+}
+.btn-secondary-masikids { /* Para o botão de contato no final */
+    background-color: #fff; 
+    color: var(--masikids-secondary); /* Laranja */
+    border: 2px solid var(--masikids-secondary);
+}
+.btn-secondary-masikids:hover {
+    background-color: var(--masikids-secondary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* --- Utilitários Masikids --- */
+.section-padding { padding: 60px 0; }
+.bg-light-masikids { background-color: var(--masikids-bg-light); } /* Fundo suave amarelo */
+.white-text { color: #fff !important; }
+
+
+/* --- Hero Section Masikids --- */
+.hero-masikids {
+    background: linear-gradient(135deg, var(--masikids-accent) 0%, var(--masikids-primary) 100%); /* Gradiente Azul Céu para Amarelo */
+    color: var(--masikids-text);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Para elementos decorativos se houver */
+}
+/* .hero-overlay-masikids { ... se precisar de overlay ... } */
+.hero-content-masikids { position: relative; z-index: 1; }
+.masikids-logo-hero {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background-color: #fff; /* Fundo para o placeholder */
+    display: inline-flex; /* Para centralizar o texto do placeholder */
+    align-items: center;
+    justify-content: center;
+    font-size: 3em; /* Tamanho do texto "MK" */
+    color: var(--masikids-secondary);
+    font-family: var(--masikids-font-fun);
+    font-weight: 800;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.hero-masikids h1 {
+    font-family: var(--masikids-font-fun);
+    font-weight: 800;
+    color: #fff; /* Texto branco para contraste com o fundo colorido */
+    font-size: 3.2em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.hero-masikids p {
+    font-size: 1.25em;
+    margin-bottom: 30px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #f0f0f0; /* Texto claro */
+    font-family: var(--body-font);
+}
+
+/* --- Masikids Approach Section --- */
+.approach-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.feature-item {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.feature-item .feature-icon {
+    color: var(--masikids-accent); /* Azul Céu */
+    margin-bottom: 15px;
+}
+.feature-item h3 {
+    font-family: var(--masikids-font-fun);
+    color: var(--masikids-secondary); /* Laranja */
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.feature-item p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* --- Masikids Services Section --- */
+.services-grid-masikids {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+.service-card-masikids {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(var(--masikids-primary-rgb, 255, 215, 0), 0.15); /* Sombra amarelada */
+    transition: transform 0.3s ease;
+}
+.service-card-masikids:hover {
+    transform: translateY(-5px);
+}
+.service-card-masikids img { /* Para os placeholders */
+    border-radius: 50%;
+    margin-bottom: 15px;
+    /* object-fit: cover; */
+}
+.service-card-masikids h4 {
+    font-family: var(--masikids-font-fun);
+    font-size: 1.3em;
+    color: var(--masikids-primary); /* Amarelo */
+    margin-bottom: 10px;
+}
+.service-card-masikids p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* --- Masikids Space (Carrossel) --- */
+.masikids-space .masikidsSwiper {
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.masikids-space .swiper-slide img {
+    width: 100%;
+    height: 400px; /* Ajuste conforme necessário */
+    object-fit: cover;
+    display: block;
+}
+.masikids-swiper-nav { /* Classe para botões de navegação do Swiper */
+    color: var(--masikids-primary) !important; /* Amarelo */
+}
+.masikids-swiper-nav:after { font-size: 28px !important; }
+.masikids-swiper-pagination .swiper-pagination-bullet-active {
+    background: var(--masikids-primary) !important; /* Amarelo */
+}
+
+/* --- Equipe Pediatria Masikids --- */
+.equipe-grid-masikids {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center; /* Centralizar cards se houver poucos */
+}
+.profissional-card-masikids {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profissional-card-masikids:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(var(--masikids-accent-rgb, 135, 206, 235), 0.2); /* Sombra azulada */
+}
+.profissional-card-masikids img {
+    width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+    margin-bottom: 15px; border: 4px solid var(--masikids-bg-light);
+}
+.profissional-card-masikids h4 {
+    font-family: var(--masikids-font-fun); color: var(--masikids-text);
+    font-size: 1.25em; margin-bottom: 5px;
+}
+.profissional-card-masikids .especialidade {
+    color: var(--masikids-accent); /* Azul Céu */
+    font-weight: 700; font-size: 1em; margin-bottom: 5px;
+    font-family: var(--masikids-font-fun);
+}
+.profissional-card-masikids .cro { font-size: 0.85em; color: #777; margin-bottom: 10px;}
+.profissional-card-masikids .highlight-masikids {
+    font-size: 0.9em; color: var(--masikids-secondary); /* Laranja */
+    font-style: italic;
+}
+
+/* --- Dicas para os Pais --- */
+.dicas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+.dica-item {
+    background: var(--masikids-bg-light);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--masikids-accent); /* Borda azul */
+}
+.dica-item h5 {
+    font-family: var(--masikids-font-fun);
+    color: var(--masikids-secondary); /* Laranja */
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+.dica-item h5 i {
+    margin-right: 8px;
+    color: var(--masikids-accent); /* Azul */
+}
+.dica-item p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* --- Contato Section Masikids --- */
+.contato-section-masikids {
+    background: linear-gradient(45deg, var(--masikids-secondary), var(--masikids-primary)); /* Laranja para Amarelo */
+}
+.contato-section-masikids .section-title-masikids,
+.contato-section-masikids .section-subtitle-masikids {
+    color: #fff; /* Texto branco para contraste */
+}
+.contato-section-masikids .section-title-masikids::after { /* Linha abaixo do título */
+    background-color: #fff !important;
+}
+.contato-info-masikids { text-align: center; margin-bottom: 30px; }
+.contato-info-masikids p { font-size: 1.1em; margin-bottom: 10px; color: #f0f0f0; }
+.contato-info-masikids i { margin-right: 10px; color: #fff; } /* Ícones brancos */
+.contato-section-masikids .btn-secondary-masikids {
+    margin: 0 auto; display: block; max-width: 320px;
+    font-size: 1.1em; padding: 14px 25px;
+}
+.contato-section-masikids .btn-secondary-masikids i { margin-right: 10px; }
+
+/* === FOOTER (Estilos idênticos aos de style-odontologia.css) === */
+.site-footer { /* ... COPIE OS ESTILOS DO FOOTER DAQUI ... */
+    background: linear-gradient(135deg, #2c5364, #203a43, #0f2027); color: #e0e0e0; padding-top: 60px; font-size: 0.95em; font-family: var(--body-font);
+}
+.footer-content { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+.footer-section { flex: 1; min-width: 280px; margin-bottom: 30px; }
+.footer-section .logo-text { font-size: 1.9em; margin-bottom: 20px; font-weight: 700; font-family: var(--heading-font); color: #fff; }
+.footer-section .logo-text span { color: #42a5f5; }
+.footer-section.about p { margin-bottom: 20px; line-height: 1.8; color: #b0b0b0; }
+.footer-section .contact span { display: block; margin-bottom: 12px; color: #c0c0c0; transition: color 0.3s ease; }
+.footer-section .contact span:hover { color: #ffffff; }
+.footer-section .contact span i { margin-right: 12px; color: #42a5f5; font-size: 1.1em; width: 20px; text-align: center; }
+.footer-section .socials a { color: #b0b0b0; margin-right: 18px; font-size: 1.5em; transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
+.footer-section .socials a:hover { color: #42a5f5; transform: translateY(-3px); }
+.footer-section .socials a:last-child { margin-right: 0; }
+.footer-section h2 { font-family: var(--heading-font); font-size: 1.4em; color: #ffffff; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+.footer-section h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; background-color: #42a5f5; border-radius: 2px; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 12px; }
+.footer-section ul li a { color: #b0b0b0; transition: color 0.3s ease, padding-left 0.3s ease; display: inline-block; text-decoration: none; }
+.footer-section ul li a:hover { color: #ffffff; padding-left: 5px; }
+.text-input.contact-input { width: 100%; padding: 12px 15px; margin-bottom: 15px; border: 1px solid #555; border-radius: 5px; background-color: #2a2f36; color: #e0e0e0; font-family: inherit; font-size: 0.95em; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.text-input.contact-input::placeholder { color: #888; }
+.text-input.contact-input:focus { outline: none; border-color: #42a5f5; box-shadow: 0 0 0 2px rgba(66, 165, 245, 0.3); }
+textarea.contact-input { resize: vertical; min-height: 80px; }
+.btn.contact-btn { display: inline-block; background-color: #42a5f5; color: #ffffff; padding: 12px 25px; border: none; border-radius: 5px; font-family: inherit; font-size: 1em; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; }
+.btn.contact-btn:hover { background-color: #1e88e5; transform: translateY(-2px); }
+.btn.contact-btn i { margin-right: 8px; }
+.footer-bottom { background-color: #0a1014; text-align: center; padding: 20px 15px; margin-top: 40px; font-size: 0.9em; color: #909090; border-top: 1px solid #303030; }
+.footer-bottom a { color: #a0a0a0; text-decoration: underline; }
+.footer-bottom a:hover { color: #42a5f5; }
+/* (COPIE TAMBÉM AS MEDIA QUERIES DO FOOTER DE style-odontologia.css) */
+@media (max-width: 992px) { .footer-content { gap: 30px; } .footer-section { min-width: calc(50% - 15px); } }
+@media (max-width: 768px) { .footer-content { flex-direction: column; align-items: center; text-align: center; } .footer-section { min-width: 100%; max-width: 450px; } .footer-section h2::after { left: 50%; transform: translateX(-50%); } .footer-section.links ul, .footer-section .socials { text-align: center; } .footer-section .socials a { margin: 0 10px; } }
+@media (max-width: 480px) { .footer-section .logo-text { font-size: 1.7em; } .footer-section h2 { font-size: 1.3em; } .btn.contact-btn { width: 100%; padding: 14px 20px; } }
+
+/* --- Responsividade específica Masikids (adicionar ao final das media queries gerais) --- */
+@media (max-width: 992px) {
+    .hero-masikids h1 { font-size: 2.8em; }
+    .section-title-masikids { font-size: 2.2em; }
+}
+
+@media (max-width: 768px) {
+    .hero-masikids { padding: 60px 0; }
+    .hero-masikids h1 { font-size: 2.4em; }
+    .hero-masikids p { font-size: 1.1em; }
+    .masikids-logo-hero { width: 100px; height: 100px; font-size: 2.5em; }
+    .section-title-masikids { font-size: 2em; }
+    .approach-features { grid-template-columns: 1fr; } /* Empilhar features */
+    .dicas-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hero-masikids h1 { font-size: 2em; }
+    .hero-masikids p { font-size: 1em; }
+    .masikids-logo-hero { width: 80px; height: 80px; font-size: 2em;}
+    .section-title-masikids { font-size: 1.7em; }
+    .btn { padding: 10px 20px; font-size: 0.95em; }
+    .masikids-space .swiper-slide img { height: 300px; }
+}

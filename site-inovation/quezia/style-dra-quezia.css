@@ -1,0 +1,356 @@
+/* style-dra-quezia.css */
+
+/* --- Reset Básico e Estilos Globais (herdado ou copiado) --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Cores base da Masioli */
+    --main-blue: #007bff; 
+    
+    /* Cores específicas Dra. Quezia - Suave e Profissional */
+    --dq-primary: #87CEEB;   /* Azul Céu Suave / Ou #B2DFDB (Verde Menta Claro) */
+    --dq-secondary: #4682B4; /* Azul Aço (mais sério para contraste) / Ou #00796B (Verde Escuro) */
+    --dq-accent: #FFB6C1;    /* Rosa Claro Suave (toque feminino delicado) / Ou #FFDAB9 (Pêssego) */
+    --dq-text: #3D405B;      /* Cinza azulado escuro para texto */
+    --dq-text-light: #5E6472; /* Cinza mais claro para parágrafos */
+    --dq-bg-light: #f8f9fc;   /* Fundo muito claro, quase branco com tom azulado/acinzentado */
+    --dq-border: #e0e7ef;     /* Cor de borda sutil */
+
+    /* Fontes */
+    --font-heading-dq: 'Lora', serif;
+    --font-body-dq: 'Poppins', sans-serif;
+    --border-radius-dq: 8px;
+}
+
+body {
+    font-family: var(--font-body-dq);
+    line-height: 1.75; /* Boa legibilidade */
+    color: var(--dq-text);
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 48px; /* Espaço para o header fixo */
+}
+
+main { flex: 1; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+/* === HEADER (Estilos idênticos aos anteriores) === */
+.site-header { /* ... COPIE OS ESTILOS DO HEADER DA APPLE DAQUI ... */
+    background-color: rgba(70, 130, 180, 0.97); /* Azul Aço do header (var --dq-secondary com alfa) */
+    color: #f0f8ff; /* Texto claro sobre o azul */
+    padding: 0 20px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.main-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; height: 48px; }
+.site-header .logo { font-size: 1.7em; font-weight: 600; color: #f0f8ff; margin-right: 25px; text-decoration: none; }
+.site-header .nav-links { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
+.site-header .nav-links li a { display: block; padding: 0 12px; font-size: 0.85em; color: #d0e0f0; line-height: 48px; text-decoration: none; transition: color 0.3s ease; }
+.site-header .nav-links li a:hover, .site-header .nav-links li a.active-nav-link { color: #fff; }
+.site-header .nav-icons { display: flex; }
+.site-header .nav-icons a { font-size: 1.2em; padding: 0 10px; color: #d0e0f0; text-decoration: none; transition: color 0.3s ease; line-height: 48px; }
+.site-header .nav-icons a:hover { color: #fff; }
+.mobile-menu-button { display: none; background: none; border: none; color: #f0f8ff; font-size: 1.5em; cursor: pointer; padding: 0 10px; }
+/* (COPIE TAMBÉM AS MEDIA QUERIES PARA O HEADER MOBILE) */
+@media (max-width: 768px) {
+    .site-header .nav-links { display: none; flex-direction: column; position: absolute; top: 48px; left: 0; right: 0; background-color: rgba(70, 130, 180, 0.99); padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow-y: auto; max-height: calc(100vh - 48px); }
+    .site-header .nav-links.active { display: flex; }
+    .site-header .nav-links li { width: 100%; text-align: center; }
+    .site-header .nav-links li a { padding: 15px 20px; line-height: 1.5; width: 100%; border-bottom: 1px solid rgba(240,248,255,0.15); }
+    .site-header .nav-links li:last-child a { border-bottom: none; }
+    .mobile-menu-button { display: block; margin-left: auto; }
+}
+
+/* --- Tipografia e Títulos Dra. Quezia --- */
+.section-title-dra-quezia {
+    font-family: var(--font-heading-dq);
+    font-size: 2.7em;
+    color: var(--dq-secondary); /* Azul Aço */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600; /* Lora Medium/SemiBold */
+}
+.section-title-dra-quezia.text-left { text-align: left; }
+.section-title-dra-quezia.white-text { color: #fff; }
+
+.section-subtitle-dra-quezia {
+    font-family: var(--font-body-dq);
+    font-size: 1.1em;
+    color: var(--dq-text-light);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px auto;
+    font-weight: 400;
+}
+.section-subtitle-dra-quezia.larger-subtitle { font-size: 1.2em; max-width: 750px; }
+.section-subtitle-dra-quezia.white-text { color: #e0e7ef; }
+
+/* --- Botões Dra. Quezia --- */
+.btn {
+    display: inline-block; padding: 12px 30px; 
+    border-radius: var(--border-radius-dq);
+    text-decoration: none; font-weight: 500; /* Poppins Medium */
+    transition: all 0.3s ease; cursor: pointer; font-size: 1.05em;
+    text-align: center; border: 2px solid transparent;
+}
+.btn-primary-dra-quezia {
+    background-color: var(--dq-primary); /* Azul Céu */
+    color: var(--dq-text); /* Texto escuro sobre azul claro */
+    border-color: var(--dq-primary);
+}
+.btn-primary-dra-quezia:hover {
+    background-color: var(--dq-secondary); /* Azul Aço */
+    color: #fff;
+    border-color: var(--dq-secondary);
+    transform: translateY(-2px);
+}
+.btn-light-dra-quezia { /* Para o botão de contato no final */
+    background-color: #fff;
+    color: var(--dq-secondary); /* Azul Aço */
+    border: 2px solid #fff;
+    font-weight: 600;
+}
+.btn-light-dra-quezia:hover {
+    background-color: var(--dq-bg-light);
+    color: var(--dq-secondary);
+    border-color: var(--dq-bg-light);
+}
+
+/* --- Utilitários Dra. Quezia --- */
+.section-padding { padding: 75px 0; }
+.bg-light-dra-quezia { background-color: var(--dq-bg-light); }
+.white-text { color: #fff !important; }
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+
+/* --- Hero Section Dra. Quezia --- */
+.hero-dra-quezia {
+    background-image: linear-gradient(rgba(135, 206, 235, 0.7), rgba(70, 130, 180, 0.8)), url('https://images.unsplash.com/photo-1507608443019-d9428084a891?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'); /* Fundo suave, talvez com flores ou textura delicada */
+    background-size: cover;
+    background-position: center;
+    color: var(--dq-text); /* Texto escuro sobre fundo claro */
+    padding: 100px 0;
+    text-align: center;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-eyebrow-dra-quezia {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--dq-secondary); /* Azul Aço */
+    margin-bottom: 15px;
+}
+.hero-dra-quezia h1 {
+    font-family: var(--font-heading-dq);
+    color: var(--dq-text);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    line-height: 1.25;
+}
+.hero-dra-quezia p {
+    font-size: 1.2em;
+    margin-bottom: 35px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400; /* Poppins Regular */
+    color: var(--dq-text-light);
+}
+
+/* --- Sobre Dra. Quezia --- */
+.about-dra-quezia { background-color: #fff; }
+.about-flex-dra-quezia { display: flex; align-items: center; gap: 50px; }
+.about-image-dra-quezia { flex-basis: 40%; max-width: 420px; }
+.about-image-dra-quezia img {
+    width: 100%; height: auto; border-radius: var(--border-radius-dq);
+    box-shadow: 0 12px 30px rgba(var(--dq-primary-rgb, 135, 206, 235), 0.2); /* Sombra na cor primária */
+}
+.about-text-dra-quezia { flex: 1; }
+.about-text-dra-quezia .section-title-dra-quezia { margin-bottom: 15px; }
+.specialty-dra-quezia {
+    font-size: 1.15em; font-weight: 600; /* Poppins SemiBold */
+    color: var(--dq-primary); /* Azul Céu */
+    margin-bottom: 20px; display: block;
+}
+.about-text-dra-quezia p { margin-bottom: 1.2em; color: var(--dq-text-light); font-size: 1.03em; }
+.philosophy-tags-dra-quezia { margin-top: 25px; display: flex; flex-wrap: wrap; gap: 10px; }
+.philosophy-tags-dra-quezia span {
+    background-color: var(--dq-bg-light);
+    color: var(--dq-secondary);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    border: 1px solid var(--dq-border);
+}
+.philosophy-tags-dra-quezia span i { margin-right: 8px; color: var(--dq-accent); } /* Rosa/Pêssego */
+
+/* --- Serviços Dentística --- */
+.services-grid-dra-quezia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin-top: 25px;
+}
+.service-card-dq {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius-dq);
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(var(--dq-secondary-rgb, 70, 130, 180), 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card-dq:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(var(--dq-secondary-rgb, 70, 130, 180), 0.12);
+}
+.service-icon-dq {
+    font-size: 2.5em;
+    color: var(--dq-primary); /* Azul Céu */
+    margin-bottom: 20px;
+    line-height: 1; /* Para ícones de linha única */
+}
+.service-card-dq h4 {
+    font-family: var(--font-heading-dq); /* Lora */
+    font-size: 1.5em;
+    color: var(--dq-secondary); /* Azul Aço */
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.service-card-dq p { font-size: 0.95em; color: var(--dq-text-light); line-height: 1.6; }
+
+/* --- Galeria de Casos Dra. Quezia --- */
+.galeria-dra-quezia { background-color: #fff; }
+.casesGallerySwiper {
+    width: 100%;
+    padding-bottom: 50px; /* Espaço para paginação */
+}
+.case-slide {
+    border-radius: var(--border-radius-dq);
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+}
+.case-slide img {
+    display: block;
+    width: 100%;
+    height: 280px; /* Altura consistente para os slides */
+    object-fit: cover;
+}
+.case-caption {
+    background-color: rgba(var(--dq-secondary-rgb, 70, 130, 180), 0.9);
+    color: #fff;
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+.cases-gallery-nav { color: var(--dq-secondary) !important; }
+.cases-gallery-nav:after { font-size: 26px !important; }
+.cases-gallery-pagination .swiper-pagination-bullet-active { background: var(--dq-secondary) !important; }
+
+/* --- Filosofia de Atendimento --- */
+.philosophy-icon { color: var(--dq-accent); margin-bottom: 20px; } /* Rosa/Pêssego */
+.philosophy-points {
+    max-width: 650px;
+    margin: 25px auto 0 auto;
+    text-align: left;
+}
+.philosophy-points p {
+    font-size: 1.05em;
+    margin-bottom: 12px;
+    color: var(--dq-text-light);
+    padding-left: 10px; /* Espaço para ícone */
+    position: relative;
+}
+.philosophy-points p i {
+    color: var(--dq-primary); /* Azul Céu */
+    margin-right: 10px;
+    /* position: absolute; left: -5px; top: 4px; */ /* Alternativa de posicionamento */
+}
+
+/* --- Contato Dra. Quezia --- */
+.contato-section-dra-quezia { background-color: var(--dq-secondary); } /* Azul Aço */
+.contato-info-dra-quezia { margin-top:30px; margin-bottom: 35px; }
+.contato-info-dra-quezia p {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    color: #eaf2f8; /* Azul bem claro */
+}
+.contato-info-dra-quezia i {
+    margin-right: 12px;
+    color: var(--dq-primary); /* Azul Céu */
+    width: 20px;
+}
+.contato-section-dra-quezia .btn-light-dra-quezia i { margin-right: 10px; }
+
+/* === FOOTER (Estilos idênticos aos anteriores) === */
+.site-footer { /* ... COPIE OS ESTILOS DO FOOTER DAQUI ... */
+    background: linear-gradient(135deg, #5e7a9b, #4682B4, #3a6a90); /* Gradiente com o Azul Aço */
+    color: #e0e0e0; padding-top: 60px; font-size: 0.95em; font-family: var(--font-body-dq);
+}
+/* (COPIE O RESTANTE DOS ESTILOS DO FOOTER E SUAS MEDIA QUERIES, AJUSTANDO CORES SE NECESSÁRIO) */
+.footer-content { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+.footer-section { flex: 1; min-width: 280px; margin-bottom: 30px; }
+.footer-section .logo-text { font-size: 1.9em; margin-bottom: 20px; font-weight: 700; font-family: var(--font-heading-dq); color: #fff; }
+.footer-section .logo-text span { color: var(--dq-primary); } /* Azul Céu no logo do footer */
+.footer-section.about p { margin-bottom: 20px; line-height: 1.8; color: #b0b0b0; }
+.footer-section .contact span { display: block; margin-bottom: 12px; color: #c0c0c0; transition: color 0.3s ease; }
+.footer-section .contact span:hover { color: #ffffff; }
+.footer-section .contact span i { margin-right: 12px; color: var(--dq-primary); font-size: 1.1em; width: 20px; text-align: center; }
+.footer-section .socials a { color: #b0b0b0; margin-right: 18px; font-size: 1.5em; transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
+.footer-section .socials a:hover { color: var(--dq-primary); transform: translateY(-3px); }
+.footer-section .socials a:last-child { margin-right: 0; }
+.footer-section h2 { font-family: var(--font-heading-dq); font-size: 1.4em; color: #ffffff; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+.footer-section h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; background-color: var(--dq-primary); border-radius: 2px; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 12px; }
+.footer-section ul li a { color: #b0b0b0; transition: color 0.3s ease, padding-left 0.3s ease; display: inline-block; text-decoration: none; }
+.footer-section ul li a:hover { color: #ffffff; padding-left: 5px; }
+.text-input.contact-input { width: 100%; padding: 12px 15px; margin-bottom: 15px; border: 1px solid #555; border-radius: 5px; background-color: #2a2f36; color: #e0e0e0; font-family: inherit; font-size: 0.95em; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.text-input.contact-input::placeholder { color: #888; }
+.text-input.contact-input:focus { outline: none; border-color: var(--dq-primary); box-shadow: 0 0 0 2px rgba(135, 206, 235, 0.3); }
+textarea.contact-input { resize: vertical; min-height: 80px; }
+.btn.contact-btn { display: inline-block; background-color: var(--dq-primary); color: var(--dq-text); padding: 12px 25px; border: none; border-radius: 5px; font-family: inherit; font-size: 1em; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+.btn.contact-btn:hover { background-color: var(--dq-secondary); color:#fff; transform: translateY(-2px); }
+.btn.contact-btn i { margin-right: 8px; }
+.footer-bottom { background-color: #3a6a90; text-align: center; padding: 20px 15px; margin-top: 40px; font-size: 0.9em; color: #c0d0e0; border-top: 1px solid #4682B4; }
+.footer-bottom a { color: #d0e0f0; text-decoration: underline; }
+.footer-bottom a:hover { color: var(--dq-primary); }
+@media (max-width: 992px) { .footer-content { gap: 30px; } .footer-section { min-width: calc(50% - 15px); } }
+@media (max-width: 768px) { .footer-content { flex-direction: column; align-items: center; text-align: center; } .footer-section { min-width: 100%; max-width: 450px; } .footer-section h2::after { left: 50%; transform: translateX(-50%); } .footer-section.links ul, .footer-section .socials { text-align: center; } .footer-section .socials a { margin: 0 10px; } }
+@media (max-width: 480px) { .footer-section .logo-text { font-size: 1.7em; } .footer-section h2 { font-size: 1.3em; } .btn.contact-btn { width: 100%; padding: 14px 20px; } }
+
+
+/* --- Responsividade específica Dra. Quezia --- */
+@media (max-width: 992px) {
+    .hero-dra-quezia h1 { font-size: 3em; }
+    .section-title-dra-quezia { font-size: 2.4em; }
+    .about-flex-dra-quezia { flex-direction: column; text-align: center; }
+    .about-text-dra-quezia .section-title-dra-quezia { text-align: center; }
+    .about-image-dra-quezia { margin-bottom: 30px; max-width: 380px; margin-left:auto; margin-right:auto; }
+    .philosophy-tags-dra-quezia { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    .hero-dra-quezia { padding: 80px 0; min-height: auto; }
+    .hero-dra-quezia h1 { font-size: 2.5em; }
+    .section-title-dra-quezia { font-size: 2.1em; }
+    .section-padding { padding: 60px 0; }
+    .services-grid-dra-quezia { grid-template-columns: 1fr; }
+    .case-slide img { height: 240px; }
+}
+
+@media (max-width: 480px) {
+    .hero-dra-quezia h1 { font-size: 2.2em; }
+    .section-title-dra-quezia { font-size: 1.8em; }
+    .btn { padding: 12px 25px; font-size: 1em; }
+    .case-slide img { height: 200px; }
+}

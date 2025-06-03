@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Masioli Cursos</title>
+    <link rel="stylesheet" href="style-cursos.css"> <!-- Reutilizar o CSS principal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="login-page-body">
+
+    <div class="login-container">
+        <div class="login-box">
+            <a href="index.html" class="cursos-logo login-logo">
+                M<span>asioli</span>Cursos
+            </a>
+            <h2>Acesse sua Conta</h2>
+            <p class="login-subtitle">Bem-vindo de volta! Faça login para continuar aprendendo.</p>
+            
+            <form action="#" method="POST" class="login-form">
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Sua senha" required>
+                </div>
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Lembrar de mim
+                    </label>
+                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                </div>
+                <button type="submit" class="btn btn-primary-cursos btn-login">Entrar</button>
+            </form>
+            
+            <div class="login-separator"><span>OU</span></div>
+            
+            <button type="button" class="btn-social-login google-login">
+                <i class="fab fa-google"></i> Entrar com Google
+            </button>
+            <!-- Adicionar outros botões de login social se necessário -->
+            
+            <p class="signup-link">
+                Não tem uma conta? <a href="index.html#planos">Inscreva-se agora!</a>
+            </p>
+        </div>
+        <p class="login-footer-text">© <span id="current-year-login"></span> Masioli Cursos</p>
+    </div>
+
+    <script>
+        if(document.getElementById('current-year-login')){
+            document.getElementById('current-year-login').textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+/* style-dr-jansen.css */
+
+/* --- Reset Básico e Estilos Globais (herdado ou copiado) --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Cores base da Masioli */
+    --main-blue: #007bff; 
+    
+    /* Cores específicas Dr. Jansen - Moderno e Energético */
+    --drj-primary: #1A2930;   /* Azul Petróleo Escuro / Grafite Intenso */
+    --drj-secondary: #FF8C00; /* Laranja Vibrante (Energia) / ou #00C851 (Verde Esmeralda Brilhante) */
+    --drj-accent: #F7CE3E;    /* Amarelo Ouro (Destaque, Performance) */
+    --drj-text: #333D47;      /* Cinza escuro para texto principal */
+    --drj-text-light: #5F6B7A; /* Cinza mais claro para parágrafos */
+    --drj-bg-light: #f4f6f8;   /* Cinza muito claro, quase branco (fundo moderno) */
+    --drj-border: #dfe4ea;     /* Cor de borda sutil */
+
+    /* Fontes */
+    --font-heading-drj: 'Oswald', sans-serif; /* Impactante */
+    --font-body-drj: 'Lato', sans-serif;      /* Clean e legível */
+    --border-radius-drj: 5px; /* Bordas mais retas, modernas */
+}
+
+body {
+    font-family: var(--font-body-drj);
+    line-height: 1.65;
+    color: var(--drj-text);
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 48px; /* Espaço para o header fixo */
+}
+
+main { flex: 1; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 20px; } /* Container um pouco mais largo */
+
+/* === HEADER (Estilos idênticos aos anteriores) === */
+.site-header { /* ... COPIE OS ESTILOS DO HEADER DA APPLE DAQUI ... */
+    background-color: rgba(26, 41, 48, 0.97); /* Azul Petróleo Escuro do header (var --drj-primary com alfa) */
+    color: #e1e5e8; /* Texto claro sobre o escuro */
+    padding: 0 20px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.main-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; height: 48px; }
+.site-header .logo { font-size: 1.7em; font-weight: 600; color: #e1e5e8; margin-right: 25px; text-decoration: none; }
+.site-header .nav-links { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
+.site-header .nav-links li a { display: block; padding: 0 12px; font-size: 0.85em; color: #b8c1c8; line-height: 48px; text-decoration: none; transition: color 0.3s ease; }
+.site-header .nav-links li a:hover, .site-header .nav-links li a.active-nav-link { color: #fff; }
+.site-header .nav-icons { display: flex; }
+.site-header .nav-icons a { font-size: 1.2em; padding: 0 10px; color: #b8c1c8; text-decoration: none; transition: color 0.3s ease; line-height: 48px; }
+.site-header .nav-icons a:hover { color: #fff; }
+.mobile-menu-button { display: none; background: none; border: none; color: #e1e5e8; font-size: 1.5em; cursor: pointer; padding: 0 10px; }
+/* (COPIE TAMBÉM AS MEDIA QUERIES PARA O HEADER MOBILE) */
+@media (max-width: 768px) {
+    .site-header .nav-links { display: none; flex-direction: column; position: absolute; top: 48px; left: 0; right: 0; background-color: rgba(26, 41, 48, 0.99); padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow-y: auto; max-height: calc(100vh - 48px); }
+    .site-header .nav-links.active { display: flex; }
+    .site-header .nav-links li { width: 100%; text-align: center; }
+    .site-header .nav-links li a { padding: 15px 20px; line-height: 1.5; width: 100%; border-bottom: 1px solid rgba(225, 229, 232,0.15); }
+    .site-header .nav-links li:last-child a { border-bottom: none; }
+    .mobile-menu-button { display: block; margin-left: auto; }
+}
+
+/* --- Tipografia e Títulos Dr. Jansen --- */
+.section-title-dr-jansen {
+    font-family: var(--font-heading-drj);
+    font-size: 2.8em; /* Títulos fortes */
+    color: var(--drj-primary); /* Azul Petróleo */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600; /* Oswald SemiBold */
+    text-transform: uppercase; /* Para um visual mais esportivo/moderno */
+    letter-spacing: 1px;
+}
+.section-title-dr-jansen.text-left { text-align: left; }
+.section-title-dr-jansen.white-text { color: #fff; }
+
+.section-subtitle-dr-jansen {
+    font-family: var(--font-body-drj);
+    font-size: 1.1em;
+    color: var(--drj-text-light);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px auto;
+    font-weight: 400; /* Lato Regular */
+}
+.section-subtitle-dr-jansen.white-text { color: #ced4da; }
+
+/* --- Botões Dr. Jansen --- */
+.btn {
+    display: inline-block; padding: 14px 35px; 
+    border-radius: var(--border-radius-drj);
+    text-decoration: none; font-weight: 700; /* Lato Bold ou Oswald Medium */
+    transition: all 0.3s ease; cursor: pointer; font-size: 1em;
+    text-align: center; text-transform: uppercase; letter-spacing: 0.8px;
+    border: 2px solid transparent;
+}
+.btn-primary-dr-jansen {
+    background-color: var(--drj-secondary); /* Laranja Vibrante */
+    color: #fff;
+    border-color: var(--drj-secondary);
+}
+.btn-primary-dr-jansen:hover {
+    background-color: #E57C00; /* Laranja mais escuro */
+    border-color: #E57C00;
+    transform: translateY(-2px) scale(1.02);
+}
+.btn-light-dr-jansen { /* Para o botão de contato no final */
+    background-color: #fff;
+    color: var(--drj-primary); /* Azul Petróleo */
+    border: 2px solid #fff;
+}
+.btn-light-dr-jansen:hover {
+    background-color: var(--drj-bg-light);
+    color: var(--drj-primary);
+    border-color: var(--drj-bg-light);
+}
+
+/* --- Utilitários Dr. Jansen --- */
+.section-padding { padding: 75px 0; }
+.bg-light-dr-jansen { background-color: var(--drj-bg-light); }
+.white-text { color: #fff !important; }
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+
+/* --- Hero Section Dr. Jansen --- */
+.hero-dr-jansen {
+    background-image: linear-gradient(rgba(26, 41, 48, 0.75), rgba(26, 41, 48, 0.9)), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1820&q=80'); /* Fundo dinâmico: atleta, pessoa ativa, paisagem inspiradora */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 110px 0;
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-eyebrow-dr-jansen {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 600; /* Lato Bold */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--drj-accent); /* Amarelo Ouro */
+    margin-bottom: 15px;
+}
+.hero-dr-jansen h1 {
+    font-family: var(--font-heading-drj);
+    color: #fff;
+    font-size: 3.6em; /* Bem impactante */
+    margin-bottom: 20px;
+    line-height: 1.15;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+}
+.hero-dr-jansen p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300; /* Lato Light */
+    opacity: 0.9;
+}
+
+/* --- Sobre Dr. Jansen --- */
+.about-dr-jansen { background-color: #fff; }
+.about-flex-dr-jansen { display: flex; align-items: center; gap: 50px; }
+.about-image-dr-jansen { flex-basis: 40%; max-width: 430px; }
+.about-image-dr-jansen img {
+    width: 100%; height: auto; border-radius: var(--border-radius-drj);
+    box-shadow: 0 12px 30px rgba(var(--drj-primary-rgb, 26, 41, 48), 0.15);
+}
+.about-text-dr-jansen { flex: 1; }
+.about-text-dr-jansen .section-title-dr-jansen { margin-bottom: 15px; }
+.specialty-dr-jansen {
+    font-size: 1.2em; font-weight: 700; /* Lato Bold */
+    color: var(--drj-secondary); /* Laranja */
+    margin-bottom: 20px; display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.about-text-dr-jansen p { margin-bottom: 1.2em; color: var(--drj-text-light); font-size: 1.03em; }
+.focus-areas-dr-jansen { margin-top: 25px; display: flex; flex-wrap: wrap; gap: 12px; }
+.focus-areas-dr-jansen span {
+    background-color: var(--drj-bg-light);
+    color: var(--drj-primary);
+    padding: 9px 18px;
+    border-radius: 25px; /* Pílulas */
+    font-size: 0.95em;
+    font-weight: 600;
+    border: 1px solid var(--drj-border);
+}
+.focus-areas-dr-jansen span i { margin-right: 8px; color: var(--drj-accent); } /* Amarelo */
+
+/* --- Serviços Dr. Jansen --- */
+.services-grid-dr-jansen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin-top: 25px;
+}
+.service-card-dj {
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: var(--border-radius-drj);
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(var(--drj-primary-rgb, 26, 41, 48), 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid transparent; /* Espaço para borda no hover */
+}
+.service-card-dj:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(var(--drj-primary-rgb, 26, 41, 48), 0.1);
+    border-top-color: var(--drj-secondary); /* Laranja */
+}
+.service-icon-dj {
+    font-size: 2.6em;
+    color: var(--drj-secondary); /* Laranja */
+    margin-bottom: 20px;
+    line-height: 1;
+}
+.service-card-dj h4 {
+    font-family: var(--font-heading-drj);
+    font-size: 1.5em;
+    color: var(--drj-primary); /* Azul Petróleo */
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.service-card-dj p { font-size: 0.95em; color: var(--drj-text-light); line-height: 1.6; }
+
+/* --- Abordagem Diferenciada --- */
+.approach-points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.approach-point {
+    text-align: center;
+    padding: 20px;
+}
+.approach-point i {
+    font-size: 3em;
+    color: var(--drj-accent); /* Amarelo */
+    margin-bottom: 15px;
+    display: block;
+}
+.approach-point h5 {
+    font-family: var(--font-heading-drj);
+    font-weight: 600;
+    font-size: 1.3em;
+    color: var(--drj-primary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.approach-point p { font-size: 0.95em; color: var(--drj-text-light); }
+
+/* --- Depoimentos (Placeholder) --- */
+.testimonials-dr-jansen .testimonial-placeholder {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: var(--border-radius-drj);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    text-align: center;
+    font-style: italic;
+    color: var(--drj-text-light);
+}
+.testimonials-dr-jansen .testimonial-placeholder p { margin-bottom: 10px; }
+
+/* --- Contato Dr. Jansen --- */
+.contato-section-dr-jansen { background-color: var(--drj-primary); } /* Azul Petróleo */
+.contato-info-dr-jansen { margin-top:30px; margin-bottom: 35px; }
+.contato-info-dr-jansen p {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    color: #e1e5e8; 
+}
+.contato-info-dr-jansen i {
+    margin-right: 12px;
+    color: var(--drj-secondary); /* Laranja */
+    width: 20px;
+}
+.contato-section-dr-jansen .btn-light-dr-jansen i { margin-right: 10px; }
+
+/* === FOOTER (Estilos idênticos aos anteriores) === */
+.site-footer { /* ... COPIE OS ESTILOS DO FOOTER DAQUI ... */
+    background: linear-gradient(135deg, #1F3A48, #1A2930, #101C21); /* Gradiente com Azul Petróleo */
+    color: #e0e0e0; padding-top: 60px; font-size: 0.95em; font-family: var(--font-body-drj);
+}
+/* (COPIE O RESTANTE DOS ESTILOS DO FOOTER E SUAS MEDIA QUERIES, AJUSTANDO CORES SE NECESSÁRIO) */
+.footer-content { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+.footer-section { flex: 1; min-width: 280px; margin-bottom: 30px; }
+.footer-section .logo-text { font-size: 1.9em; margin-bottom: 20px; font-weight: 700; font-family: var(--font-heading-drj); color: #fff; }
+.footer-section .logo-text span { color: var(--drj-secondary); } /* Laranja no logo do footer */
+.footer-section.about p { margin-bottom: 20px; line-height: 1.8; color: #b0b0b0; }
+.footer-section .contact span { display: block; margin-bottom: 12px; color: #c0c0c0; transition: color 0.3s ease; }
+.footer-section .contact span:hover { color: #ffffff; }
+.footer-section .contact span i { margin-right: 12px; color: var(--drj-secondary); font-size: 1.1em; width: 20px; text-align: center; }
+.footer-section .socials a { color: #b0b0b0; margin-right: 18px; font-size: 1.5em; transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
+.footer-section .socials a:hover { color: var(--drj-secondary); transform: translateY(-3px); }
+.footer-section .socials a:last-child { margin-right: 0; }
+.footer-section h2 { font-family: var(--font-heading-drj); font-size: 1.4em; color: #ffffff; margin-bottom: 25px; position: relative; padding-bottom: 10px; text-transform: uppercase; }
+.footer-section h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; background-color: var(--drj-secondary); border-radius: 2px; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 12px; }
+.footer-section ul li a { color: #b0b0b0; transition: color 0.3s ease, padding-left 0.3s ease; display: inline-block; text-decoration: none; }
+.footer-section ul li a:hover { color: #ffffff; padding-left: 5px; }
+.text-input.contact-input { width: 100%; padding: 12px 15px; margin-bottom: 15px; border: 1px solid #555; border-radius: 5px; background-color: #2a2f36; color: #e0e0e0; font-family: inherit; font-size: 0.95em; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.text-input.contact-input::placeholder { color: #888; }
+.text-input.contact-input:focus { outline: none; border-color: var(--drj-secondary); box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.3); }
+textarea.contact-input { resize: vertical; min-height: 80px; }
+.btn.contact-btn { display: inline-block; background-color: var(--drj-secondary); color: #fff; padding: 12px 25px; border: none; border-radius: 5px; font-family: inherit; font-size: 1em; font-weight: 700; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; }
+.btn.contact-btn:hover { background-color: #E57C00; transform: translateY(-2px); }
+.btn.contact-btn i { margin-right: 8px; }
+.footer-bottom { background-color: #101C21; text-align: center; padding: 20px 15px; margin-top: 40px; font-size: 0.9em; color: #95a5a6; border-top: 1px solid #1A2930; }
+.footer-bottom a { color: #bdc3c7; text-decoration: underline; }
+.footer-bottom a:hover { color: var(--drj-secondary); }
+@media (max-width: 992px) { .footer-content { gap: 30px; } .footer-section { min-width: calc(50% - 15px); } }
+@media (max-width: 768px) { .footer-content { flex-direction: column; align-items: center; text-align: center; } .footer-section { min-width: 100%; max-width: 450px; } .footer-section h2::after { left: 50%; transform: translateX(-50%); } .footer-section.links ul, .footer-section .socials { text-align: center; } .footer-section .socials a { margin: 0 10px; } }
+@media (max-width: 480px) { .footer-section .logo-text { font-size: 1.7em; } .footer-section h2 { font-size: 1.3em; } .btn.contact-btn { width: 100%; padding: 14px 20px; } }
+
+/* --- Responsividade específica Dr. Jansen --- */
+@media (max-width: 992px) {
+    .hero-dr-jansen h1 { font-size: 3.1em; }
+    .section-title-dr-jansen { font-size: 2.4em; }
+    .about-flex-dr-jansen { flex-direction: column; text-align: center; }
+    .about-text-dr-jansen .section-title-dr-jansen { text-align: center; }
+    .about-image-dr-jansen { margin-bottom: 30px; max-width: 380px; margin-left:auto; margin-right:auto; }
+    .focus-areas-dr-jansen { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    .hero-dr-jansen { padding: 90px 0; min-height: auto; }
+    .hero-dr-jansen h1 { font-size: 2.7em; }
+    .section-title-dr-jansen { font-size: 2.2em; }
+    .section-padding { padding: 60px 0; }
+    .services-grid-dr-jansen { grid-template-columns: 1fr; }
+    .approach-points-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hero-dr-jansen h1 { font-size: 2.3em; }
+    .section-title-dr-jansen { font-size: 1.9em; }
+    .btn { padding: 12px 28px; font-size: 0.95em; }
+}

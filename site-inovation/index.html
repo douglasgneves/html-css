@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masioli Saúde Integrada</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Icone Masioli
          Por simplicidade, usaremos texto ou caracteres Unicode aqui. -->
 </head>
@@ -15,17 +16,17 @@
             <a href="index.html" class="logo"></a> <!-- Logo Masioli -->
             <ul class="nav-links">
                 <li><a href="loja/loja.html">Loja</a></li>
-                <li><a href="#">Masioli Odontologia</a></li>
-                <li><a href="#">Masikids</a></li>
-                <li><a href="#">Deise Ortodontia</a></li>
-                <li><a href="#">Frizzera</a></li>
-                <li><a href="#">Quiropraxia</a></li>
-                <li><a href="#">Douglas</a></li>
-                <li><a href="#">Quezia</a></li>
-                <li><a href="#">Marcos Daniel</a></li>
-                <li><a href="#">Jansen</a></li>
-                <li><a href="#">Mais Cursos</a></li>
-                <li><a href="#">Odontopixel</a></li>
+                <li><a href="masioli odontologia/masioli-odontologia.html">Masioli Odontologia</a></li>
+                <li><a href="masikids/masikids.html">Masikids</a></li>
+                <li><a href="dc orto/dc-orto.html">DC Orto</a></li>
+                <li><a href="frizzera/frizzera-periodontia.html">Frizzera</a></li>
+                <li><a href="quiropraxia/quiropraxia.html">Quiropraxia</a></li>
+                <li><a href="douglas/douglas.html">Douglas</a></li>
+                <li><a href="quezia/quezia.html">Quezia</a></li>
+                <li><a href="marcos daniel/marco-daniel.html">Marcos Daniel</a></li>
+                <li><a href="jansen/jansen.html">Jansen</a></li>
+                <li><a href="mais cursos/landing-cursos.html">Mais Cursos</a></li>
+                
             </ul>
             <div class="nav-icons">
                 <a href="#" class="icon-search">🔍</a> <!-- Ícone de busca (Unicode) -->
@@ -76,6 +77,66 @@
 
     </main>
 
+    <footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h2 class="logo-text"><span>Masioli</span>Saúde Integrada</h2>
+            <p>
+                Cuidando da sua saúde e bem-estar com uma abordagem completa e integrada.
+                Encontre aqui serviços de odontologia, estética, bem-estar e mais.
+            </p>
+            <div class="contact">
+                <span><i class="fas fa-phone"></i>   (XX) XXXXX-XXXX</span>
+                <span><i class="fas fa-envelope"></i>   contato@masiolisaude.com.br</span>
+            </div>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section links">
+            <h2>Links Rápidos</h2>
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="loja/loja.html">Loja</a></li>
+                <li><a href="#">Masioli Odontologia</a></li>
+                <li><a href="#">Masikids</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact-form-simple">
+            <h2>Fale Conosco</h2>
+            <form action="#" method="post">
+                <input type="email" name="email" class="text-input contact-input" placeholder="Seu email...">
+                <textarea rows="3" name="message" class="text-input contact-input" placeholder="Sua mensagem..."></textarea>
+                <button type="submit" class="btn btn-big contact-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © <span id="current-year"></span> Masioli Saúde Integrada | Todos os direitos reservados.
+        <!-- Você pode adicionar um link para o desenvolvedor ou designer aqui, se desejar -->
+        <!-- | Desenvolvido por <a href="#">Seu Nome/Empresa</a> -->
+    </div>
+</footer>
+
+<!-- Script para o ano atual no rodapé (opcional, mas legal) -->
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
     <script src="script.js" defer></script>
+    <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

@@ -1,0 +1,377 @@
+/* style-frizzera-perio.css */
+
+/* --- Reset Básico e Estilos Globais (herdado ou copiado) --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Cores base da Masioli */
+    --main-blue: #007bff; 
+    --light-blue: #4A90E2;
+    --text-color-default: #333;
+    --light-text-color-default: #f8f9fa;
+    
+    /* Cores específicas Frizzera Periodontia */
+    --perio-primary: #28A745;   /* Verde Saúde/Natureza */
+    --perio-secondary: #1E7E34; /* Verde Escuro para contraste */
+    --perio-accent: #6F42C1;    /* Roxo/Lilás para um toque de sofisticação ou um coral suave #FF7F50 */
+    --perio-text: #2c3e50;      /* Texto azul escuro/cinza */
+    --perio-bg-light: #f0f8ff;  /* Azul Alice muito claro (quase branco) */
+    --perio-border: #ced4da;    /* Cor de borda sutil */
+
+    /* Fontes */
+    --heading-font-default: 'Merriweather', serif;
+    --body-font-default: 'Open Sans', sans-serif;
+    --perio-font-main: 'Lato', sans-serif; /* Fonte principal para Frizzera Periodontia */
+    --border-radius-default: 8px;
+}
+
+body {
+    font-family: var(--perio-font-main);
+    line-height: 1.65; /* Um pouco mais de espaçamento entre linhas */
+    color: var(--perio-text);
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 48px; /* Espaço para o header fixo */
+}
+
+main { flex: 1; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+/* === HEADER (Estilos idênticos aos anteriores) === */
+.site-header { /* ... COPIE OS ESTILOS DO HEADER DA APPLE DAQUI ... */
+    background-color: rgba(40, 40, 40, 0.97); color: #f5f5f7; padding: 0 20px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.main-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; height: 48px; }
+.site-header .logo { font-size: 1.7em; font-weight: 600; color: #f5f5f7; margin-right: 25px; text-decoration: none; }
+.site-header .nav-links { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
+.site-header .nav-links li a { display: block; padding: 0 12px; font-size: 0.85em; color: #d2d2d7; line-height: 48px; text-decoration: none; transition: color 0.3s ease; }
+.site-header .nav-links li a:hover, .site-header .nav-links li a.active-nav-link { color: #fff; }
+.site-header .nav-icons { display: flex; }
+.site-header .nav-icons a { font-size: 1.2em; padding: 0 10px; color: #d2d2d7; text-decoration: none; transition: color 0.3s ease; line-height: 48px; }
+.site-header .nav-icons a:hover { color: #fff; }
+.mobile-menu-button { display: none; background: none; border: none; color: #f5f5f7; font-size: 1.5em; cursor: pointer; padding: 0 10px; }
+/* (COPIE TAMBÉM AS MEDIA QUERIES PARA O HEADER MOBILE) */
+@media (max-width: 768px) {
+    .site-header .nav-links { display: none; flex-direction: column; position: absolute; top: 48px; left: 0; right: 0; background-color: rgba(40, 40, 40, 0.99); padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow-y: auto; max-height: calc(100vh - 48px); }
+    .site-header .nav-links.active { display: flex; }
+    .site-header .nav-links li { width: 100%; text-align: center; }
+    .site-header .nav-links li a { padding: 15px 20px; line-height: 1.5; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .site-header .nav-links li:last-child a { border-bottom: none; }
+    .mobile-menu-button { display: block; margin-left: auto; }
+}
+
+/* --- Tipografia e Títulos Frizzera Periodontia --- */
+.section-title-frizzera-perio {
+    font-family: var(--heading-font-default);
+    font-size: 2.5em;
+    color: var(--perio-secondary); /* Verde Escuro */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.section-title-frizzera-perio.text-left { text-align: left; }
+
+.section-subtitle-frizzera-perio {
+    font-size: 1.1em;
+    color: #555;
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+}
+.section-subtitle-frizzera-perio.larger-subtitle { font-size: 1.2em; max-width: 800px; }
+
+.subsection-title-frizzera-perio {
+    font-family: var(--perio-font-main);
+    font-weight: 700;
+    font-size: 1.6em;
+    color: var(--perio-primary); /* Verde Principal */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* --- Botões Frizzera Periodontia --- */
+.btn {
+    display: inline-block; padding: 12px 28px; border-radius: var(--border-radius-default);
+    text-decoration: none; font-weight: 700; /* Lato Bold */
+    transition: all 0.3s ease; cursor: pointer; font-size: 1.05em;
+    text-align: center;
+}
+.btn-primary-frizzera-perio {
+    background-color: var(--perio-primary); /* Verde Principal */
+    color: #fff;
+    border: 2px solid var(--perio-primary);
+}
+.btn-primary-frizzera-perio:hover {
+    background-color: var(--perio-secondary); /* Verde Escuro */
+    border-color: var(--perio-secondary);
+    transform: translateY(-2px);
+}
+.btn-light-frizzera-perio { /* Para o botão de contato no final */
+    background-color: #fff;
+    color: var(--perio-secondary);
+    border: 2px solid #fff;
+}
+.btn-light-frizzera-perio:hover {
+    background-color: var(--perio-bg-light);
+    color: var(--perio-secondary);
+    border-color: var(--perio-bg-light);
+}
+
+/* --- Utilitários Frizzera Periodontia --- */
+.section-padding { padding: 65px 0; }
+.bg-light-frizzera-perio { background-color: var(--perio-bg-light); }
+.white-text { color: #fff !important; }
+.text-center { text-align: center; }
+
+/* --- Hero Section Frizzera Periodontia --- */
+.hero-frizzera-perio {
+    background-image: linear-gradient(rgba(40, 167, 69, 0.75), rgba(30, 126, 52, 0.9)), url('https://images.unsplash.com/photo-1583912575945-de5291304387?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'); /* Imagem de fundo relacionada a cuidado, natureza, saúde */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 90px 0;
+    text-align: center;
+    position: relative;
+}
+.perio-icon-hero {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 20px;
+}
+.hero-frizzera-perio h1 {
+    font-family: var(--heading-font-default);
+    font-weight: 700;
+    color: #fff;
+    font-size: 3.2em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+}
+.hero-frizzera-perio p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* --- What is Periodontia Section --- */
+.perio-intro-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.perio-intro-text { flex: 1.2; } /* Mais espaço para o texto */
+.perio-intro-text p { margin-bottom: 1em; color: #444; }
+.perio-intro-image {
+    flex: 0.8;
+    max-width: 450px;
+}
+.perio-intro-image img {
+    width: 100%;
+    border-radius: var(--border-radius-default);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* --- Sinais de Alerta e Doenças Comuns --- */
+.sinais-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.sinal-item {
+    background-color: #fff;
+    color: var(--perio-text);
+    padding: 10px 18px;
+    border-radius: 20px; /* Pílulas */
+    font-size: 0.95em;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    border: 1px solid var(--perio-border);
+}
+.sinal-item i {
+    margin-right: 8px;
+    color: var(--perio-accent); /* Roxo ou Coral */
+}
+.perio-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--perio-border);
+    margin: 40px auto;
+    width: 80%;
+}
+.doencas-comuns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.doenca-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: var(--border-radius-default);
+    border-left: 5px solid var(--perio-primary); /* Borda lateral verde */
+}
+.doenca-card h4 {
+    font-family: var(--perio-font-main);
+    font-weight: 700;
+    color: var(--perio-secondary); /* Verde Escuro */
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+.doenca-card p { font-size: 0.95em; color: #555; }
+
+/* --- Tratamentos Periodontais --- */
+.tratamentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+.tratamento-item {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: var(--border-radius-default);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tratamento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(var(--perio-primary-rgb, 40, 167, 69), 0.1);
+}
+.tratamento-icon {
+    display: block;
+    font-size: 2em; /* Ícones um pouco menores aqui */
+    color: var(--perio-primary); /* Verde */
+    margin-bottom: 15px;
+    text-align: center;
+}
+.tratamento-item h5 {
+    font-family: var(--perio-font-main);
+    font-weight: 700;
+    color: var(--perio-secondary); /* Verde Escuro */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.tratamento-item p { font-size: 0.9em; color: #444; text-align: center; line-height: 1.5; }
+
+/* --- Prevenção --- */
+.prevencao-icon {
+    color: var(--perio-primary); /* Verde */
+    margin-bottom: 20px;
+}
+.prevencao-lista {
+    list-style: none;
+    padding-left: 0;
+    max-width: 550px;
+    margin: 20px auto 0 auto;
+    text-align: left;
+}
+.prevencao-lista li {
+    font-size: 1.05em;
+    margin-bottom: 10px;
+    color: var(--perio-text);
+}
+.prevencao-lista li i {
+    color: var(--perio-secondary); /* Verde Escuro */
+    margin-right: 10px;
+}
+
+/* --- Especialista Frizzera Periodontia (Similar ao DC Orto, ajuste classes) --- */
+.especialista-frizzera-perio .especialista-wrapper {
+    display: flex; align-items: center; gap: 40px;
+}
+.especialista-frizzera-perio .especialista-img { flex-basis: 35%; max-width: 350px; }
+.especialista-frizzera-perio .especialista-img img { width: 100%; border-radius: var(--border-radius-default); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.especialista-frizzera-perio .especialista-info { flex: 1; }
+.especialista-frizzera-perio .especialista-info .section-title-frizzera-perio { margin-bottom: 10px; }
+.especialista-frizzera-perio .especialidade-titulo { font-size: 1.1em; color: var(--perio-primary); font-weight: 700; margin-bottom: 20px; display: block; }
+.especialista-frizzera-perio .especialista-info p { margin-bottom: 1.2em; line-height: 1.7; color: #333; }
+.especialista-frizzera-perio .especialista-info p em { display: block; padding-left: 20px; border-left: 3px solid var(--perio-accent); color: #555; font-style: italic; }
+
+/* --- Contato Section Frizzera Periodontia --- */
+.contato-section-frizzera-perio {
+    background-color: var(--perio-secondary); /* Verde Escuro */
+}
+.contato-section-frizzera-perio .section-title-frizzera-perio,
+.contato-section-frizzera-perio .section-subtitle-frizzera-perio { color: #fff; }
+.contato-info-frizzera-perio { text-align: center; margin-bottom: 30px; }
+.contato-info-frizzera-perio p { font-size: 1.1em; margin-bottom: 10px; color: #e8f5e9; } /* Verde bem claro */
+.contato-info-frizzera-perio i { margin-right: 10px; color: #fff; }
+.contato-section-frizzera-perio .btn-light-frizzera-perio {
+    margin: 10px auto 0 auto; display: block; max-width: 320px;
+}
+.contato-section-frizzera-perio .btn-light-frizzera-perio i { margin-right: 10px; }
+
+/* === FOOTER (Estilos idênticos aos anteriores) === */
+.site-footer { /* ... COPIE OS ESTILOS DO FOOTER DAQUI ... */
+    background: linear-gradient(135deg, #2c5364, #203a43, #0f2027); color: #e0e0e0; padding-top: 60px; font-size: 0.95em; font-family: var(--body-font-default);
+}
+/* (COPIE O RESTANTE DOS ESTILOS DO FOOTER E SUAS MEDIA QUERIES) */
+.footer-content { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+.footer-section { flex: 1; min-width: 280px; margin-bottom: 30px; }
+.footer-section .logo-text { font-size: 1.9em; margin-bottom: 20px; font-weight: 700; font-family: var(--heading-font-default); color: #fff; }
+.footer-section .logo-text span { color: #42a5f5; }
+.footer-section.about p { margin-bottom: 20px; line-height: 1.8; color: #b0b0b0; }
+.footer-section .contact span { display: block; margin-bottom: 12px; color: #c0c0c0; transition: color 0.3s ease; }
+.footer-section .contact span:hover { color: #ffffff; }
+.footer-section .contact span i { margin-right: 12px; color: #42a5f5; font-size: 1.1em; width: 20px; text-align: center; }
+.footer-section .socials a { color: #b0b0b0; margin-right: 18px; font-size: 1.5em; transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
+.footer-section .socials a:hover { color: #42a5f5; transform: translateY(-3px); }
+.footer-section .socials a:last-child { margin-right: 0; }
+.footer-section h2 { font-family: var(--heading-font-default); font-size: 1.4em; color: #ffffff; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+.footer-section h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; background-color: #42a5f5; border-radius: 2px; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 12px; }
+.footer-section ul li a { color: #b0b0b0; transition: color 0.3s ease, padding-left 0.3s ease; display: inline-block; text-decoration: none; }
+.footer-section ul li a:hover { color: #ffffff; padding-left: 5px; }
+.text-input.contact-input { width: 100%; padding: 12px 15px; margin-bottom: 15px; border: 1px solid #555; border-radius: 5px; background-color: #2a2f36; color: #e0e0e0; font-family: inherit; font-size: 0.95em; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.text-input.contact-input::placeholder { color: #888; }
+.text-input.contact-input:focus { outline: none; border-color: #42a5f5; box-shadow: 0 0 0 2px rgba(66, 165, 245, 0.3); }
+textarea.contact-input { resize: vertical; min-height: 80px; }
+.btn.contact-btn { display: inline-block; background-color: #42a5f5; color: #ffffff; padding: 12px 25px; border: none; border-radius: 5px; font-family: inherit; font-size: 1em; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; }
+.btn.contact-btn:hover { background-color: #1e88e5; transform: translateY(-2px); }
+.btn.contact-btn i { margin-right: 8px; }
+.footer-bottom { background-color: #0a1014; text-align: center; padding: 20px 15px; margin-top: 40px; font-size: 0.9em; color: #909090; border-top: 1px solid #303030; }
+.footer-bottom a { color: #a0a0a0; text-decoration: underline; }
+.footer-bottom a:hover { color: #42a5f5; }
+@media (max-width: 992px) { .footer-content { gap: 30px; } .footer-section { min-width: calc(50% - 15px); } }
+@media (max-width: 768px) { .footer-content { flex-direction: column; align-items: center; text-align: center; } .footer-section { min-width: 100%; max-width: 450px; } .footer-section h2::after { left: 50%; transform: translateX(-50%); } .footer-section.links ul, .footer-section .socials { text-align: center; } .footer-section .socials a { margin: 0 10px; } }
+@media (max-width: 480px) { .footer-section .logo-text { font-size: 1.7em; } .footer-section h2 { font-size: 1.3em; } .btn.contact-btn { width: 100%; padding: 14px 20px; } }
+
+
+/* --- Responsividade específica Frizzera Periodontia --- */
+@media (max-width: 992px) {
+    .hero-frizzera-perio h1 { font-size: 2.8em; }
+    .section-title-frizzera-perio { font-size: 2.2em; }
+    .perio-intro-flex { flex-direction: column; text-align: center; }
+    .perio-intro-text .section-title-frizzera-perio { text-align: center; }
+    .perio-intro-image { margin-top: 30px; max-width: 100%; }
+    .especialista-frizzera-perio .especialista-wrapper { flex-direction: column; text-align: center; }
+    .especialista-frizzera-perio .especialista-info .section-title-frizzera-perio { text-align: center; }
+    .especialista-frizzera-perio .especialista-img { margin-bottom: 30px; max-width: 300px; margin-left:auto; margin-right:auto; }
+}
+
+@media (max-width: 768px) {
+    .hero-frizzera-perio { padding: 70px 0; }
+    .hero-frizzera-perio h1 { font-size: 2.4em; }
+    .section-title-frizzera-perio { font-size: 2em; }
+    .sinais-grid { justify-content: flex-start; } /* Para não centralizar com poucos itens */
+    .sinal-item { flex-basis: calc(50% - 10px); font-size: 0.9em; } /* Duas colunas de sinais */
+    .tratamentos-grid { grid-template-columns: 1fr; }
+    .doencas-comuns { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hero-frizzera-perio h1 { font-size: 2em; }
+    .section-title-frizzera-perio { font-size: 1.7em; }
+    .sinal-item { flex-basis: 100%; } /* Uma coluna de sinais */
+    .btn { padding: 10px 20px; font-size: 1em; }
+}

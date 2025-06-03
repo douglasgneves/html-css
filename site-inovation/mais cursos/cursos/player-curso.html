@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula: [Nome da Aula] - Masioli Cursos</title>
+    <link rel="stylesheet" href="style-cursos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Video.js CSS (Opcional, para um player mais robusto) -->
+    <!-- <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" /> -->
+</head>
+<body class="player-page-body">
+
+    <div class="player-layout">
+        <!-- Sidebar com Módulos e Aulas do Curso -->
+        <aside class="player-sidebar">
+            <div class="player-sidebar-header">
+                <a href="area-membros.html" class="back-to-cursos"><i class="fas fa-arrow-left"></i> Meus Cursos</a>
+                <h3>Odontologia Estética Avançada</h3> <!-- Nome do Curso Atual -->
+            </div>
+            <div class="course-modules-list">
+                <!-- Módulo 1 -->
+                <div class="module-item">
+                    <button class="module-title">
+                        Módulo 1: Fundamentos da Estética <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="lessons-list">
+                        <li class="lesson-item active-lesson"><a href="#">Aula 1: Princípios do Sorriso</a> (15:30)</li>
+                        <li class="lesson-item"><a href="#">Aula 2: Análise Facial e Dental</a> (22:10)</li>
+                        <li class="lesson-item"><a href="#"><i class="fas fa-lock"></i> Aula 3: Planejamento Digital</a> (18:05)</li>
+                    </ul>
+                </div>
+                <!-- Módulo 2 -->
+                <div class="module-item">
+                    <button class="module-title">
+                        Módulo 2: Facetas de Porcelana <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="lessons-list" style="display:none;"> <!-- Exemplo de módulo fechado -->
+                         <li class="lesson-item"><a href="#"><i class="fas fa-lock"></i> Aula 1: Indicações e Materiais</a></li>
+                         <li class="lesson-item"><a href="#"><i class="fas fa-lock"></i> Aula 2: Preparo Dental</a></li>
+                    </ul>
+                </div>
+                <!-- Adicionar mais módulos e aulas -->
+                 <div class="module-item">
+                    <button class="module-title">
+                        Recursos Adicionais <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="lessons-list" style="display:none;">
+                         <li class="lesson-item"><a href="#" target="_blank"><i class="fas fa-file-pdf"></i> Artigos de Referência</a></li>
+                         <li class="lesson-item"><a href="#" target="_blank"><i class="fas fa-link"></i> Links Úteis</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal com o Player de Vídeo -->
+        <main class="player-main-content">
+            <header class="player-video-header">
+                <h2>Aula 1: Princípios do Sorriso</h2>
+                <div class="video-nav-buttons">
+                    <button class="btn btn-outline-cursos btn-sm" disabled><i class="fas fa-chevron-left"></i> Anterior</button>
+                    <button class="btn btn-primary-cursos btn-sm">Próxima Aula <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </header>
+
+            <div class="video-player-container">
+                <!-- Usando o player HTML5 padrão -->
+                <video id="meuVideoPlayer" controls width="100%" poster="https://via.placeholder.com/800x450/172B4D/FFFFFF?text=Vídeo+Aula+Aqui">
+                    <source src="caminho/para/seu/video.mp4" type="video/mp4">
+                    <!-- Adicionar mais sources para diferentes formatos se necessário -->
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+                
+                <!-- Exemplo com Video.js (requer o script do Video.js no final do body)
+                <video id="meuVideoPlayer" class="video-js vjs-default-skin vjs-big-play-centered"
+                    controls preload="auto" width="100%" height="auto"
+                    poster="https://via.placeholder.com/800x450/172B4D/FFFFFF?text=Vídeo+Aula+Aqui"
+                    data-setup="{}">
+                    <source src="caminho/para/seu/video.mp4" type="video/mp4" />
+                    <p class="vjs-no-js">
+                        Para assistir este vídeo, por favor habilite o JavaScript e considere atualizar para um navegador que
+                        <a href="https://videojs.com/html5-video-support/" target="_blank">suporte vídeo HTML5</a>
+                    </p>
+                </video>
+                -->
+            </div>
+
+            <div class="video-info-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-button active" data-tab="descricao">Descrição</button>
+                    <button class="tab-button" data-tab="arquivos">Arquivos</button>
+                    <button class="tab-button" data-tab="comentarios">Comentários (7)</button>
+                </div>
+                <div class="tabs-content">
+                    <div id="descricao" class="tab-pane active">
+                        <h4>Sobre esta aula</h4>
+                        <p>Nesta aula introdutória, exploraremos os conceitos fundamentais que definem um sorriso esteticamente agradável. Abordaremos a importância da proporção áurea, simetria, linha do sorriso e como esses elementos se integram na percepção da beleza facial.</p>
+                        <p>Você aprenderá a identificar os principais componentes de uma análise estética e como eles se aplicam no planejamento de tratamentos restauradores e cosméticos.</p>
+                    </div>
+                    <div id="arquivos" class="tab-pane">
+                        <h4>Recursos da Aula</h4>
+                        <ul>
+                            <li><a href="#" download><i class="fas fa-file-pdf"></i> Slides da Aula - Princípios do Sorriso.pdf</a></li>
+                            <li><a href="#" download><i class="fas fa-file-alt"></i> Checklist de Análise Estética.docx</a></li>
+                        </ul>
+                    </div>
+                    <div id="comentarios" class="tab-pane">
+                        <h4>Discussão</h4>
+                        <!-- Simulação de comentários -->
+                        <div class="comment-item">
+                            <img src="https://via.placeholder.com/40x40/0052CC/FFFFFF?text=AP" alt="Avatar">
+                            <div class="comment-content">
+                                <strong>Ana P.:</strong> <span>Aula excelente, muito didática!</span>
+                                <small>2 horas atrás</small>
+                            </div>
+                        </div>
+                        <div class="comment-item">
+                             <img src="https://via.placeholder.com/40x40/FF8B00/FFFFFF?text=CM" alt="Avatar">
+                            <div class="comment-content">
+                                <strong>Carlos M.:</strong> <span>Tive uma dúvida sobre a proporção áurea, alguém pode explicar melhor a aplicação prática?</span>
+                                <small>1 hora atrás</small>
+                            </div>
+                        </div>
+                        <textarea class="comment-input" placeholder="Escreva seu comentário..."></textarea>
+                        <button class="btn btn-primary-cursos btn-sm">Enviar Comentário</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Video.js (Opcional) -->
+    <!-- <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script> -->
+    <script src="script-area-membros.js"></script>
+</body>
+</html>

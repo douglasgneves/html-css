@@ -1,0 +1,443 @@
+/* RESET BÁSICO E VARIÁVEIS */
+:root {
+    --primary-color: #2E7D32; /* Verde escuro principal do site original */
+    --secondary-color: #6EAF71; /* Verde mais claro */
+    --accent-color: #F2B705; /* Amarelo/Dourado para CTAs (sugestão) */
+    --text-color: #333;
+    --light-gray: #f4f4f4;
+    --white: #fff;
+    --font-family: 'Montserrat', sans-serif; /* Fonte similar à do site original */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: var(--white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Ajuste conforme sua logo */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: var(--primary-color);
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.cta-header {
+    font-size: 0.9em;
+}
+
+/* Menu Hamburguer (Mobile) */
+.menu-toggle {
+    display: none; /* Escondido por padrão em telas maiores */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+
+/* HERO SECTION */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-background.jpg') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 0;
+    min-height: 70vh; /* Ajuste conforme necessário */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* SEÇÕES GERAIS */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ABOUT SECTION */
+.about-section {
+    background-color: var(--light-gray);
+}
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.about-text {
+    flex: 1;
+}
+.about-text h2 {
+    text-align: left; /* Sobrescreve o h2 geral */
+    margin-bottom: 20px;
+}
+.about-image {
+    flex: 1;
+    max-width: 450px; /* Limita o tamanho da imagem */
+}
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+/* SERVICES SECTION */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.service-card img {
+    max-width: 100px; /* Ou ajuste para imagens maiores */
+    height: auto;
+    margin-bottom: 15px;
+    /* Se forem ícones: filter: invert(40%) sepia(38%) saturate(1078%) hue-rotate(86deg) brightness(95%) contrast(88%); para cor primária */
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* TEAM SECTION */
+.team-section {
+    background-color: var(--light-gray);
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--secondary-color);
+}
+.team-member h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+.team-member p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* CONTACT SECTION */
+.contact-section .container > p { /* Parágrafo de introdução */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+.contact-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+.contact-info i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+.contact-section .btn-primary {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+}
+/* Estilos básicos para o formulário (se usar) */
+#contact-form {
+    max-width: 600px;
+    margin: 30px auto 0;
+    display: grid;
+    gap: 15px;
+}
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+#contact-form button {
+    justify-self: center; /* Centraliza o botão no grid */
+}
+
+
+/* RODAPÉ */
+footer {
+    background-color: #222; /* Cor escura para o rodapé */
+    color: #ccc;
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    height: 40px; /* Ajuste */
+    margin-bottom: 10px;
+}
+
+.footer-links h4, .footer-contact h4, .footer-social h4 {
+    color: var(--white);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li a,
+.footer-contact p a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a:hover,
+.footer-contact p a:hover {
+    color: var(--secondary-color);
+}
+.footer-contact p {
+    margin-bottom: 8px;
+}
+.footer-contact i {
+    margin-right: 8px;
+    color: var(--secondary-color);
+}
+
+.footer-social a {
+    color: #ccc;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+}
+.footer-bottom p {
+    margin-bottom: 5px;
+}
+.footer-bottom a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    header .container {
+        flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    }
+
+    .main-nav {
+        width: 100%; /* Ocupa toda a largura abaixo do logo/botão */
+        order: 3; /* Para ficar abaixo do logo e cta-header */
+    }
+
+    .main-nav ul {
+        display: none; /* Escondido por padrão no mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--white);
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .main-nav.active ul {
+        display: flex; /* Mostra quando a classe 'active' é adicionada via JS */
+    }
+
+    .main-nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão hamburguer */
+    }
+
+    .cta-header {
+        order: 2; /* Para ficar ao lado do logo no mobile, antes do menu expandir */
+        margin-left: auto; /* Empurra para a direita */
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+    .about-text h2 {
+        text-align: center;
+    }
+    .about-image {
+        margin-top: 30px;
+        max-width: 100%;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr; /* Uma coluna no mobile */
+        text-align: center;
+    }
+    .footer-social {
+        margin-top: 20px;
+    }
+    .footer-social a {
+        margin: 0 10px;
+    }
+}

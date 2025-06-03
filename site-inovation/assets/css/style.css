@@ -205,57 +205,6 @@ a {
     }
 }
 
-
-/* === ESTILOS DE ANIMAÇÃO === */
-
-/* Estado inicial para todos os elementos que serão animados ao rolar */
-.animate-on-scroll {
-    opacity: 0;
-    transition-property: opacity, transform;
-    transition-duration: 0.8s; /* Duração padrão da animação */
-    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Easing mais "Apple-like" (pode ajustar) */
-    /* Um easing com um pouco de "overshoot" pode ser legal: cubic-bezier(0.175, 0.885, 0.32, 1.275) */
-    /* Ou um ease-out mais suave: cubic-bezier(0.25, 0.46, 0.45, 0.94) */
-}
-
-/* Tipos específicos de animação - estado inicial */
-.fade-in {
-    /* Apenas opacity já está em .animate-on-scroll */
-    /* Opcional: transform: scale(0.98); */
-}
-
-.fade-in-up {
-    transform: translateY(30px); /* Começa 30px abaixo */
-}
-
-.fade-in-down {
-    transform: translateY(-30px); /* Começa 30px acima */
-}
-
-.slide-in-left {
-    transform: translateX(-50px); /* Começa 50px à esquerda */
-}
-
-.slide-in-right {
-    transform: translateX(50px); /* Começa 50px à direita */
-}
-
-/* Estado final (visível) - quando a classe .is-visible é adicionada pelo JS */
-.animate-on-scroll.is-visible {
-    opacity: 1;
-    transform: translateY(0) translateX(0) scale(1); /* Reseta todas as transformações */
-}
-
-/* Opcional: Respeitar a preferência do usuário por movimento reduzido */
-@media (prefers-reduced-motion: reduce) {
-    .animate-on-scroll {
-        transition: none; /* Remove a transição */
-        /* Garante que o elemento esteja visível se as animações estiverem desabilitadas */
-        opacity: 1;
-        transform: none;
-    }
-}
-
 .site-footer {
     background: linear-gradient(135deg, #2c5364, #203a43, #0f2027); /* Gradiente escuro sofisticado */
     color: #e0e0e0; /* Cor de texto clara para contraste */
@@ -450,56 +399,289 @@ textarea.contact-input {
     color: #42a5f5;
 }
 
-/* --- Responsividade --- */
-@media (max-width: 992px) {
-    .footer-content {
-        gap: 30px; /* Reduz o gap entre seções */
-    }
-    .footer-section {
-        min-width: calc(50% - 15px); /* Duas colunas, considerando o gap */
-    }
-    .footer-section.about { /* Seção about pode ocupar mais espaço */
-       /* min-width: 100%; ou flex-basis: 100%; */
-    }
+
+
+.main-nav {
+    position: relative; /* Para posicionar os dropdowns dos itens de menu */
 }
 
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column; /* Empilha as seções */
-        align-items: center; /* Centraliza o conteúdo quando empilhado */
-        text-align: center;
-    }
-
-    .footer-section {
-        min-width: 100%; /* Cada seção ocupa a largura total */
-        max-width: 450px; /* Limita a largura máxima para melhor leitura no centro */
-    }
-
-    .footer-section.links h2::after,
-    .footer-section.contact-form-simple h2::after {
-        left: 50%; /* Centraliza a linha decorativa */
-        transform: translateX(-50%);
-    }
-
-    .socials {
-        text-align: center; /* Garante que os ícones sociais fiquem centralizados */
-    }
-
-    .socials a {
-        margin: 0 10px; /* Ajusta a margem para centralização */
-    }
+/* Dropdowns do Menu Principal (Hover) */
+.nav-item-with-dropdown {
+    position: relative; /* Importante para o posicionamento do dropdown */
 }
 
-@media (max-width: 480px) {
-    .logo-text {
-        font-size: 1.7em;
-    }
-    .footer-section.links h2,
-    .footer-section.contact-form-simple h2 {
-        font-size: 1.3em;
-    }
-    .btn.contact-btn {
-        width: 100%; /* Botão ocupa toda a largura */
-        padding: 14px 20px;
-    }
+.site-header {
+    position: relative; /* Para posicionar o painel de busca em relação ao header */
+    z-index: 100; /* Para o header ficar sobre o conteúdo da página */
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Abaixo do item do menu */
+    left: 0;
+    background-color: #2c2c2e; /* Cor de fundo escura, similar ao seu header */
+    color: #f5f5f7;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    padding: 15px 20px;
+    z-index: 101; /* Acima do main-nav mas abaixo de paineis de busca/login ativos */
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item-with-dropdown:hover > .dropdown-content {
+    display: block; /* Ou flex/grid se precisar de layout interno mais complexo */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.dropdown-content p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.dropdown-content a {
+    color: #2997ff; /* Cor de link estilo Apple */
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    font-size: 0.9em;
+}
+
+.dropdown-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* Painel de Busca */
+.search-panel {
+    position: absolute; /* Em relação ao .site-header */
+    top: 100%; /* Começa logo abaixo do header */
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Um pouco diferente do nav para destacar */
+    color: #f5f5f7;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    z-index: 99; /* Abaixo do nav mas acima do conteúdo da página */
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+    display: none; /* Controlado por JS */
+}
+
+.search-panel.active {
+    display: block;
+    transform: translateY(0);
+}
+
+.search-panel-content {
+    max-width: 800px; /* Ou a largura que preferir */
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-input {
+    width: calc(100% - 40px); /* Desconta padding */
+    padding: 12px 15px;
+    font-size: 1.1em;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #fff;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-panel h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #ccc;
+}
+
+.search-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.search-panel ul li a {
+    color: #2997ff;
+    text-decoration: none;
+    font-size: 0.95em;
+}
+.search-panel ul li a:hover {
+    text-decoration: underline;
+}
+
+.close-search-panel {
+    position: absolute;
+    top: -10px; /* Ajuste conforme necessário */
+    right: 0px; /* Ajuste conforme necessário */
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+}
+.close-search-panel:hover {
+    color: #fff;
+}
+
+
+/* Painel Lateral de Login/Sacola (Estilo Apple) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 199; /* Abaixo do painel lateral, mas acima do resto */
+    display: none; /* Controlado por JS */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -350px; /* Começa fora da tela (largura do painel) */
+    width: 320px; /* Largura do painel */
+    height: 100%;
+    background-color: #f5f5f7; /* Cor clara, estilo Apple */
+    color: #1d1d1f;
+    box-shadow: -5px 0px 15px rgba(0,0,0,0.1);
+    z-index: 200; /* Acima de tudo */
+    padding: 20px;
+    padding-top: 50px; /* Espaço para o botão de fechar */
+    overflow-y: auto;
+    transition: right 0.4s ease-in-out;
+    display: none; /* Controlado por JS */
+}
+
+.side-panel.active {
+    display: block;
+    right: 0;
+}
+
+.close-side-panel {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #888;
+    cursor: pointer;
+}
+.close-side-panel:hover {
+    color: #333;
+}
+
+.side-panel h2 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #1d1d1f;
+}
+.side-panel h3 {
+    font-size: 1.2em;
+    color: #1d1d1f;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.side-panel p {
+    font-size: 0.95em;
+    color: #555;
+}
+.side-panel hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+.side-panel label {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #333;
+}
+.side-panel input[type="email"],
+.side-panel input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+.side-panel .cta-button { /* Reutilizando sua classe de botão */
+    background-color: #0071e3; /* Azul Apple */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.side-panel .cta-button:hover {
+    background-color: #0077ed;
+}
+.side-panel .small-link {
+    font-size: 0.85em;
+    color: #0071e3;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.side-panel .small-link:hover {
+    text-decoration: underline;
+}
+.side-panel .cta-link { /* Reutilizando sua classe de link CTA */
+    color: #0071e3;
+    text-decoration: none;
+    font-weight: bold;
+}
+.side-panel .cta-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Ajustes para o conteúdo principal não ser sobreposto quando o painel de busca está ativo */
+/* Isso pode ser opcional dependendo do efeito desejado */
+/*
+body.search-panel-open main {
+    margin-top: 100px; /* Altura aproximada do seu header + painel de busca
+    transition: margin-top 0.4s ease-in-out;
+}
+*/

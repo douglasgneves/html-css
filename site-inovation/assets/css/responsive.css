@@ -1,0 +1,53 @@
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .footer-content {
+        gap: 30px; /* Reduz o gap entre seções */
+    }
+    .footer-section {
+        min-width: calc(50% - 15px); /* Duas colunas, considerando o gap */
+    }
+    .footer-section.about { /* Seção about pode ocupar mais espaço */
+       /* min-width: 100%; ou flex-basis: 100%; */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Empilha as seções */
+        align-items: center; /* Centraliza o conteúdo quando empilhado */
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%; /* Cada seção ocupa a largura total */
+        max-width: 450px; /* Limita a largura máxima para melhor leitura no centro */
+    }
+
+    .footer-section.links h2::after,
+    .footer-section.contact-form-simple h2::after {
+        left: 50%; /* Centraliza a linha decorativa */
+        transform: translateX(-50%);
+    }
+
+    .socials {
+        text-align: center; /* Garante que os ícones sociais fiquem centralizados */
+    }
+
+    .socials a {
+        margin: 0 10px; /* Ajusta a margem para centralização */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.7em;
+    }
+    .footer-section.links h2,
+    .footer-section.contact-form-simple h2 {
+        font-size: 1.3em;
+    }
+    .btn.contact-btn {
+        width: 100%; /* Botão ocupa toda a largura */
+        padding: 14px 20px;
+    }
+}

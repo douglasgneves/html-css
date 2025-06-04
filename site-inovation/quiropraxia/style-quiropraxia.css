@@ -1,0 +1,375 @@
+/* style-quiropraxia.css */
+
+/* --- Reset Básico e Estilos Globais (herdado ou copiado) --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Cores base da Masioli */
+    --main-blue: #007bff; 
+    --light-blue: #4A90E2;
+    --text-color-default: #333;
+    --light-text-color-default: #f8f9fa;
+    
+    /* Cores específicas Quiropraxia */
+    --quiro-primary: #66CDAA;   /* Verde Água Médio (calmante, natural) */
+    --quiro-secondary: #2E8B57; /* Verde Mar (mais profundo) */
+    --quiro-accent: #FF8C00;    /* Laranja Escuro (energia, vitalidade) ou #F4A460 (Sandy Brown) */
+    --quiro-text: #343a40;      /* Cinza escuro para texto */
+    --quiro-bg-light: #f7f9fc;  /* Um cinza azulado muito claro */
+    --quiro-border: #e0e0e0;    /* Cor de borda sutil */
+
+    /* Fontes */
+    --heading-font-default: 'Merriweather', serif;
+    --body-font-default: 'Open Sans', sans-serif;
+    --quiro-font-main: 'Montserrat', sans-serif; /* Fonte principal para Quiropraxia */
+    --border-radius-default: 8px;
+}
+
+body {
+    font-family: var(--quiro-font-main);
+    line-height: 1.7;
+    color: var(--quiro-text);
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 48px; /* Espaço para o header fixo */
+}
+
+main { flex: 1; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+/* === HEADER (Estilos idênticos aos anteriores) === */
+.site-header { /* ... COPIE OS ESTILOS DO HEADER DA APPLE DAQUI ... */
+    background-color: rgba(40, 40, 40, 0.97); color: #f5f5f7; padding: 0 20px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.main-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; height: 48px; }
+.site-header .logo { font-size: 1.7em; font-weight: 600; color: #f5f5f7; margin-right: 25px; text-decoration: none; }
+.site-header .nav-links { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
+.site-header .nav-links li a { display: block; padding: 0 12px; font-size: 0.85em; color: #d2d2d7; line-height: 48px; text-decoration: none; transition: color 0.3s ease; }
+.site-header .nav-links li a:hover, .site-header .nav-links li a.active-nav-link { color: #fff; }
+.site-header .nav-icons { display: flex; }
+.site-header .nav-icons a { font-size: 1.2em; padding: 0 10px; color: #d2d2d7; text-decoration: none; transition: color 0.3s ease; line-height: 48px; }
+.site-header .nav-icons a:hover { color: #fff; }
+.mobile-menu-button { display: none; background: none; border: none; color: #f5f5f7; font-size: 1.5em; cursor: pointer; padding: 0 10px; }
+/* (COPIE TAMBÉM AS MEDIA QUERIES PARA O HEADER MOBILE) */
+@media (max-width: 768px) {
+    .site-header .nav-links { display: none; flex-direction: column; position: absolute; top: 48px; left: 0; right: 0; background-color: rgba(40, 40, 40, 0.99); padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow-y: auto; max-height: calc(100vh - 48px); }
+    .site-header .nav-links.active { display: flex; }
+    .site-header .nav-links li { width: 100%; text-align: center; }
+    .site-header .nav-links li a { padding: 15px 20px; line-height: 1.5; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .site-header .nav-links li:last-child a { border-bottom: none; }
+    .mobile-menu-button { display: block; margin-left: auto; }
+}
+
+/* --- Tipografia e Títulos Quiropraxia --- */
+.section-title-quiro {
+    font-family: var(--heading-font-default); /* Merriweather para um toque clássico */
+    font-size: 2.6em;
+    color: var(--quiro-secondary); /* Verde Mar */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.section-title-quiro.text-left { text-align: left; }
+
+.section-subtitle-quiro {
+    font-family: var(--quiro-font-main); /* Montserrat */
+    font-size: 1.15em;
+    color: #5a6268; /* Cinza um pouco mais escuro */
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 45px auto;
+    font-weight: 400;
+}
+
+/* --- Botões Quiropraxia --- */
+.btn {
+    display: inline-block; padding: 13px 32px; border-radius: 50px; /* Bem arredondado */
+    text-decoration: none; font-weight: 600; /* Montserrat SemiBold */
+    transition: all 0.3s ease; cursor: pointer; font-size: 1em;
+    text-align: center; letter-spacing: 0.5px;
+}
+.btn-primary-quiro {
+    background-color: var(--quiro-primary); /* Verde Água */
+    color: #fff;
+    border: 2px solid var(--quiro-primary);
+}
+.btn-primary-quiro:hover {
+    background-color: var(--quiro-secondary); /* Verde Mar */
+    border-color: var(--quiro-secondary);
+    transform: translateY(-2px) scale(1.03);
+}
+.btn-light-quiro { /* Para o botão de contato no final */
+    background-color: #fff;
+    color: var(--quiro-secondary);
+    border: 2px solid #fff;
+}
+.btn-light-quiro:hover {
+    background-color: var(--quiro-bg-light);
+    color: var(--quiro-secondary);
+    border-color: var(--quiro-bg-light);
+}
+
+
+/* --- Utilitários Quiropraxia --- */
+.section-padding { padding: 70px 0; }
+.bg-light-quiro { background-color: var(--quiro-bg-light); }
+.white-text { color: #fff !important; }
+.text-center { text-align: center; }
+.mt-4 { margin-top: 1.5rem !important; } /* Utilitário de margem */
+
+/* --- Hero Section Quiropraxia --- */
+.hero-quiropraxia {
+    background-image: linear-gradient(rgba(46, 139, 87, 0.7), rgba(102, 205, 170, 0.6)), url('https://images.unsplash.com/photo-1519824145371-296894a017b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'); /* Imagem de fundo: pessoa relaxada, coluna, natureza */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+}
+.quiro-icon-hero {
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 20px;
+}
+.hero-quiropraxia h1 {
+    font-family: var(--heading-font-default);
+    font-weight: 700;
+    color: #fff;
+    font-size: 3.3em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+.hero-quiropraxia p {
+    font-family: var(--quiro-font-main);
+    font-weight: 400;
+    font-size: 1.25em;
+    margin-bottom: 35px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.75;
+}
+
+/* --- O que é Quiropraxia --- */
+.what-is-quiro .quiro-intro-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.what-is-quiro .quiro-intro-text { flex: 1.3; }
+.what-is-quiro .quiro-intro-text p { margin-bottom: 1.1em; color: #495057; font-size: 1.05em;}
+.what-is-quiro .quiro-intro-image {
+    flex: 0.7;
+    max-width: 400px;
+}
+.what-is-quiro .quiro-intro-image img {
+    width: 100%;
+    border-radius: var(--border-radius-default);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* --- Indicações Quiropraxia --- */
+.indicacoes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* Espaço menor para pílulas */
+    justify-content: center;
+    margin-top: 20px;
+}
+.indicacao-item {
+    background-color: #fff;
+    color: var(--quiro-text);
+    padding: 12px 22px;
+    border-radius: 25px; /* Pílulas */
+    font-size: 0.98em;
+    font-weight: 500; /* Montserrat Medium */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    border: 1px solid var(--quiro-border);
+    transition: all 0.3s ease;
+}
+.indicacao-item:hover {
+    background-color: var(--quiro-primary);
+    color: #fff;
+    border-color: var(--quiro-primary);
+    transform: translateY(-2px);
+}
+.indicacao-item i {
+    margin-right: 10px;
+    color: var(--quiro-accent); /* Laranja */
+}
+.indicacao-item:hover i {
+    color: #fff;
+}
+
+/* --- Benefícios Quiropraxia --- */
+.beneficios-quiro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 25px;
+}
+.beneficio-quiro-card {
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: var(--border-radius-default);
+    text-align: center;
+    border: 1px solid var(--quiro-border);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.beneficio-quiro-card:hover {
+    box-shadow: 0 10px 30px rgba(var(--quiro-primary-rgb, 102, 205, 170), 0.15);
+    border-color: var(--quiro-primary);
+}
+.beneficio-quiro-card i {
+    font-size: 2.8em;
+    color: var(--quiro-primary); /* Verde Água */
+    margin-bottom: 20px;
+    display: block;
+}
+.beneficio-quiro-card h4 {
+    font-family: var(--quiro-font-main);
+    font-weight: 600; /* Montserrat SemiBold */
+    font-size: 1.25em;
+    color: var(--quiro-secondary); /* Verde Mar */
+    margin-bottom: 10px;
+}
+.beneficio-quiro-card p { font-size: 0.95em; color: #495057; }
+
+/* --- Como Funciona a Sessão --- */
+.session-steps {
+    margin-top: 30px;
+    position: relative;
+}
+/* Opcional: Linha conectando os steps (requer mais CSS) */
+.step-item {
+    display: flex;
+    align-items: flex-start; /* Alinha número e conteúdo no topo */
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: var(--border-radius-default);
+    border-left: 5px solid var(--quiro-accent); /* Laranja */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.step-number {
+    background-color: var(--quiro-accent); /* Laranja */
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: 25px;
+    flex-shrink: 0; /* Impede que o número encolha */
+}
+.step-content h5 {
+    font-family: var(--quiro-font-main);
+    font-weight: 600;
+    font-size: 1.3em;
+    color: var(--quiro-secondary); /* Verde Mar */
+    margin-bottom: 8px;
+}
+.step-content p { font-size: 1em; color: #495057; }
+
+/* --- Especialista Quiropraxia --- */
+.especialista-quiro .especialista-wrapper {
+    display: flex; align-items: center; gap: 45px;
+}
+.especialista-quiro .especialista-img { flex-basis: 38%; max-width: 380px; }
+.especialista-quiro .especialista-img img { width: 100%; border-radius: var(--border-radius-default); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+.especialista-quiro .especialista-info { flex: 1; }
+.especialista-quiro .especialista-info .section-title-quiro { margin-bottom: 15px; }
+.especialista-quiro .especialidade-titulo { font-size: 1.15em; color: var(--quiro-primary); font-weight: 600; margin-bottom: 20px; display: block; }
+.especialista-quiro .especialista-info p { margin-bottom: 1.25em; line-height: 1.75; color: #343a40; }
+.especialista-quiro .especialista-info p em { display: block; padding: 15px 20px; border-left: 4px solid var(--quiro-accent); background-color: var(--quiro-bg-light); border-radius: 0 var(--border-radius-default) var(--border-radius-default) 0; color: #495057; font-style: italic; }
+
+/* --- Contato Section Quiropraxia --- */
+.contato-section-quiro {
+    background-color: var(--quiro-secondary); /* Verde Mar */
+}
+.contato-section-quiro .section-title-quiro,
+.contato-section-quiro .section-subtitle-quiro { color: #fff; }
+.contato-info-quiro { text-align: center; margin-bottom: 30px; }
+.contato-info-quiro p { font-size: 1.1em; margin-bottom: 10px; color: #e9ecef; } /* Cinza claro */
+.contato-info-quiro i { margin-right: 10px; color: var(--quiro-accent); } /* Laranja */
+.contato-section-quiro .btn-light-quiro {
+    margin: 10px auto 0 auto; display: block; max-width: 320px;
+    font-weight: 600;
+}
+.contato-section-quiro .btn-light-quiro i { margin-right: 10px; }
+
+
+/* === FOOTER (Estilos idênticos aos anteriores) === */
+.site-footer { /* ... COPIE OS ESTILOS DO FOOTER DAQUI ... */
+    background: linear-gradient(135deg, #2c5364, #203a43, #0f2027); color: #e0e0e0; padding-top: 60px; font-size: 0.95em; font-family: var(--body-font-default);
+}
+/* (COPIE O RESTANTE DOS ESTILOS DO FOOTER E SUAS MEDIA QUERIES) */
+.footer-content { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+.footer-section { flex: 1; min-width: 280px; margin-bottom: 30px; }
+.footer-section .logo-text { font-size: 1.9em; margin-bottom: 20px; font-weight: 700; font-family: var(--heading-font-default); color: #fff; }
+.footer-section .logo-text span { color: #42a5f5; }
+.footer-section.about p { margin-bottom: 20px; line-height: 1.8; color: #b0b0b0; }
+.footer-section .contact span { display: block; margin-bottom: 12px; color: #c0c0c0; transition: color 0.3s ease; }
+.footer-section .contact span:hover { color: #ffffff; }
+.footer-section .contact span i { margin-right: 12px; color: #42a5f5; font-size: 1.1em; width: 20px; text-align: center; }
+.footer-section .socials a { color: #b0b0b0; margin-right: 18px; font-size: 1.5em; transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
+.footer-section .socials a:hover { color: #42a5f5; transform: translateY(-3px); }
+.footer-section .socials a:last-child { margin-right: 0; }
+.footer-section h2 { font-family: var(--heading-font-default); font-size: 1.4em; color: #ffffff; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+.footer-section h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; background-color: #42a5f5; border-radius: 2px; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 12px; }
+.footer-section ul li a { color: #b0b0b0; transition: color 0.3s ease, padding-left 0.3s ease; display: inline-block; text-decoration: none; }
+.footer-section ul li a:hover { color: #ffffff; padding-left: 5px; }
+.text-input.contact-input { width: 100%; padding: 12px 15px; margin-bottom: 15px; border: 1px solid #555; border-radius: 5px; background-color: #2a2f36; color: #e0e0e0; font-family: inherit; font-size: 0.95em; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.text-input.contact-input::placeholder { color: #888; }
+.text-input.contact-input:focus { outline: none; border-color: #42a5f5; box-shadow: 0 0 0 2px rgba(66, 165, 245, 0.3); }
+textarea.contact-input { resize: vertical; min-height: 80px; }
+.btn.contact-btn { display: inline-block; background-color: #42a5f5; color: #ffffff; padding: 12px 25px; border: none; border-radius: 5px; font-family: inherit; font-size: 1em; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; }
+.btn.contact-btn:hover { background-color: #1e88e5; transform: translateY(-2px); }
+.btn.contact-btn i { margin-right: 8px; }
+.footer-bottom { background-color: #0a1014; text-align: center; padding: 20px 15px; margin-top: 40px; font-size: 0.9em; color: #909090; border-top: 1px solid #303030; }
+.footer-bottom a { color: #a0a0a0; text-decoration: underline; }
+.footer-bottom a:hover { color: #42a5f5; }
+@media (max-width: 992px) { .footer-content { gap: 30px; } .footer-section { min-width: calc(50% - 15px); } }
+@media (max-width: 768px) { .footer-content { flex-direction: column; align-items: center; text-align: center; } .footer-section { min-width: 100%; max-width: 450px; } .footer-section h2::after { left: 50%; transform: translateX(-50%); } .footer-section.links ul, .footer-section .socials { text-align: center; } .footer-section .socials a { margin: 0 10px; } }
+@media (max-width: 480px) { .footer-section .logo-text { font-size: 1.7em; } .footer-section h2 { font-size: 1.3em; } .btn.contact-btn { width: 100%; padding: 14px 20px; } }
+
+
+/* --- Responsividade específica Quiropraxia --- */
+@media (max-width: 992px) {
+    .hero-quiropraxia h1 { font-size: 2.9em; }
+    .section-title-quiro { font-size: 2.3em; }
+    .what-is-quiro .quiro-intro-flex { flex-direction: column; text-align: center; }
+    .what-is-quiro .quiro-intro-text .section-title-quiro { text-align: center; }
+    .what-is-quiro .quiro-intro-image { margin-top: 30px; max-width: 100%; }
+    .especialista-quiro .especialista-wrapper { flex-direction: column; text-align: center; }
+    .especialista-quiro .especialista-info .section-title-quiro { text-align: center; }
+    .especialista-quiro .especialista-img { margin-bottom: 30px; max-width: 320px; margin-left:auto; margin-right:auto; }
+}
+
+@media (max-width: 768px) {
+    .hero-quiropraxia { padding: 80px 0; }
+    .hero-quiropraxia h1 { font-size: 2.5em; }
+    .section-title-quiro { font-size: 2.1em; }
+    .indicacoes-grid { justify-content: flex-start; }
+    .indicacao-item { flex-basis: calc(50% - 8px); font-size: 0.95em; padding: 10px 18px; }
+    .beneficios-quiro-grid { grid-template-columns: 1fr; }
+    .step-item { flex-direction: column; align-items: center; text-align: center; }
+    .step-number { margin-right: 0; margin-bottom: 15px; }
+}
+
+@media (max-width: 480px) {
+    .hero-quiropraxia h1 { font-size: 2.2em; }
+    .section-title-quiro { font-size: 1.8em; }
+    .indicacao-item { flex-basis: 100%; font-size: 0.9em; }
+    .btn { padding: 12px 25px; font-size: 0.95em; }
+}

@@ -1,0 +1,428 @@
+/* style-dr-douglas.css */
+
+/* --- Reset Básico e Estilos Globais (herdado ou copiado) --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Cores base da Masioli */
+    --main-blue: #007bff; 
+    
+    /* Cores específicas Dr. Douglas - Estética Premium */
+    --drd-primary: #0A2540;   /* Azul Marinho Profundo / Quase Preto */
+    --drd-secondary: #B08D57; /* Dourado Envelhecido / Bege Dourado (mais sutil que ouro brilhante) */
+    /* Alternativa para Dourado: --drd-secondary: #D4AF37; (Ouro mais clássico) */
+    --drd-accent: var(--main-blue); /* Azul Masioli como acento, ou um azul mais claro #557AAC */
+    --drd-text-light: #f8f9fa; /* Branco/Off-white */
+    --drd-text-dark: #212529;  /* Cinza escuro para texto */
+    --drd-bg-light: #f8f9fa;   /* Fundo claro principal */
+    --drd-border: #dee2e6;     /* Cor de borda sutil */
+
+    /* Fontes */
+    --font-heading-drd: 'Playfair Display', serif;
+    --font-body-drd: 'Montserrat', sans-serif;
+    --border-radius-drd: 6px; /* Bordas um pouco mais sutis */
+}
+
+body {
+    font-family: var(--font-body-drd);
+    line-height: 1.7;
+    color: var(--drd-text-dark);
+    background-color: #fff; /* Fundo branco é comum em sites premium */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 48px; /* Espaço para o header fixo */
+}
+
+main { flex: 1; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* === HEADER (Estilos idênticos aos anteriores) === */
+.site-header { /* ... COPIE OS ESTILOS DO HEADER DA APPLE DAQUI ... */
+    background-color: rgba(10, 37, 64, 0.97); /* Azul Marinho semi-transparente do header */
+    color: var(--drd-text-light); padding: 0 20px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Fonte do header Apple */
+}
+.main-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; height: 48px; }
+.site-header .logo { font-size: 1.7em; font-weight: 600; color: var(--drd-text-light); margin-right: 25px; text-decoration: none; }
+.site-header .nav-links { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
+.site-header .nav-links li a { display: block; padding: 0 12px; font-size: 0.85em; color: #d2d2d7; line-height: 48px; text-decoration: none; transition: color 0.3s ease; }
+.site-header .nav-links li a:hover, .site-header .nav-links li a.active-nav-link { color: #fff; }
+.site-header .nav-icons { display: flex; }
+.site-header .nav-icons a { font-size: 1.2em; padding: 0 10px; color: #d2d2d7; text-decoration: none; transition: color 0.3s ease; line-height: 48px; }
+.site-header .nav-icons a:hover { color: #fff; }
+.mobile-menu-button { display: none; background: none; border: none; color: var(--drd-text-light); font-size: 1.5em; cursor: pointer; padding: 0 10px; }
+/* (COPIE TAMBÉM AS MEDIA QUERIES PARA O HEADER MOBILE) */
+@media (max-width: 768px) {
+    .site-header .nav-links { display: none; flex-direction: column; position: absolute; top: 48px; left: 0; right: 0; background-color: rgba(10, 37, 64, 0.99); padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow-y: auto; max-height: calc(100vh - 48px); }
+    .site-header .nav-links.active { display: flex; }
+    .site-header .nav-links li { width: 100%; text-align: center; }
+    .site-header .nav-links li a { padding: 15px 20px; line-height: 1.5; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .site-header .nav-links li:last-child a { border-bottom: none; }
+    .mobile-menu-button { display: block; margin-left: auto; }
+}
+
+/* --- Tipografia e Títulos Dr. Douglas --- */
+.section-title-dr-douglas {
+    font-family: var(--font-heading-drd);
+    font-size: 2.8em; /* Títulos impactantes */
+    color: var(--drd-primary); /* Azul Marinho */
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+.section-title-dr-douglas.text-left { text-align: left; }
+.section-title-dr-douglas.white-text { color: var(--drd-text-light); }
+
+.section-subtitle-dr-douglas {
+    font-family: var(--font-body-drd);
+    font-size: 1.15em;
+    color: #495057;
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 50px auto;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.section-subtitle-dr-douglas.white-text { color: #ced4da; }
+
+
+/* --- Botões Dr. Douglas --- */
+.btn {
+    display: inline-block; padding: 14px 35px; 
+    border-radius: var(--border-radius-drd);
+    text-decoration: none; font-weight: 500; /* Montserrat Medium */
+    transition: all 0.3s ease; cursor: pointer; font-size: 1.05em;
+    text-align: center; letter-spacing: 0.5px;
+    border: 2px solid transparent; /* Para manter o alinhamento com botões com borda */
+}
+.btn-primary-dr-douglas {
+    background-color: var(--drd-secondary); /* Dourado */
+    color: var(--drd-primary); /* Texto Azul Marinho sobre dourado */
+    /* Ou color: #fff; se o dourado for mais claro */
+    font-weight: 600;
+}
+.btn-primary-dr-douglas:hover {
+    background-color: #A07D47; /* Dourado um pouco mais escuro */
+    /* box-shadow: 0 5px 15px rgba(176, 141, 87, 0.3); */
+    transform: translateY(-2px);
+}
+.btn-secondary-dr-douglas {
+    background-color: transparent;
+    color: var(--drd-primary); /* Azul Marinho */
+    border: 2px solid var(--drd-primary);
+}
+.btn-secondary-dr-douglas:hover {
+    background-color: var(--drd-primary);
+    color: var(--drd-text-light);
+}
+.btn.large-btn { padding: 16px 40px; font-size: 1.1em; }
+
+/* --- Utilitários Dr. Douglas --- */
+.section-padding { padding: 80px 0; }
+.bg-light-dr-douglas { background-color: var(--drd-bg-light); }
+.dark-bg-dr-douglas { background-color: var(--drd-primary); color: var(--drd-text-light); }
+.text-left { text-align: left !important; }
+.mt-5 { margin-top: 3rem !important; }
+
+/* --- Hero Section Dr. Douglas --- */
+.hero-dr-douglas {
+    background-image: linear-gradient(rgba(10, 37, 64, 0.75), rgba(10, 37, 64, 0.85)), url('https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'); /* Imagem de fundo: sorriso elegante, close-up de dentes perfeitos, ou abstrato de luxo */
+    background-size: cover;
+    background-position: center;
+    color: var(--drd-text-light);
+    padding: 120px 0;
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-eyebrow-dr-douglas {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--drd-secondary); /* Dourado */
+    margin-bottom: 15px;
+}
+.hero-dr-douglas h1 {
+    font-family: var(--font-heading-drd);
+    color: var(--drd-text-light);
+    font-size: 3.8em; /* Bem grande */
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.hero-dr-douglas p {
+    font-size: 1.25em;
+    margin-bottom: 40px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300; /* Montserrat Light */
+    opacity: 0.9;
+}
+
+/* --- Sobre Dr. Douglas --- */
+.about-dr-douglas { background-color: #fff; } /* Garante fundo branco se o body for diferente */
+.about-flex {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.about-image-dr-douglas {
+    flex-basis: 40%;
+    max-width: 450px;
+}
+.about-image-dr-douglas img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-drd);
+    box-shadow: 0 15px 35px rgba(10, 37, 64, 0.15);
+}
+.about-text-dr-douglas { flex: 1; }
+.about-text-dr-douglas .section-title-dr-douglas { margin-bottom: 15px; }
+.specialty-dr-douglas {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--drd-secondary); /* Dourado */
+    margin-bottom: 20px;
+    display: block;
+}
+.about-text-dr-douglas p { margin-bottom: 1.3em; color: #495057; font-size: 1.05em; }
+.credentials-dr-douglas {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; /* Empilhar credenciais */
+    gap: 10px;
+}
+.credentials-dr-douglas span {
+    font-size: 0.95em;
+    color: var(--drd-primary);
+    font-weight: 500;
+}
+.credentials-dr-douglas span i {
+    margin-right: 10px;
+    color: var(--drd-secondary); /* Dourado */
+    width: 20px; /* Alinhamento */
+}
+
+/* --- Facetas Explicação / Tipos --- */
+.facetas-tipos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.tipo-faceta-card {
+    background-color: #fff;
+    padding: 35px 30px;
+    border-radius: var(--border-radius-drd);
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(10, 37, 64, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tipo-faceta-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(10, 37, 64, 0.12);
+}
+.tipo-faceta-card .tipo-icon {
+    font-size: 2.8em;
+    color: var(--drd-secondary); /* Dourado */
+    margin-bottom: 20px;
+}
+.tipo-faceta-card h3 {
+    font-family: var(--font-heading-drd);
+    font-size: 1.6em;
+    color: var(--drd-primary); /* Azul Marinho */
+    margin-bottom: 15px;
+}
+.tipo-faceta-card p { font-size: 0.95em; color: #495057; line-height: 1.6; }
+
+/* --- Galeria Antes e Depois --- */
+.galeria-dr-douglas { background-color: #fff; }
+.smileGallerySwiper {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 60px; /* Espaço para paginação */
+}
+.smileGallerySwiper .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 320px; /* Ajuste para o efeito coverflow */
+    /* height: auto; */ /* Altura definida pelo conteúdo */
+    border-radius: var(--border-radius-drd);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.before-after-card {
+    background-color: var(--drd-bg-light);
+}
+.before-after-card .img-container {
+    position: relative;
+}
+.before-after-card .img-container img {
+    display: block;
+    width: 100%;
+    height: auto; /* Mantém proporção */
+}
+.before-after-card .img-container span { /* Legenda "Antes" / "Depois" */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(10, 37, 64, 0.8); /* Azul Marinho com transparência */
+    color: var(--drd-text-light);
+    padding: 5px 10px;
+    font-size: 0.8em;
+    font-weight: 600;
+    border-radius: 3px;
+}
+.smile-gallery-nav { color: var(--drd-primary) !important; }
+.smile-gallery-nav:after { font-size: 28px !important; }
+.smile-gallery-pagination .swiper-pagination-bullet-active { background: var(--drd-primary) !important; }
+
+/* --- Processo Dr. Douglas --- */
+.process-steps-dr-douglas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.process-step {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius-drd);
+    text-align: center;
+    border: 1px solid var(--drd-border);
+}
+.step-icon-dr-douglas {
+    background-color: var(--drd-secondary); /* Dourado */
+    color: var(--drd-primary); /* Azul Marinho */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 1.8em;
+}
+.process-step h4 {
+    font-family: var(--font-heading-drd);
+    font-size: 1.4em;
+    color: var(--drd-primary); /* Azul Marinho */
+    margin-bottom: 10px;
+}
+.process-step p { font-size: 0.95em; color: #495057; }
+
+/* --- Depoimentos --- */
+.testimonials-dr-douglas .testimonialsSwiper { padding-bottom: 50px; }
+.testimonial-card {
+    background-color: rgba(255,255,255,0.05); /* Fundo sutil no tema escuro */
+    padding: 30px;
+    border-radius: var(--border-radius-drd);
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+.testimonial-card p {
+    font-size: 1.05em;
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    color: #e0e0e0; /* Texto mais claro sobre fundo escuro */
+}
+.testimonial-author {
+    font-weight: 600;
+    color: var(--drd-secondary); /* Dourado */
+}
+.testimonials-pagination .swiper-pagination-bullet { background: rgba(255,255,255,0.5); }
+.testimonials-pagination .swiper-pagination-bullet-active { background: var(--drd-secondary) !important; }
+
+
+/* --- Contato Dr. Douglas --- */
+.contato-section-dr-douglas { background-color: #fff; }
+.contato-icon-dr-douglas {
+    color: var(--drd-secondary); /* Dourado */
+    margin-bottom: 20px;
+}
+.contato-info-dr-douglas { margin-top:30px; margin-bottom: 35px; }
+.contato-info-dr-douglas p {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    color: var(--drd-text-dark);
+}
+.contato-info-dr-douglas i {
+    margin-right: 12px;
+    color: var(--drd-primary); /* Azul Marinho */
+    width: 20px;
+}
+
+/* === FOOTER (Estilos idênticos aos anteriores) === */
+.site-footer { /* ... COPIE OS ESTILOS DO FOOTER DAQUI ... */
+    background: linear-gradient(135deg, #1a3b5c, #0A2540, #05172A); /* Gradiente com o azul marinho */
+    color: #e0e0e0; padding-top: 60px; font-size: 0.95em; font-family: var(--font-body-drd);
+}
+/* (COPIE O RESTANTE DOS ESTILOS DO FOOTER E SUAS MEDIA QUERIES, AJUSTANDO CORES SE NECESSÁRIO) */
+.footer-content { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+.footer-section { flex: 1; min-width: 280px; margin-bottom: 30px; }
+.footer-section .logo-text { font-size: 1.9em; margin-bottom: 20px; font-weight: 700; font-family: var(--font-heading-drd); color: #fff; }
+.footer-section .logo-text span { color: var(--drd-secondary); } /* Dourado no logo do footer */
+.footer-section.about p { margin-bottom: 20px; line-height: 1.8; color: #b0b0b0; }
+.footer-section .contact span { display: block; margin-bottom: 12px; color: #c0c0c0; transition: color 0.3s ease; }
+.footer-section .contact span:hover { color: #ffffff; }
+.footer-section .contact span i { margin-right: 12px; color: var(--drd-secondary); font-size: 1.1em; width: 20px; text-align: center; }
+.footer-section .socials a { color: #b0b0b0; margin-right: 18px; font-size: 1.5em; transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
+.footer-section .socials a:hover { color: var(--drd-secondary); transform: translateY(-3px); }
+.footer-section .socials a:last-child { margin-right: 0; }
+.footer-section h2 { font-family: var(--font-heading-drd); font-size: 1.4em; color: #ffffff; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+.footer-section h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; background-color: var(--drd-secondary); border-radius: 2px; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 12px; }
+.footer-section ul li a { color: #b0b0b0; transition: color 0.3s ease, padding-left 0.3s ease; display: inline-block; text-decoration: none; }
+.footer-section ul li a:hover { color: #ffffff; padding-left: 5px; }
+.text-input.contact-input { width: 100%; padding: 12px 15px; margin-bottom: 15px; border: 1px solid #555; border-radius: 5px; background-color: #2a2f36; color: #e0e0e0; font-family: inherit; font-size: 0.95em; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.text-input.contact-input::placeholder { color: #888; }
+.text-input.contact-input:focus { outline: none; border-color: var(--drd-secondary); box-shadow: 0 0 0 2px rgba(176, 141, 87, 0.3); }
+textarea.contact-input { resize: vertical; min-height: 80px; }
+.btn.contact-btn { display: inline-block; background-color: var(--drd-secondary); color: #ffffff; padding: 12px 25px; border: none; border-radius: 5px; font-family: inherit; font-size: 1em; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; }
+.btn.contact-btn:hover { background-color: #A07D47; transform: translateY(-2px); }
+.btn.contact-btn i { margin-right: 8px; }
+.footer-bottom { background-color: #05172A; text-align: center; padding: 20px 15px; margin-top: 40px; font-size: 0.9em; color: #909090; border-top: 1px solid #1a3b5c; }
+.footer-bottom a { color: #a0a0a0; text-decoration: underline; }
+.footer-bottom a:hover { color: var(--drd-secondary); }
+@media (max-width: 992px) { .footer-content { gap: 30px; } .footer-section { min-width: calc(50% - 15px); } }
+@media (max-width: 768px) { .footer-content { flex-direction: column; align-items: center; text-align: center; } .footer-section { min-width: 100%; max-width: 450px; } .footer-section h2::after { left: 50%; transform: translateX(-50%); } .footer-section.links ul, .footer-section .socials { text-align: center; } .footer-section .socials a { margin: 0 10px; } }
+@media (max-width: 480px) { .footer-section .logo-text { font-size: 1.7em; } .footer-section h2 { font-size: 1.3em; } .btn.contact-btn { width: 100%; padding: 14px 20px; } }
+
+
+/* --- Responsividade específica Dr. Douglas --- */
+@media (max-width: 992px) {
+    .hero-dr-douglas h1 { font-size: 3.2em; }
+    .section-title-dr-douglas { font-size: 2.5em; }
+    .about-flex { flex-direction: column; text-align: center; }
+    .about-text-dr-douglas .section-title-dr-douglas { text-align: center; }
+    .about-image-dr-douglas { margin-bottom: 30px; max-width: 380px; margin-left:auto; margin-right:auto; }
+    .credentials-dr-douglas { align-items: center; } /* Centralizar credenciais */
+}
+
+@media (max-width: 768px) {
+    .hero-dr-douglas { padding: 100px 0; min-height: auto; }
+    .hero-dr-douglas h1 { font-size: 2.6em; }
+    .section-title-dr-douglas { font-size: 2.2em; }
+    .section-padding { padding: 60px 0; }
+    .facetas-tipos-grid { grid-template-columns: 1fr; }
+    .process-steps-dr-douglas { grid-template-columns: 1fr; }
+    .smileGallerySwiper .swiper-slide { width: 280px; } /* Ajustar para telas menores */
+}
+
+@media (max-width: 480px) {
+    .hero-dr-douglas h1 { font-size: 2.1em; }
+    .section-title-dr-douglas { font-size: 1.9em; }
+    .btn { padding: 12px 28px; font-size: 1em; }
+    .smileGallerySwiper .swiper-slide { width: 85%; } /* Quase tela cheia para melhor visualização */
+}

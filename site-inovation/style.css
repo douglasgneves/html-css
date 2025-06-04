@@ -1,0 +1,505 @@
+/* Reset básico e Estilos Globais */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Fontes parecidas com as da Apple */
+    background-color: #f5f5f7; /* Um cinza claro, comum no fundo de páginas da Apple */
+    color: #1d1d1f; /* Cor de texto principal (quase preto) */
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Herda a cor do elemento pai */
+}
+
+/* Estilos do Header */
+.site-header {
+    background-color: rgba(40, 40, 40, 0.97); /* Um preto semi-transparente, como o da Apple */
+    color: #f5f5f7; /* Texto claro no header escuro */
+    padding: 0 20px;
+    position: sticky; /* Faz o header ficar fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000; /* Garante que o header fique sobre outros elementos */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo (suporte varia entre navegadores) */
+    -webkit-backdrop-filter: blur(10px); /* Para Safari */
+}
+
+.main-nav {
+    display: flex; /* Habilita o Flexbox para alinhar os itens */
+    justify-content: space-between; /* Espaça os itens: logo à esquerda, ícones à direita, links no meio (ajustaremos) */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    max-width: 1080px; /* Largura máxima do conteúdo do header */
+    margin: 0 auto; /* Centraliza o conteúdo do header */
+    height: 48px; /* Altura do header, similar ao da Apple */
+}
+
+.logo {
+    font-size: 1.7em;
+    font-weight: 600;
+    color: #f5f5f7; /* Cor do logo */
+    margin-right: 25px; /* Espaço à direita do logo */
+}
+
+.nav-links {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alinha os links horizontalmente */
+    flex-grow: 1; /* Faz os links ocuparem o espaço disponível entre logo e ícones */
+    justify-content: center; /* Centraliza os links de navegação */
+}
+
+.nav-links li a {
+    display: block;
+    padding: 0 12px; /* Espaçamento interno dos links */
+    font-size: 0.85em; /* Tamanho da fonte dos links */
+    color: #d2d2d7; /* Cor dos links (um pouco mais clara que o texto branco puro) */
+    transition: color 0.3s ease; /* Transição suave para o hover */
+}
+
+.nav-links li a:hover {
+    color: #fff; /* Cor do link ao passar o mouse */
+}
+
+.nav-icons a {
+    font-size: 1.2em; /* Tamanho dos ícones */
+    padding: 0 10px;
+    color: #d2d2d7;
+    transition: color 0.3s ease;
+}
+
+.nav-icons a:hover {
+    color: #fff;
+}
+
+/* Esconder o logo e os ícones no centro quando os links são centralizados (opcional)
+   e ajustar o espaçamento se necessário */
+.main-nav .logo {
+    /* Se quiser o logo mais à esquerda e os ícones à direita */
+    /* flex-grow: 0; */
+}
+.main-nav .nav-icons {
+    /* flex-grow: 0; */
+}
+
+/* Estilos da Seção Hero */
+.hero-section {
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 80px 20px; /* Espaçamento interno (topo/baixo, laterais) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px; /* Altura mínima para dar destaque */
+    overflow-x: hidden; /* Para evitar scroll horizontal se elementos slide-in começarem fora */
+}
+
+/* Estilo padrão (tema claro) */
+.apple-style-hero {
+    background-color: #ffffff; /* Fundo branco para o tema claro */
+    color: #1d1d1f; /* Texto escuro */
+}
+
+/* Variação para tema escuro */
+.apple-style-hero.dark-theme {
+    background-color: #000000; /* Fundo preto para o tema escuro */
+    color: #f5f5f7; /* Texto claro */
+}
+.apple-style-hero.dark-theme .hero-eyebrow {
+    color: #6e6e73; /* Cor do "eyebrow" um pouco diferente no tema escuro */
+}
+.apple-style-hero.dark-theme .hero-description {
+    color: #a1a1a6; /* Cor da descrição um pouco diferente no tema escuro */
+}
+.apple-style-hero.dark-theme .cta-link {
+    color: #2997ff; /* Azul característico da Apple para links no tema escuro */
+}
+.apple-style-hero.dark-theme .cta-link:hover {
+    text-decoration: underline;
+}
+/* O botão no tema escuro pode precisar de estilos específicos se não for o azul padrão */
+.apple-style-hero.dark-theme .cta-button {
+    background-color: #0071e3; /* Azul da Apple */
+    color: #fff;
+}
+.apple-style-hero.dark-theme .cta-button:hover {
+    background-color: #0077ed;
+}
+
+
+.hero-content {
+    max-width: 680px; /* Largura máxima do conteúdo do hero */
+}
+
+.hero-eyebrow { /* Pequeno texto acima do título principal */
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #BF4800; /* Uma cor de destaque, como laranja ou a cor da marca */
+    margin-bottom: 8px;
+}
+
+.hero-title {
+    font-size: 3.5em; /* Tamanho grande para o título */
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    letter-spacing: -0.02em; /* Leve ajuste no espaçamento entre letras */
+}
+
+.hero-description {
+    font-size: 1.3em;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    max-width: 500px; /* Para não ficar muito largo */
+    margin-left: auto;
+    margin-right: auto;
+    color: #333; /* Cor da descrição um pouco mais suave */
+}
+/* Ajuste para tema escuro já feito acima */
+
+.hero-actions a {
+    font-size: 1.1em;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.cta-link {
+    color: #0066cc; /* Azul característico da Apple para links */
+    transition: text-decoration 0.3s ease;
+}
+.cta-link:hover {
+    text-decoration: underline;
+}
+
+.cta-button {
+    background-color: #0071e3; /* Azul da Apple */
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 20px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0077ed; /* Azul um pouco mais claro no hover */
+}
+
+/* Ajustes para responsividade (muito básico, apenas para exemplo) */
+@media (max-width: 768px) {
+    .nav-links {
+        /* Em telas menores, você poderia esconder os links e mostrar um ícone de menu (hambúrguer)
+           Isso requer JavaScript para a funcionalidade. Por agora, vamos apenas ajustar. */
+        /* Exemplo: display: none; ou flex-direction: column; para empilhar */
+        font-size: 0.9em; /* Diminuir um pouco os links */
+    }
+    .nav-links li a {
+        padding: 0 8px;
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+    .hero-description {
+        font-size: 1.1em;
+    }
+    .hero-actions a {
+        display: block; /* Faz os botões ocuparem a largura toda e ficarem um abaixo do outro */
+        margin-bottom: 15px;
+    }
+}
+
+
+/* === ESTILOS DE ANIMAÇÃO === */
+
+/* Estado inicial para todos os elementos que serão animados ao rolar */
+.animate-on-scroll {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.8s; /* Duração padrão da animação */
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Easing mais "Apple-like" (pode ajustar) */
+    /* Um easing com um pouco de "overshoot" pode ser legal: cubic-bezier(0.175, 0.885, 0.32, 1.275) */
+    /* Ou um ease-out mais suave: cubic-bezier(0.25, 0.46, 0.45, 0.94) */
+}
+
+/* Tipos específicos de animação - estado inicial */
+.fade-in {
+    /* Apenas opacity já está em .animate-on-scroll */
+    /* Opcional: transform: scale(0.98); */
+}
+
+.fade-in-up {
+    transform: translateY(30px); /* Começa 30px abaixo */
+}
+
+.fade-in-down {
+    transform: translateY(-30px); /* Começa 30px acima */
+}
+
+.slide-in-left {
+    transform: translateX(-50px); /* Começa 50px à esquerda */
+}
+
+.slide-in-right {
+    transform: translateX(50px); /* Começa 50px à direita */
+}
+
+/* Estado final (visível) - quando a classe .is-visible é adicionada pelo JS */
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1); /* Reseta todas as transformações */
+}
+
+/* Opcional: Respeitar a preferência do usuário por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+        transition: none; /* Remove a transição */
+        /* Garante que o elemento esteja visível se as animações estiverem desabilitadas */
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.site-footer {
+    background: linear-gradient(135deg, #2c5364, #203a43, #0f2027); /* Gradiente escuro sofisticado */
+    color: #e0e0e0; /* Cor de texto clara para contraste */
+    padding: 60px 0 20px 0; /* Mais padding no topo, menos no bottom antes do copyright */
+    font-size: 0.95em;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px; /* Espaço entre as seções */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 280px; /* Largura mínima para cada seção antes de quebrar */
+    margin-bottom: 30px;
+}
+
+/* Seção "About" e Logo */
+.logo-text {
+    font-size: 1.9em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+    color: #42a5f5; /* Um azul vibrante para destaque no logo (Masioli) */
+    /* Ou use uma cor que combine com sua identidade visual, ex: #66cc99 (verde menta) */
+}
+
+.footer-section.about p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #b0b0b0; /* Texto um pouco mais suave */
+}
+
+.footer-section .contact span {
+    display: block;
+    margin-bottom: 12px;
+    color: #c0c0c0;
+    transition: color 0.3s ease;
+}
+
+.footer-section .contact span:hover {
+    color: #ffffff;
+}
+
+.footer-section .contact span i {
+    margin-right: 12px;
+    color: #42a5f5; /* Cor do ícone consistente com o logo span */
+    font-size: 1.1em;
+    width: 20px; /* Alinhamento dos ícones */
+    text-align: center;
+}
+
+/* Redes Sociais */
+.socials a {
+    color: #b0b0b0;
+    margin-right: 18px;
+    font-size: 1.5em; /* Ícones maiores */
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* Para permitir transform */
+}
+
+.socials a:hover {
+    color: #42a5f5; /* Cor de destaque no hover */
+    transform: translateY(-3px); /* Efeito sutil de levantar */
+}
+
+.socials a:last-child {
+    margin-right: 0;
+}
+
+/* Seção "Links Rápidos" */
+.footer-section.links h2,
+.footer-section.contact-form-simple h2 {
+    font-size: 1.4em;
+    color: #ffffff;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Linha decorativa sutil abaixo dos títulos das seções */
+.footer-section.links h2::after,
+.footer-section.contact-form-simple h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #42a5f5; /* Cor de destaque */
+    border-radius: 2px;
+}
+
+.footer-section.links ul {
+    list-style: none;
+}
+
+.footer-section.links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section.links ul li a {
+    color: #b0b0b0;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+}
+
+.footer-section.links ul li a:hover {
+    color: #ffffff;
+    padding-left: 5px; /* Efeito sutil de deslocamento no hover */
+    text-decoration: none; /* Remove sublinhado padrão para manter o visual limpo */
+}
+
+/* Seção "Fale Conosco" (Formulário) */
+.text-input.contact-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #555; /* Borda sutil */
+    border-radius: 5px;
+    background-color: #2a2f36; /* Fundo escuro para inputs */
+    color: #e0e0e0;
+    font-family: inherit;
+    font-size: 0.95em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-input.contact-input::placeholder {
+    color: #888;
+}
+
+.text-input.contact-input:focus {
+    outline: none;
+    border-color: #42a5f5; /* Cor de destaque na borda ao focar */
+    box-shadow: 0 0 0 2px rgba(66, 165, 245, 0.3); /* Sombra suave ao focar */
+}
+
+textarea.contact-input {
+    resize: vertical; /* Permite apenas redimensionamento vertical */
+    min-height: 80px;
+}
+
+.btn.contact-btn {
+    display: inline-block;
+    background-color: #42a5f5; /* Cor de destaque para o botão */
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn.contact-btn:hover {
+    background-color: #1e88e5; /* Tom mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+.btn.contact-btn i {
+    margin-right: 8px;
+}
+
+/* Rodapé Inferior (Copyright) */
+.footer-bottom {
+    background-color: #0a1014; /* Um pouco mais escuro que o gradiente para distinção */
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: 40px; /* Espaço acima da barra de copyright */
+    font-size: 0.9em;
+    color: #909090;
+    border-top: 1px solid #303030; /* Linha sutil de separação */
+}
+
+.footer-bottom a {
+    color: #a0a0a0;
+    text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+    color: #42a5f5;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .footer-content {
+        gap: 30px; /* Reduz o gap entre seções */
+    }
+    .footer-section {
+        min-width: calc(50% - 15px); /* Duas colunas, considerando o gap */
+    }
+    .footer-section.about { /* Seção about pode ocupar mais espaço */
+       /* min-width: 100%; ou flex-basis: 100%; */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Empilha as seções */
+        align-items: center; /* Centraliza o conteúdo quando empilhado */
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%; /* Cada seção ocupa a largura total */
+        max-width: 450px; /* Limita a largura máxima para melhor leitura no centro */
+    }
+
+    .footer-section.links h2::after,
+    .footer-section.contact-form-simple h2::after {
+        left: 50%; /* Centraliza a linha decorativa */
+        transform: translateX(-50%);
+    }
+
+    .socials {
+        text-align: center; /* Garante que os ícones sociais fiquem centralizados */
+    }
+
+    .socials a {
+        margin: 0 10px; /* Ajusta a margem para centralização */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.7em;
+    }
+    .footer-section.links h2,
+    .footer-section.contact-form-simple h2 {
+        font-size: 1.3em;
+    }
+    .btn.contact-btn {
+        width: 100%; /* Botão ocupa toda a largura */
+        padding: 14px 20px;
+    }
+}

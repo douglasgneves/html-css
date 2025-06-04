@@ -1,0 +1,481 @@
+/* style-odontologia.css */
+
+/* --- Reset Básico e Estilos Globais da PÁGINA DE ODONTOLOGIA --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #007bff; /* Azul Masioli (pode ajustar) */
+    --secondary-color: #4A90E2; /* Azul mais claro */
+    --accent-color: #50E3C2;   /* Verde menta/água para toques (pode ajustar) */
+    --text-color: #333;
+    --light-text-color: #f8f9fa;
+    --bg-light: #f9f9f9;
+    --heading-font: 'Merriweather', serif;
+    --body-font: 'Open Sans', sans-serif;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: var(--body-font); /* Fonte principal da página de odontologia */
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: #fff; /* Fundo branco para a página de odontologia */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 48px; /* Adiciona espaço para o header fixo/sticky */
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Tipografia e Títulos da PÁGINA DE ODONTOLOGIA --- */
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+    color: var(--text-color); /* Cor padrão para títulos na pág odonto */
+    margin-bottom: 0.8em;
+    line-height: 1.3;
+}
+/* (Restante dos estilos de h1, h2, .section-title, .section-subtitle da página de odontologia permanecem como antes) */
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.3em; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color); /* Cor do título da seção na pág odonto */
+    position: relative;
+    padding-bottom: 10px;
+}
+.section-title::after {
+    content: ''; position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%); width: 70px; height: 3px;
+    background-color: var(--accent-color); border-radius: 2px;
+}
+.section-subtitle {
+    text-align: center; font-size: 1.1em; color: #555;
+    max-width: 700px; margin: 0 auto 40px auto;
+}
+
+
+/* === ESTILOS DO NOVO HEADER (Apple-like) === */
+.site-header {
+    background-color: rgba(40, 40, 40, 0.97); /* Um preto semi-transparente */
+    color: #f5f5f7; /* Texto claro no header escuro */
+    padding: 0 20px; /* Padding lateral */
+    position: fixed; /* Fixo no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Fontes do header */
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1080px; /* Largura máxima do conteúdo do header */
+    margin: 0 auto; /* Centraliza */
+    height: 48px; /* Altura do header */
+}
+
+.site-header .logo { /* Especificidade para o logo dentro do .site-header */
+    font-size: 1.7em;
+    font-weight: 600;
+    color: #f5f5f7;
+    margin-right: 25px;
+    text-decoration: none;
+}
+
+.site-header .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* flex-grow: 1;  Removido para melhor controle com muitos links */
+    justify-content: center; /* Centraliza se houver espaço */
+    overflow-x: auto; /* Permite scroll horizontal se os links não couberem */
+    white-space: nowrap; /* Impede quebra de linha dos links */
+}
+
+.site-header .nav-links li a {
+    display: block;
+    padding: 0 12px;
+    font-size: 0.85em; /* Tamanho da fonte dos links */
+    color: #d2d2d7;
+    line-height: 48px; /* Alinha verticalmente com a altura do header */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-header .nav-links li a:hover,
+.site-header .nav-links li a.active-nav-link { /* Estilo para link ativo */
+    color: #fff;
+}
+
+.site-header .nav-icons {
+    display: flex; /* Mantém os ícones lado a lado */
+}
+
+.site-header .nav-icons a {
+    font-size: 1.2em;
+    padding: 0 10px;
+    color: #d2d2d7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    line-height: 48px; /* Alinha verticalmente */
+}
+
+.site-header .nav-icons a:hover {
+    color: #fff;
+}
+
+.mobile-menu-button { /* Estilo do botão hamburguer */
+    display: none; /* Escondido em desktop */
+    background: none;
+    border: none;
+    color: #f5f5f7;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0 10px;
+}
+/* === FIM DOS ESTILOS DO HEADER === */
+
+
+/* --- Botões da PÁGINA DE ODONTOLOGIA --- */
+.btn {
+    display: inline-block; padding: 12px 28px; border-radius: var(--border-radius);
+    text-decoration: none; font-weight: 600; transition: all 0.3s ease;
+    cursor: pointer; font-size: 1em; text-align: center;
+}
+.btn-primary {
+    background-color: var(--primary-color); color: var(--light-text-color);
+    border: 2px solid var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: var(--secondary-color); border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+/* (Restante dos estilos de botões .btn-secondary, .btn-whatsapp permanecem) */
+.btn-secondary {
+    background-color: transparent; color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color); color: var(--light-text-color);
+    transform: translateY(-2px);
+}
+.btn-whatsapp {
+    background-color: #25D366; color: white;
+    border: 2px solid #25D366;
+}
+.btn-whatsapp:hover {
+    background-color: #1DAE54; border-color: #1DAE54;
+    transform: translateY(-2px);
+}
+.btn-whatsapp i { margin-right: 8px; }
+
+
+/* --- Utilitários da PÁGINA DE ODONTOLOGIA --- */
+.section-padding { padding: 70px 0; }
+.bg-light { background-color: var(--bg-light); }
+
+
+/* --- Hero Section ODONTOLOGIA (Estilos como definidos anteriormente) --- */
+.hero-odontologia {
+    background-image: url('https://images.unsplash.com/photo-1588776814546-da630a748953?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+    background-size: cover; background-position: center center;
+    color: var(--light-text-color); padding: 120px 0; text-align: center; position: relative;
+}
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 50, 100, 0.6);
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-odontologia h1 {
+    color: var(--light-text-color); font-size: 3em; margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+.hero-odontologia p {
+    font-size: 1.2em; margin-bottom: 35px; max-width: 700px;
+    margin-left: auto; margin-right: auto;
+}
+
+/* --- Carrossel de Pacientes (Estilos como definidos anteriormente) --- */
+.pacientes-carrossel .swiper-slide {
+    text-align: center; background: #fff; border-radius: var(--border-radius);
+    overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.pacientes-carrossel .swiper-slide img {
+    display: block; width: 100%; height: 250px; object-fit: cover;
+}
+.pacientes-carrossel .slide-caption {
+    padding: 15px; font-weight: 600; color: var(--text-color); background-color: var(--bg-light);
+}
+.pacientes-carrossel .swiper-button-next,
+.pacientes-carrossel .swiper-button-prev { color: var(--primary-color); transition: opacity 0.3s; }
+.pacientes-carrossel .swiper-button-next:hover,
+.pacientes-carrossel .swiper-button-prev:hover { opacity: 0.7; }
+.pacientes-carrossel .swiper-pagination-bullet-active { background: var(--primary-color); }
+
+/* --- Nossa História (Estilos como definidos anteriormente) --- */
+.historia-clinica .section-title { text-align: left; }
+.historia-clinica .section-title::after { left: 0; transform: translateX(0); }
+.historia-content-wrapper { display: flex; align-items: center; gap: 50px; }
+.historia-texto { flex: 1; }
+.historia-texto p { margin-bottom: 1.5em; color: #555; }
+.historia-imagem { flex-basis: 40%; max-width: 450px; }
+.historia-imagem img { width: 100%; height: auto; border-radius: var(--border-radius); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+/* --- A Clínica (Estilos como definidos anteriormente) --- */
+.a-clinica .section-title { text-align: left; }
+.a-clinica .section-title::after { left: 0; transform: translateX(0); }
+.a-clinica .clinica-flex-container { display: flex; align-items: center; gap: 40px; }
+.a-clinica .clinica-texto { flex: 1; }
+.a-clinica .clinica-texto p { margin-bottom: 1.5em; color: #555; }
+.a-clinica .clinica-imagem { flex-basis: 50%; max-width: 550px; }
+.a-clinica .clinica-imagem img { width: 100%; border-radius: var(--border-radius); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+
+/* --- Áreas de Atuação (Estilos como definidos anteriormente) --- */
+.areas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
+.area-card { background-color: #fff; padding: 30px; border-radius: var(--border-radius); box-shadow: 0 5px 20px rgba(0, 75, 150, 0.07); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.area-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0, 75, 150, 0.12); }
+.area-card .area-icon { color: var(--accent-color); margin-bottom: 20px; }
+.area-card h3 { color: var(--primary-color); margin-bottom: 10px; }
+.area-card p { font-size: 0.95em; color: #666; line-height: 1.6; }
+
+/* --- Equipe Profissional (Estilos como definidos anteriormente) --- */
+.equipe-profissional .section-subtitle { margin-bottom: 15px; }
+.equipe-profissional > .container > p:nth-of-type(2) { text-align: center; max-width: 800px; margin: 0 auto 40px auto; color: #555; }
+.equipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.profissional-card { background-color: #fff; border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.08); padding: 25px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.profissional-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+.profissional-card img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid var(--bg-light); }
+.profissional-card h4 { color: var(--text-color); font-size: 1.2em; margin-bottom: 5px; }
+.profissional-card .especialidade { color: var(--primary-color); font-weight: 600; font-size: 0.95em; margin-bottom: 5px; }
+.profissional-card .cro { font-size: 0.85em; color: #777; }
+
+/* --- Seção de Contato (Estilos como definidos anteriormente) --- */
+.contato-section { background-color: var(--primary-color); color: var(--light-text-color); }
+.contato-section .section-title,
+.contato-section .section-subtitle { color: var(--light-text-color); }
+.contato-section .section-title::after { background-color: var(--light-text-color); }
+.contato-info { text-align: center; margin-bottom: 30px; }
+.contato-info p { font-size: 1.1em; margin-bottom: 10px; }
+.contato-info i { margin-right: 10px; color: var(--accent-color); }
+.contato-section .btn-whatsapp { margin: 0 auto; display: block; max-width: 300px; }
+
+
+/* === ESTILOS DO FOOTER (como você forneceu, ou o "glow up" anterior) === */
+.site-footer {
+    background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+    color: #e0e0e0;
+    padding-top: 60px; /* Padding no topo, o bottom é cuidado pelo .footer-bottom */
+    font-size: 0.95em;
+    font-family: var(--body-font); /* Manter a fonte do corpo da página no footer */
+}
+
+.footer-content {
+    max-width: 1200px; margin: 0 auto; padding: 0 25px;
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;
+}
+
+.footer-section { flex: 1; min-width: 280px; margin-bottom: 30px; }
+
+.footer-section .logo-text { /* Alterado de h2 para .logo-text para consistência com o HTML */
+    font-size: 1.9em; margin-bottom: 20px; font-weight: 700;
+    font-family: var(--heading-font); /* Usar a fonte de título aqui */
+    color: #fff; /* Cor do Logo Masioli */
+}
+.footer-section .logo-text span { color: #42a5f5; /* Cor do 'Masioli' */ }
+
+.footer-section.about p { margin-bottom: 20px; line-height: 1.8; color: #b0b0b0; }
+
+.footer-section .contact span { display: block; margin-bottom: 12px; color: #c0c0c0; transition: color 0.3s ease; }
+.footer-section .contact span:hover { color: #ffffff; }
+.footer-section .contact span i { margin-right: 12px; color: #42a5f5; font-size: 1.1em; width: 20px; text-align: center; }
+
+.footer-section .socials a {
+    color: #b0b0b0; margin-right: 18px; font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease; display: inline-block;
+}
+.footer-section .socials a:hover { color: #42a5f5; transform: translateY(-3px); }
+.footer-section .socials a:last-child { margin-right: 0; }
+
+.footer-section h2 { /* Para "Links Rápidos" e "Fale Conosco" */
+    font-family: var(--heading-font); /* Usar a fonte de título */
+    font-size: 1.4em; color: #ffffff; margin-bottom: 25px;
+    position: relative; padding-bottom: 10px;
+}
+.footer-section h2::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 50px; height: 3px; background-color: #42a5f5; border-radius: 2px;
+}
+
+.footer-section ul { list-style: none; } /* Mantém padding:0 e margin:0 do reset global */
+.footer-section ul li { margin-bottom: 12px; }
+.footer-section ul li a { color: #b0b0b0; transition: color 0.3s ease, padding-left 0.3s ease; display: inline-block; text-decoration: none; }
+.footer-section ul li a:hover { color: #ffffff; padding-left: 5px; }
+
+.text-input.contact-input {
+    width: 100%; padding: 12px 15px; margin-bottom: 15px;
+    border: 1px solid #555; border-radius: 5px; background-color: #2a2f36;
+    color: #e0e0e0; font-family: inherit; font-size: 0.95em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.text-input.contact-input::placeholder { color: #888; }
+.text-input.contact-input:focus { outline: none; border-color: #42a5f5; box-shadow: 0 0 0 2px rgba(66, 165, 245, 0.3); }
+textarea.contact-input { resize: vertical; min-height: 80px; }
+
+.btn.contact-btn {
+    display: inline-block; background-color: #42a5f5; color: #ffffff;
+    padding: 12px 25px; border: none; border-radius: 5px;
+    font-family: inherit; font-size: 1em; font-weight: 600;
+    cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn.contact-btn:hover { background-color: #1e88e5; transform: translateY(-2px); }
+.btn.contact-btn i { margin-right: 8px; }
+
+.footer-bottom {
+    background-color: #0a1014; text-align: center;
+    padding: 20px 15px; margin-top: 40px;
+    font-size: 0.9em; color: #909090; border-top: 1px solid #303030;
+}
+.footer-bottom a { color: #a0a0a0; text-decoration: underline; }
+.footer-bottom a:hover { color: #42a5f5; }
+/* === FIM DOS ESTILOS DO FOOTER === */
+
+
+/* --- RESPONSIVIDADE (COMBINADA) --- */
+@media (max-width: 1080px) { /* Limite para quando os links do header podem começar a não caber */
+    .site-header .nav-links {
+        /* overflow-x: auto; já definido, mas pode precisar de ajustes se muitos links */
+        /* justify-content: flex-start; se quiser que comece da esquerda em vez de centralizar */
+    }
+}
+
+@media (max-width: 992px) {
+    /* Header */
+    .site-header .nav-links {
+        /* Começar a esconder para mobile */
+        /* Ou reduzir o padding dos links */
+        /* padding: 0 8px; */
+    }
+
+    /* Conteúdo da Página de Odontologia */
+    h1 { font-size: 2.5em; }
+    .hero-odontologia h1 { font-size: 2.6em; }
+    h2 { font-size: 1.9em; }
+
+    .historia-content-wrapper,
+    .a-clinica .clinica-flex-container {
+        flex-direction: column; text-align: center;
+    }
+    .historia-clinica .section-title,
+    .a-clinica .section-title { text-align: center; }
+    .historia-clinica .section-title::after,
+    .a-clinica .section-title::after { left: 50%; transform: translateX(-50%); }
+    .historia-imagem, .a-clinica .clinica-imagem {
+        flex-basis: auto; max-width: 100%; margin-top: 30px;
+    }
+
+    /* Footer */
+    .footer-content { gap: 30px; }
+    .footer-section { min-width: calc(50% - 15px); }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 48px; /* Manter o espaço para o header fixo */
+    }
+
+    /* Header Mobile */
+    .site-header .nav-links {
+        display: none; /* Esconder links por padrão */
+        flex-direction: column;
+        position: absolute;
+        top: 48px; /* Abaixo do header */
+        left: 0;
+        right: 0;
+        background-color: rgba(40, 40, 40, 0.99); /* Fundo sólido para o menu mobile */
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        overflow-y: auto; /* Scroll se muitos links */
+        max-height: calc(100vh - 48px); /* Limitar altura */
+    }
+    .site-header .nav-links.active { /* Mostrar quando ativo pelo JS */
+        display: flex;
+    }
+    .site-header .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    .site-header .nav-links li a {
+        padding: 15px 20px; /* Mais área de toque */
+        line-height: 1.5; /* Resetar line-height para links empilhados */
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .site-header .nav-links li:last-child a {
+        border-bottom: none;
+    }
+    .site-header .nav-icons {
+        /* Decida se os ícones de busca/sacola aparecem no mobile ou são movidos para dentro do menu */
+        /* display: none; */ /* Exemplo para esconder */
+    }
+    .mobile-menu-button {
+        display: block; /* Mostrar o botão hamburguer */
+        margin-left: auto; /* Empurra para a direita se os ícones estiverem escondidos */
+    }
+
+    /* Conteúdo da Página de Odontologia */
+    .hero-odontologia { padding: 80px 0; }
+    .hero-odontologia h1 { font-size: 2.2em; }
+    .hero-odontologia p { font-size: 1em; }
+    .section-padding { padding: 50px 0; }
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.7em; }
+    .areas-grid, .equipe-grid { grid-template-columns: 1fr; }
+
+    /* Footer */
+    .footer-content { flex-direction: column; align-items: center; text-align: center; }
+    .footer-section { min-width: 100%; max-width: 450px; }
+    .footer-section h2::after { left: 50%; transform: translateX(-50%); }
+    .footer-section.links ul, .footer-section .socials { text-align: center; }
+    .footer-section .socials a { margin: 0 10px; }
+}
+
+@media (max-width: 480px) {
+    /* Header */
+    /* Ajustes finos se necessário */
+
+    /* Conteúdo da Página de Odontologia */
+    .hero-odontologia h1 { font-size: 1.8em; }
+    h2 { font-size: 1.5em; }
+    .btn { padding: 10px 20px; font-size: 0.9em; }
+    .pacientes-carrossel .swiper-slide img { height: 200px; }
+    .profissional-card img { width: 120px; height: 120px; }
+
+    /* Footer */
+    .footer-section .logo-text { font-size: 1.7em; }
+    .footer-section h2 { font-size: 1.3em; }
+    .btn.contact-btn { width: 100%; padding: 14px 20px; }
+}

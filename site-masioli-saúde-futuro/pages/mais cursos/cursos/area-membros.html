@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Cursos - Masioli Cursos</title>
+    <link rel="stylesheet" href="style-cursos.css"> <!-- Reutilizar o CSS principal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="area-membros-body">
+
+    <div class="dashboard-layout">
+        <!-- Sidebar de Navegação da Área de Membros -->
+        <aside class="dashboard-sidebar">
+            <a href="index.html" class="cursos-logo sidebar-logo">
+                M<span>asioli</span>Cursos
+            </a>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="area-membros.html"><i class="fas fa-book-open"></i> Meus Cursos</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Certificados</a></li>
+                    <li><a href="#"><i class="fas fa-user-circle"></i> Meu Perfil</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Configurações</a></li>
+                    <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>© <span id="current-year-sidebar"></span> Masioli Cursos</p>
+            </div>
+        </aside>
+
+        <!-- Conteúdo Principal da Área de Membros -->
+        <main class="dashboard-main-content">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle-btn" aria-label="Alternar menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2>Bem-vindo(a) de volta, [Nome do Aluno]!</h2>
+                </div>
+                <div class="header-right">
+                    <div class="user-avatar">
+                        <img src="https://via.placeholder.com/40x40/0052CC/FFFFFF?text=NA" alt="Avatar do Aluno">
+                        <!-- NA = Nome Aluno -->
+                    </div>
+                </div>
+            </header>
+
+            <!-- Seção de Listagem de Cursos do Aluno -->
+            <section class="meus-cursos-lista section-dashboard-padding">
+                <h3>Seus Cursos Inscritos</h3>
+                <div class="cursos-inscritos-grid">
+                    <!-- Card de Curso Inscrito 1 -->
+                    <div class="curso-inscrito-card">
+                        <img src="https://via.placeholder.com/300x170/007BFF/FFFFFF?text=Curso+Odonto+Estética" alt="Curso de Odontologia Estética Avançada">
+                        <div class="curso-inscrito-info">
+                            <h4>Odontologia Estética Avançada</h4>
+                            <p class="instrutor-curso"><i class="fas fa-user-tie"></i> Dr. Douglas Neves</p>
+                            <div class="progresso-curso">
+                                <div class="progresso-barra" style="width: 75%;"></div>
+                                <span>75% Concluído</span>
+                            </div>
+                            <a href="player-curso.html?curso=estetica" class="btn btn-primary-cursos btn-sm btn-block">Continuar Aprendendo</a>
+                        </div>
+                    </div>
+                    <!-- Card de Curso Inscrito 2 -->
+                    <div class="curso-inscrito-card">
+                        <img src="https://via.placeholder.com/300x170/FFC107/000000?text=Gestão+Consultório" alt="Curso de Gestão de Consultórios">
+                        <div class="curso-inscrito-info">
+                            <h4>Gestão Eficaz de Clínicas</h4>
+                            <p class="instrutor-curso"><i class="fas fa-user-tie"></i> Dr. Marco Masioli</p>
+                            <div class="progresso-curso">
+                                <div class="progresso-barra" style="width: 30%;"></div>
+                                <span>30% Concluído</span>
+                            </div>
+                            <a href="player-curso.html?curso=gestao" class="btn btn-primary-cursos btn-sm btn-block">Continuar Aprendendo</a>
+                        </div>
+                    </div>
+                    <!-- Adicionar mais cursos inscritos -->
+                </div>
+            </section>
+
+            <!-- Seção de Cursos Recomendados/Novos (Opcional) -->
+            <section class="cursos-sugeridos section-dashboard-padding">
+                 <h3>Cursos que Você Pode Gostar</h3>
+                 <div class="cursos-inscritos-grid">
+                    <!-- Card de Curso Sugerido 1 -->
+                    <div class="curso-inscrito-card">
+                        <img src="https://via.placeholder.com/300x170/28A745/FFFFFF?text=Curso+Perio" alt="Curso de Periodontia">
+                        <div class="curso-inscrito-info">
+                            <h4>Periodontia Clínica para Iniciantes</h4>
+                             <p class="instrutor-curso"><i class="fas fa-user-tie"></i> Dr(a). Frizzera</p>
+                             <span class="preco-curso-sugerido">R$ XXX</span>
+                            <a href="curso-detalhe.html" class="btn btn-outline-cursos btn-sm btn-block">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <!-- Adicionar mais cursos sugeridos -->
+                 </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script-area-membros.js"></script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+/* Estilos Específicos da Página da Loja */
+
+/* Herda do HTML inline original, mas usando o padding do seu CSS original */
+.page-title-section {
+    text-align: center;
+    padding: 60px 20px; /* Padding do seu CSS original */
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.page-title-section h1 {
+    font-size: 2.8em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    /* Se as classes de animação não estiverem no style.css principal, defina-as aqui ou em um arquivo de animação */
+}
+
+.page-title-section p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 20px; /* Adicionado margin-bottom para separar um pouco */
+}
+
+/* Herda do HTML inline original, mas usando o padding do seu CSS original */
+.products-section {
+    padding: 50px 20px; /* Padding do seu CSS original */
+}
+
+/* Herda do HTML inline original, mas usando a margin-bottom do seu CSS original */
+.products-section h2 {
+    text-align: center;
+    margin-bottom: 40px; /* Margin do seu CSS original */
+    font-size: 2em;
+    font-weight: 600;
+}
+
+/* Combinando o seu CSS original com o que estava inline (eram muito parecidos) */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid responsivo */
+    gap: 25px; /* Espaço entre os cards (do seu CSS original) */
+    max-width: 1200px; /* Largura máxima do grid */
+    margin: 0 auto; /* Centralizar o grid */
+}
+
+/* Combinando o seu CSS original com o que estava inline */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #eaeaea; /* Do seu CSS original */
+    border-radius: 12px; /* Bordas mais arredondadas (do seu CSS original) */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição para hover */
+    display: flex; /* Adicionado para melhor controle do alinhamento interno */
+    flex-direction: column; /* Adicionado para empilhar os itens verticalmente */
+    justify-content: space-between; /* Adicionado para empurrar o botão para baixo se as descrições variarem */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Leve elevação no hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Usando principalmente as definições do seu CSS original que são melhores para consistência */
+.product-card img {
+    max-width: 100%;
+    width: 100%; /* Garante que a imagem preencha a largura disponível */
+    height: 180px; /* Altura fixa para a imagem */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    margin-bottom: 15px;
+    border-radius: 8px; /* Do seu CSS original */
+}
+
+.product-card h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d1d1f;
+}
+
+.product-card p { /* Descrição do produto */
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+    min-height: 3.6em; /* Espaço para umas 2-3 linhas de descrição */
+    flex-grow: 1; /* Permite que a descrição cresça para preencher espaço, ajudando a alinhar botões */
+}
+
+/* Estilizando a classe .price conforme seu CSS e o inline anterior */
+.product-card .price {
+    font-weight: bold;
+    font-size: 1.3em; /* Do seu CSS original */
+    color: #0071e3; /* Azul Apple */
+    margin-bottom: 15px;
+}
+
+/* Reutilizando o .cta-button que já existe (presumindo que está no style.css principal) */
+/* Se não estiver, você pode definir estilos básicos aqui: */
+.cta-button {
+    /* Estilos base do seu style.css principal, se houver */
+    /* Exemplo:
+    background-color: #0071e3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    */
+}
+
+/* Ajuste específico para o botão dentro do card, como você já tinha */
+.product-card .cta-button {
+    margin-top: 10px;
+    display: inline-block; /* Garante que o botão não ocupe a largura toda dentro do card */
+    align-self: center; /* Centraliza o botão se o card for flex container */
+}
+
+/*
+  Se as animações (animate-on-scroll, fade-in-up, etc.) não estiverem
+  definidas no seu style.css principal, você precisará adicioná-las aqui
+  ou em um arquivo CSS de animações separado e linká-lo no HTML.
+  Exemplo simples para fade-in-up (você provavelmente tem algo mais elaborado):
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-up.is-visible { // Classe adicionada por JavaScript
+    opacity: 1;
+    transform: translateY(0);
+  }
+*/
+.site-footer {
+    background: linear-gradient(135deg, #2c5364, #203a43, #0f2027); /* Gradiente escuro sofisticado */
+    color: #e0e0e0; /* Cor de texto clara para contraste */
+    padding: 60px 0 20px 0; /* Mais padding no topo, menos no bottom antes do copyright */
+    font-size: 0.95em;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px; /* Espaço entre as seções */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 280px; /* Largura mínima para cada seção antes de quebrar */
+    margin-bottom: 30px;
+}
+
+/* Seção "About" e Logo */
+.logo-text {
+    font-size: 1.9em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+    color: #42a5f5; /* Um azul vibrante para destaque no logo (Masioli) */
+    /* Ou use uma cor que combine com sua identidade visual, ex: #66cc99 (verde menta) */
+}
+
+.footer-section.about p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #b0b0b0; /* Texto um pouco mais suave */
+}
+
+.footer-section .contact span {
+    display: block;
+    margin-bottom: 12px;
+    color: #c0c0c0;
+    transition: color 0.3s ease;
+}
+
+.footer-section .contact span:hover {
+    color: #ffffff;
+}
+
+.footer-section .contact span i {
+    margin-right: 12px;
+    color: #42a5f5; /* Cor do ícone consistente com o logo span */
+    font-size: 1.1em;
+    width: 20px; /* Alinhamento dos ícones */
+    text-align: center;
+}
+
+/* Redes Sociais */
+.socials a {
+    color: #b0b0b0;
+    margin-right: 18px;
+    font-size: 1.5em; /* Ícones maiores */
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* Para permitir transform */
+}
+
+.socials a:hover {
+    color: #42a5f5; /* Cor de destaque no hover */
+    transform: translateY(-3px); /* Efeito sutil de levantar */
+}
+
+.socials a:last-child {
+    margin-right: 0;
+}
+
+/* Seção "Links Rápidos" */
+.footer-section.links h2,
+.footer-section.contact-form-simple h2 {
+    font-size: 1.4em;
+    color: #ffffff;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Linha decorativa sutil abaixo dos títulos das seções */
+.footer-section.links h2::after,
+.footer-section.contact-form-simple h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #42a5f5; /* Cor de destaque */
+    border-radius: 2px;
+}
+
+.footer-section.links ul {
+    list-style: none;
+}
+
+.footer-section.links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section.links ul li a {
+    color: #b0b0b0;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+}
+
+.footer-section.links ul li a:hover {
+    color: #ffffff;
+    padding-left: 5px; /* Efeito sutil de deslocamento no hover */
+    text-decoration: none; /* Remove sublinhado padrão para manter o visual limpo */
+}
+
+/* Seção "Fale Conosco" (Formulário) */
+.text-input.contact-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #555; /* Borda sutil */
+    border-radius: 5px;
+    background-color: #2a2f36; /* Fundo escuro para inputs */
+    color: #e0e0e0;
+    font-family: inherit;
+    font-size: 0.95em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-input.contact-input::placeholder {
+    color: #888;
+}
+
+.text-input.contact-input:focus {
+    outline: none;
+    border-color: #42a5f5; /* Cor de destaque na borda ao focar */
+    box-shadow: 0 0 0 2px rgba(66, 165, 245, 0.3); /* Sombra suave ao focar */
+}
+
+textarea.contact-input {
+    resize: vertical; /* Permite apenas redimensionamento vertical */
+    min-height: 80px;
+}
+
+.btn.contact-btn {
+    display: inline-block;
+    background-color: #42a5f5; /* Cor de destaque para o botão */
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn.contact-btn:hover {
+    background-color: #1e88e5; /* Tom mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+.btn.contact-btn i {
+    margin-right: 8px;
+}
+
+/* Rodapé Inferior (Copyright) */
+.footer-bottom {
+    background-color: #0a1014; /* Um pouco mais escuro que o gradiente para distinção */
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: 40px; /* Espaço acima da barra de copyright */
+    font-size: 0.9em;
+    color: #909090;
+    border-top: 1px solid #303030; /* Linha sutil de separação */
+}
+
+.footer-bottom a {
+    color: #a0a0a0;
+    text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+    color: #42a5f5;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .footer-content {
+        gap: 30px; /* Reduz o gap entre seções */
+    }
+    .footer-section {
+        min-width: calc(50% - 15px); /* Duas colunas, considerando o gap */
+    }
+    .footer-section.about { /* Seção about pode ocupar mais espaço */
+       /* min-width: 100%; ou flex-basis: 100%; */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Empilha as seções */
+        align-items: center; /* Centraliza o conteúdo quando empilhado */
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%; /* Cada seção ocupa a largura total */
+        max-width: 450px; /* Limita a largura máxima para melhor leitura no centro */
+    }
+
+    .footer-section.links h2::after,
+    .footer-section.contact-form-simple h2::after {
+        left: 50%; /* Centraliza a linha decorativa */
+        transform: translateX(-50%);
+    }
+
+    .socials {
+        text-align: center; /* Garante que os ícones sociais fiquem centralizados */
+    }
+
+    .socials a {
+        margin: 0 10px; /* Ajusta a margem para centralização */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.7em;
+    }
+    .footer-section.links h2,
+    .footer-section.contact-form-simple h2 {
+        font-size: 1.3em;
+    }
+    .btn.contact-btn {
+        width: 100%; /* Botão ocupa toda a largura */
+        padding: 14px 20px;
+    }
+}

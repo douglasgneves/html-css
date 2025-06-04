@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masioli Cursos - Transforme Seu Conhecimento</title>
+    
+    <!-- CSS Principal para a Landing Page de Cursos -->
+    <link rel="stylesheet" href="cursos/style-cursos.css"> 
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Swiper.js (para carrossel de cursos ou depoimentos) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Sora para títulos (moderno, forte), Inter para corpo (muito legível) -->
+</head>
+<body>
+
+    <!-- HEADER - Pode ser mais simples para a landing de cursos ou o mesmo da Masioli -->
+    <header class="cursos-header">
+        <nav class="container cursos-nav">
+            <a href="../index.html" class="cursos-logo">
+                <!-- <img src="logo-masioli-cursos.svg" alt="Masioli Cursos"> -->
+                M<span>asioli</span>Cursos
+            </a>
+            <ul class="cursos-nav-links">
+                <li><a href="#nossos-cursos">Nossos Cursos</a></li>
+                <li><a href="#instrutores">Instrutores</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="cursos-nav-actions">
+                <a href="cursos/login.html" class="btn btn-outline-cursos">Entrar</a> <!-- Link para a página de login -->
+                <a href="#planos" class="btn btn-primary-cursos">Inscreva-se</a>
+            </div>
+            <button class="mobile-menu-button-cursos" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION CURSOS -->
+        <section class="hero-cursos">
+            <div class="container hero-content-cursos">
+                <h1>Invista em Você. <br>Transforme sua Carreira e Conhecimento.</h1>
+                <p>Descubra cursos online de alta qualidade, ministrados por especialistas da Masioli Saúde Integrada, e dê o próximo passo em sua jornada profissional e pessoal.</p>
+                <div class="hero-cta-cursos">
+                    <a href="#nossos-cursos" class="btn btn-primary-cursos btn-lg">Ver Cursos Disponíveis</a>
+                    <a href="login.html" class="btn btn-secondary-cursos btn-lg">Já sou Aluno</a>
+                </div>
+                <!-- Opcional: Pequenas logos de parceiros ou "Como visto em" -->
+            </div>
+        </section>
+
+        <!-- SEÇÃO "POR QUE ESCOLHER NOSSOS CURSOS?" -->
+        <section class="why-choose-cursos section-padding">
+            <div class="container">
+                <h2 class="section-title-cursos">Por que Escolher os Cursos Masioli?</h2>
+                <div class="why-grid-cursos">
+                    <div class="why-item-cursos">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>Instrutores Especialistas</h3>
+                        <p>Aprenda com profissionais renomados e atuantes no mercado, da equipe Masioli Saúde Integrada.</p>
+                    </div>
+                    <div class="why-item-cursos">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Conteúdo Prático e Atualizado</h3>
+                        <p>Cursos desenvolvidos com foco na aplicação prática e nas últimas tendências da sua área.</p>
+                    </div>
+                    <div class="why-item-cursos">
+                        <i class="fas fa-infinity"></i>
+                        <h3>Acesso Vitalício e Flexível</h3>
+                        <p>Estude no seu ritmo, quando e onde quiser, com acesso ilimitado ao material do curso.</p>
+                    </div>
+                     <div class="why-item-cursos">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Certificado de Conclusão</h3>
+                        <p>Receba um certificado para comprovar suas novas habilidades e conhecimentos adquiridos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LISTA DE CURSOS (DESTAQUES) -->
+        <section id="nossos-cursos" class="featured-cursos section-padding bg-light-cursos">
+            <div class="container">
+                <h2 class="section-title-cursos">Cursos em Destaque</h2>
+                <p class="section-subtitle-cursos">Explore alguns dos nossos cursos mais procurados e comece a aprender hoje mesmo.</p>
+                <div class="cursos-grid">
+                    <!-- Card de Curso 1 -->
+                    <div class="curso-card">
+                        <img src="https://via.placeholder.com/350x200/007BFF/FFFFFF?text=Curso+Odonto+Estética" alt="Curso de Odontologia Estética Avançada">
+                        <div class="curso-card-content">
+                            <span class="curso-category">Odontologia</span>
+                            <h3>Odontologia Estética Avançada</h3>
+                            <p>Domine as técnicas mais recentes em facetas, lentes de contato dental e planejamento digital do sorriso.</p>
+                            <div class="curso-meta">
+                                <span><i class="fas fa-user-tie"></i> Dr. Douglas Neves</span>
+                                <span><i class="fas fa-clock"></i> 40 horas</span>
+                            </div>
+                            <a href="curso-detalhe.html" class="btn btn-primary-cursos btn-sm">Saiba Mais</a>
+                        </div>
+                    </div>
+                    <!-- Card de Curso 2 -->
+                    <div class="curso-card">
+                        <img src="https://via.placeholder.com/350x200/28A745/FFFFFF?text=Curso+Perio+Iniciantes" alt="Curso de Periodontia para Iniciantes">
+                        <div class="curso-card-content">
+                            <span class="curso-category">Periodontia</span>
+                            <h3>Periodontia Clínica para Iniciantes</h3>
+                            <p>Fundamentos do diagnóstico, prevenção e tratamento básico das doenças periodontais.</p>
+                            <div class="curso-meta">
+                                <span><i class="fas fa-user-tie"></i> Dr(a). Frizzera</span>
+                                <span><i class="fas fa-clock"></i> 25 horas</span>
+                            </div>
+                            <a href="curso-detalhe.html" class="btn btn-primary-cursos btn-sm">Saiba Mais</a>
+                        </div>
+                    </div>
+                    <!-- Card de Curso 3 -->
+                    <div class="curso-card">
+                        <img src="https://via.placeholder.com/350x200/FFC107/000000?text=Gestão+Consultório" alt="Curso de Gestão de Consultórios">
+                        <div class="curso-card-content">
+                            <span class="curso-category">Gestão</span>
+                            <h3>Gestão Eficaz de Clínicas e Consultórios</h3>
+                            <p>Aprenda estratégias de marketing, finanças e liderança para o sucesso do seu negócio na área da saúde.</p>
+                            <div class="curso-meta">
+                                <span><i class="fas fa-user-tie"></i> Dr. Marco Masioli</span>
+                                <span><i class="fas fa-clock"></i> 30 horas</span>
+                            </div>
+                            <a href="curso-detalhe.html" class="btn btn-primary-cursos btn-sm">Saiba Mais</a>
+                        </div>
+                    </div>
+                    <!-- Adicione mais cards de curso -->
+                </div>
+                <div class="text-center mt-5">
+                    <a href="todos-os-cursos.html" class="btn btn-outline-cursos btn-lg">Ver Todos os Cursos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTRUTORES -->
+        <section id="instrutores" class="instrutores-cursos section-padding">
+            <div class="container">
+                <h2 class="section-title-cursos">Nossos Instrutores Especialistas</h2>
+                <p class="section-subtitle-cursos">Profissionais renomados da Masioli Saúde Integrada compartilhando seu conhecimento.</p>
+                <div class="swiper instrutoresSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Instrutor 1 -->
+                        <div class="swiper-slide instrutor-card">
+                            <img src="https://via.placeholder.com/200x200/20c997/FFFFFF?text=Dr.+Douglas" alt="Dr. Douglas Neves">
+                            <h4>Dr. Douglas Neves</h4>
+                            <p>Especialista em Estética Dental</p>
+                        </div>
+                        <!-- Instrutor 2 -->
+                        <div class="swiper-slide instrutor-card">
+                            <img src="https://via.placeholder.com/200x200/6F42C1/FFFFFF?text=Dra.+Quezia" alt="Dra. Quezia Godinho">
+                            <h4>Dra. Quezia Godinho</h4>
+                            <p>Especialista em Dentística</p>
+                        </div>
+                        <!-- Instrutor 3 -->
+                        <div class="swiper-slide instrutor-card">
+                            <img src="https://via.placeholder.com/200x200/198754/FFFFFF?text=Dr(a).+Frizzera" alt="Dr(a). Frizzera">
+                            <h4>Dr(a). Frizzera</h4>
+                            <p>Especialista em Periodontia</p>
+                        </div>
+                        <!-- Adicione mais instrutores -->
+                    </div>
+                    <div class="swiper-pagination instrutores-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOIMENTOS -->
+        <section id="depoimentos" class="depoimentos-cursos section-padding bg-dark-cursos">
+            <div class="container">
+                <h2 class="section-title-cursos white-text">O que Nossos Alunos Dizem</h2>
+                <div class="swiper depoimentosSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Depoimento 1 -->
+                        <div class="swiper-slide depoimento-card">
+                            <i class="fas fa-quote-left"></i>
+                            <p>O curso superou minhas expectativas! Conteúdo rico e instrutores incríveis. Já estou aplicando no meu dia a dia.</p>
+                            <div class="depoimento-author">
+                                <img src="https://via.placeholder.com/60x60/007BFF/FFFFFF?text=AP" alt="Aluno Ana P.">
+                                <div>
+                                    <h5>Ana P.</h5>
+                                    <span>Aluna do Curso de Estética</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Depoimento 2 -->
+                         <div class="swiper-slide depoimento-card">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Didática excelente e material de apoio muito completo. Recomendo a todos os colegas da área!</p>
+                            <div class="depoimento-author">
+                                <img src="https://via.placeholder.com/60x60/28A745/FFFFFF?text=CM" alt="Aluno Carlos M.">
+                                <div>
+                                    <h5>Carlos M.</h5>
+                                    <span>Aluno do Curso de Gestão</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Adicione mais depoimentos -->
+                    </div>
+                    <div class="swiper-pagination depoimentos-pagination"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PLANOS E PREÇOS (Opcional) -->
+        <section id="planos" class="planos-cursos section-padding">
+            <div class="container">
+                <h2 class="section-title-cursos">Invista no Seu Futuro</h2>
+                <p class="section-subtitle-cursos">Escolha o plano que melhor se adapta aos seus objetivos de aprendizado.</p>
+                <div class="planos-grid">
+                    <!-- Plano 1: Curso Individual -->
+                    <div class="plano-card">
+                        <div class="plano-header">
+                            <h3>Curso Individual</h3>
+                            <p class="plano-price">R$ <span>XXX</span> <small>/curso</small></p>
+                        </div>
+                        <ul class="plano-features">
+                            <li><i class="fas fa-check"></i> Acesso vitalício a 1 curso</li>
+                            <li><i class="fas fa-check"></i> Material de apoio completo</li>
+                            <li><i class="fas fa-check"></i> Certificado de conclusão</li>
+                            <li><i class="fas fa-times"></i> Acesso a todos os cursos</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary-cursos btn-block">Escolher Curso</a>
+                    </div>
+                    <!-- Plano 2: Assinatura (Exemplo) -->
+                    <div class="plano-card popular-plano">
+                        <span class="popular-badge">Mais Popular</span>
+                        <div class="plano-header">
+                            <h3>Assinatura Premium</h3>
+                            <p class="plano-price">R$ <span>YYY</span> <small>/mês</small></p>
+                        </div>
+                        <ul class="plano-features">
+                            <li><i class="fas fa-check"></i> Acesso a TODOS os cursos</li>
+                            <li><i class="fas fa-check"></i> Novos cursos todo mês</li>
+                            <li><i class="fas fa-check"></i> Material de apoio completo</li>
+                            <li><i class="fas fa-check"></i> Certificado para cada curso</li>
+                            <li><i class="fas fa-check"></i> Comunidade exclusiva</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary-cursos btn-block">Assinar Agora</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-cursos section-padding bg-light-cursos">
+            <div class="container">
+                <h2 class="section-title-cursos">Perguntas Frequentes</h2>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">Como acesso os cursos após a inscrição?</button>
+                        <div class="faq-answer">
+                            <p>Após a confirmação do pagamento, você receberá um e-mail com os dados de acesso à nossa plataforma de alunos. Basta fazer login com seu usuário e senha para começar a estudar!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Os cursos oferecem certificado?</button>
+                        <div class="faq-answer">
+                            <p>Sim, todos os nossos cursos oferecem um certificado digital de conclusão após você completar todas as aulas e atividades propostas.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Por quanto tempo terei acesso aos cursos?</button>
+                        <div class="faq-answer">
+                            <p>Para cursos individuais, o acesso é vitalício! Se você optar por um plano de assinatura, terá acesso enquanto sua assinatura estiver ativa.</p>
+                        </div>
+                    </div>
+                    <!-- Adicione mais perguntas -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="cta-final-cursos section-padding">
+            <div class="container text-center">
+                <h2 class="section-title-cursos">Pronto para Começar a Aprender?</h2>
+                <p class="section-subtitle-cursos large-subtitle">Não perca mais tempo. Dê o primeiro passo para impulsionar sua carreira e conhecimento com os cursos da Masioli Saúde Integrada.</p>
+                <a href="#planos" class="btn btn-primary-cursos btn-xl">Quero me Inscrever Agora!</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (Pode ser um footer mais simples ou o mesmo da Masioli) -->
+    <footer class="site-footer-cursos">
+        <div class="container">
+            <div class="footer-cursos-content">
+                <div class="footer-cursos-about">
+                    <h3 class="cursos-logo-footer">M<span>asioli</span>Cursos</h3>
+                    <p>Transformando conhecimento em resultados. Cursos online com a excelência Masioli Saúde Integrada.</p>
+                    <div class="footer-social-cursos">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-cursos-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#nossos-cursos">Nossos Cursos</a></li>
+                        <li><a href="#instrutores">Instrutores</a></li>
+                        <li><a href="login.html">Área do Aluno</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-cursos-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-envelope"></i> cursos@masiolisaude.com.br</p>
+                    <p><i class="fas fa-phone"></i> (XX) XXXX-XXXX</p>
+                </div>
+            </div>
+            <div class="footer-cursos-bottom">
+                <p>© <span id="current-year-cursos"></span> Masioli Cursos. Todos os direitos reservados. Plataforma de Cursos da Masioli Saúde Integrada.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="cursos/script-cursos.js"></script> 
+</body>
+</html>

@@ -1,0 +1,910 @@
+/* style-cursos.css */
+
+/* --- Reset Básico e Estilos Globais --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Cores Masioli Cursos - Moderno e Confiável */
+    --cursos-primary: #0052CC;   /* Azul Médio (Principal para CTAs e destaques) */
+    --cursos-secondary: #FF8B00; /* Laranja (Secundário para acentos e CTAs alternativos) */
+    --cursos-dark: #172B4D;      /* Azul Escuro/Grafite (Textos principais, fundos escuros) */
+    --cursos-light: #F4F5F7;     /* Cinza muito claro (Fundos de seção) */
+    --cursos-text: #42526E;      /* Cinza azulado para texto */
+    --cursos-text-light: #6B778C;/* Cinza mais claro para parágrafos */
+    --cursos-success: #36B37E;   /* Verde para sucesso/confirmação */
+    --cursos-border: #DFE1E6;     /* Cor de borda sutil */
+
+    /* Fontes */
+    --font-heading-cursos: 'Sora', sans-serif;
+    --font-body-cursos: 'Inter', sans-serif;
+    --border-radius-cursos: 6px;
+}
+
+body {
+    font-family: var(--font-body-cursos);
+    line-height: 1.65;
+    color: var(--cursos-text);
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main { flex: 1; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* --- Header Cursos --- */
+.cursos-header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(var(--cursos-dark-rgb, 23, 43, 77), 0.08);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+.cursos-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cursos-logo {
+    font-family: var(--font-heading-cursos);
+    font-size: 1.8em;
+    color: var(--cursos-dark);
+    text-decoration: none;
+    font-weight: 700;
+}
+.cursos-logo span { color: var(--cursos-primary); }
+.cursos-nav-links { list-style: none; display: flex; gap: 25px; }
+.cursos-nav-links a {
+    text-decoration: none;
+    color: var(--cursos-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+.cursos-nav-links a::after { /* Efeito sublinhado sutil no hover */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cursos-primary);
+    transition: width 0.3s ease;
+}
+.cursos-nav-links a:hover, .cursos-nav-links a.active {
+    color: var(--cursos-primary);
+}
+.cursos-nav-links a:hover::after, .cursos-nav-links a.active::after {
+    width: 100%;
+}
+.cursos-nav-actions { display: flex; align-items: center; gap: 15px; }
+.mobile-menu-button-cursos { display: none; background: none; border: none; color: var(--cursos-dark); font-size: 1.6em; cursor: pointer; }
+
+/* --- Botões Cursos --- */
+.btn {
+    display: inline-block; padding: 10px 22px; 
+    border-radius: var(--border-radius-cursos);
+    text-decoration: none; font-weight: 600; /* Inter SemiBold */
+    transition: all 0.3s ease; cursor: pointer; font-size: 0.95em;
+    text-align: center; border: 1.5px solid transparent;
+}
+.btn-primary-cursos {
+    background-color: var(--cursos-primary); color: #fff; border-color: var(--cursos-primary);
+}
+.btn-primary-cursos:hover {
+    background-color: #0040A8; border-color: #0040A8; transform: translateY(-2px);
+}
+.btn-secondary-cursos { /* Pode ser o laranja */
+    background-color: var(--cursos-secondary); color: #fff; border-color: var(--cursos-secondary);
+}
+.btn-secondary-cursos:hover {
+    background-color: #E57A00; border-color: #E57A00; transform: translateY(-2px);
+}
+.btn-outline-cursos {
+    background-color: transparent; color: var(--cursos-primary); border-color: var(--cursos-primary);
+}
+.btn-outline-cursos:hover {
+    background-color: var(--cursos-primary); color: #fff;
+}
+.btn-lg { padding: 14px 30px; font-size: 1.05em; }
+.btn-xl { padding: 16px 40px; font-size: 1.15em; }
+.btn-sm { padding: 8px 18px; font-size: 0.85em; }
+.btn-block { display: block; width: 100%; }
+
+/* --- Utilitários Cursos --- */
+.section-padding { padding: 70px 0; }
+.bg-light-cursos { background-color: var(--cursos-light); }
+.bg-dark-cursos { background-color: var(--cursos-dark); }
+.white-text { color: #fff !important; }
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.mt-5 { margin-top: 3rem !important; }
+
+/* --- Hero Section Cursos --- */
+.hero-cursos {
+    background: linear-gradient(135deg, rgba(var(--cursos-primary-rgb,0,82,204),0.05) 0%, rgba(var(--cursos-light-rgb,244,245,247),0.1) 100%), 
+                url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80'); /* Fundo inspirador: pessoas aprendendo, ambiente de estudo moderno */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-content-cursos h1 {
+    font-family: var(--font-heading-cursos);
+    color: var(--cursos-dark);
+    font-size: 3.2em; /* Sora é forte, pode ser um pouco menor que Playfair */
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+.hero-content-cursos p {
+    font-size: 1.2em;
+    margin-bottom: 35px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400; /* Inter Regular */
+    color: var(--cursos-text-light);
+}
+.hero-cta-cursos { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;}
+
+/* --- Seção "Por que Escolher" --- */
+.why-choose-cursos { background-color: #fff; }
+.why-grid-cursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.why-item-cursos {
+    text-align: center;
+    padding: 25px;
+}
+.why-item-cursos i {
+    font-size: 2.8em;
+    color: var(--cursos-primary);
+    margin-bottom: 20px;
+    display: inline-block;
+    background-color: rgba(var(--cursos-primary-rgb,0,82,204),0.1);
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+}
+.why-item-cursos h3 {
+    font-family: var(--font-heading-cursos);
+    font-size: 1.4em;
+    color: var(--cursos-dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.why-item-cursos p { font-size: 0.95em; color: var(--cursos-text-light); }
+
+/* --- Lista de Cursos --- */
+.cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 25px;
+}
+.curso-card {
+    background-color: #fff;
+    border-radius: var(--border-radius-cursos);
+    box-shadow: 0 5px 20px rgba(var(--cursos-dark-rgb,23,43,77),0.07);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.curso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(var(--cursos-dark-rgb,23,43,77),0.1);
+}
+.curso-card img { width: 100%; height: 200px; object-fit: cover; }
+.curso-card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column;}
+.curso-category {
+    display: inline-block;
+    background-color: rgba(var(--cursos-secondary-rgb,255,139,0),0.15);
+    color: var(--cursos-secondary);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.curso-card-content h3 {
+    font-family: var(--font-heading-cursos);
+    font-size: 1.3em;
+    color: var(--cursos-dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.curso-card-content p { font-size: 0.9em; color: var(--cursos-text-light); margin-bottom: 15px; flex-grow: 1;}
+.curso-meta { display: flex; justify-content: space-between; font-size: 0.85em; color: var(--cursos-text-light); border-top: 1px solid var(--cursos-border); padding-top: 10px; margin-top: auto; }
+.curso-meta span i { margin-right: 5px; color: var(--cursos-primary); }
+.curso-card .btn-sm { margin-top: 15px; }
+
+/* --- Instrutores --- */
+.instrutores-cursos .instrutoresSwiper { padding-bottom: 40px; }
+.instrutor-card { text-align: center; }
+.instrutor-card img {
+    width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 3px solid #fff;
+}
+.instrutor-card h4 {
+    font-family: var(--font-body-cursos); font-weight: 600;
+    font-size: 1.15em; color: var(--cursos-dark); margin-bottom: 5px;
+}
+.instrutor-card p { font-size: 0.9em; color: var(--cursos-text-light); }
+.instrutores-pagination .swiper-pagination-bullet-active { background: var(--cursos-primary) !important; }
+
+/* --- Depoimentos --- */
+.depoimentos-cursos .depoimentosSwiper { padding-bottom: 50px; }
+.depoimento-card {
+    background-color: rgba(255,255,255,0.08);
+    padding: 30px;
+    border-radius: var(--border-radius-cursos);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+.depoimento-card i.fa-quote-left {
+    font-size: 2em;
+    color: var(--cursos-secondary);
+    margin-bottom: 15px;
+    display: block;
+}
+.depoimento-card p {
+    font-size: 1.05em;
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    color: #e0e0e0; /* Texto mais claro sobre fundo escuro */
+}
+.depoimento-author { display: flex; align-items: center; }
+.depoimento-author img { width: 50px; height: 50px; border-radius: 50%; margin-right: 15px; }
+.depoimento-author h5 { font-size: 1em; font-weight: 600; color: #fff; margin: 0; }
+.depoimento-author span { font-size: 0.85em; color: #ccc; }
+.depoimentos-pagination .swiper-pagination-bullet { background: rgba(255,255,255,0.5); }
+.depoimentos-pagination .swiper-pagination-bullet-active { background: var(--cursos-secondary) !important; }
+
+/* --- Planos e Preços --- */
+.planos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: stretch; /* Para cards com alturas diferentes alinharem */
+    margin-top: 30px;
+}
+.plano-card {
+    background-color: #fff;
+    border: 1px solid var(--cursos-border);
+    border-radius: var(--border-radius-cursos);
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(var(--cursos-dark-rgb,23,43,77),0.05);
+    position: relative;
+}
+.plano-card.popular-plano {
+    border-color: var(--cursos-secondary);
+    box-shadow: 0 8px 25px rgba(var(--cursos-secondary-rgb,255,139,0),0.15);
+    transform: scale(1.03); /* Destaca o popular */
+}
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cursos-secondary);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+.plano-header h3 {
+    font-family: var(--font-heading-cursos);
+    font-size: 1.6em;
+    color: var(--cursos-dark);
+    margin-bottom: 10px;
+}
+.plano-price {
+    font-size: 1.3em; color: var(--cursos-primary); margin-bottom: 20px;
+}
+.plano-price span { font-size: 2.2em; font-weight: 700; }
+.plano-price small { font-size: 0.7em; color: var(--cursos-text-light); }
+.plano-features { list-style: none; padding: 0; margin-bottom: 25px; text-align: left; flex-grow: 1; }
+.plano-features li { margin-bottom: 10px; color: var(--cursos-text); font-size: 0.95em; }
+.plano-features li i { margin-right: 8px; color: var(--cursos-success); }
+.plano-features li i.fa-times { color: #E74C3C; }
+.plano-card .btn-block { margin-top: auto; } /* Botão no final do card */
+
+/* --- FAQ --- */
+.faq-accordion { max-width: 800px; margin: 30px auto 0 auto; }
+.faq-item {
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid var(--cursos-border);
+    border-radius: var(--border-radius-cursos);
+}
+.faq-question {
+    background: none; border: none; width: 100%;
+    text-align: left; padding: 18px 20px;
+    font-family: var(--font-body-cursos); font-weight: 600;
+    font-size: 1.1em; color: var(--cursos-dark);
+    cursor: pointer; position: relative;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.faq-question::after { /* Ícone de seta */
+    content: '\f078'; /* Font Awesome down arrow */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    transition: transform 0.3s ease;
+}
+.faq-item.active .faq-question::after { transform: rotate(180deg); }
+.faq-answer {
+    padding: 0 20px 20px 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+.faq-answer p { font-size: 0.95em; color: var(--cursos-text-light); line-height: 1.7; }
+.faq-item.active .faq-answer { max-height: 300px; /* Ajuste conforme necessário */ }
+
+/* --- CTA Final --- */
+.cta-final-cursos { background-color: #fff; } /* Ou var(--cursos-primary) com texto branco */
+.cta-final-cursos .section-subtitle-cursos { color: var(--cursos-text); }
+
+/* --- Footer Cursos --- */
+.site-footer-cursos {
+    background-color: var(--cursos-dark);
+    color: #a9b4c8; /* Cinza azulado claro */
+    padding: 50px 0 20px 0;
+    font-size: 0.9em;
+}
+.footer-cursos-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; margin-bottom: 40px; }
+.footer-cursos-about, .footer-cursos-links, .footer-cursos-contact { flex: 1; min-width: 250px; }
+.cursos-logo-footer {
+    font-family: var(--font-heading-cursos); font-size: 1.8em;
+    color: #fff; text-decoration: none; font-weight: 700; margin-bottom: 15px;
+}
+.cursos-logo-footer span { color: var(--cursos-secondary); } /* Laranja */
+.footer-cursos-about p { margin-bottom: 20px; line-height: 1.7; }
+.footer-social-cursos a {
+    color: #a9b4c8; margin-right: 15px; font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+.footer-social-cursos a:hover { color: var(--cursos-secondary); }
+.footer-cursos-links h4, .footer-cursos-contact h4 {
+    font-family: var(--font-body-cursos); font-weight: 600;
+    font-size: 1.1em; color: #fff; margin-bottom: 15px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+.footer-cursos-links ul { list-style: none; padding: 0; }
+.footer-cursos-links ul li a {
+    text-decoration: none; color: #a9b4c8; margin-bottom: 8px; display: block;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.footer-cursos-links ul li a:hover { color: #fff; padding-left: 5px; }
+.footer-cursos-contact p { margin-bottom: 8px; }
+.footer-cursos-contact p i { margin-right: 8px; color: var(--cursos-secondary); width: 18px; }
+.footer-cursos-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #2a3f5f; font-size: 0.85em; }
+
+
+/* === ESTILOS DA PÁGINA DE LOGIN === */
+.login-page-body {
+    background-color: var(--cursos-light); /* Fundo da página de login */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0; /* Remover padding do header, já que não o teremos aqui */
+}
+.login-container {
+    width: 100%;
+    max-width: 420px; /* Largura da caixa de login */
+    padding: 20px;
+}
+.login-box {
+    background-color: #fff;
+    padding: 35px 30px;
+    border-radius: var(--border-radius-cursos);
+    box-shadow: 0 8px 30px rgba(var(--cursos-dark-rgb,23,43,77),0.1);
+    text-align: center;
+}
+.login-logo { margin-bottom: 20px; display: inline-block; }
+.login-box h2 {
+    font-family: var(--font-heading-cursos);
+    font-size: 1.8em;
+    color: var(--cursos-dark);
+    margin-bottom: 10px;
+}
+.login-subtitle {
+    font-size: 0.95em;
+    color: var(--cursos-text-light);
+    margin-bottom: 25px;
+}
+.login-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.login-form label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--cursos-text);
+    margin-bottom: 6px;
+}
+.login-form label i { margin-right: 6px; color: var(--cursos-primary); }
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--cursos-border);
+    border-radius: var(--border-radius-cursos);
+    font-family: var(--font-body-cursos);
+    font-size: 0.95em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+    outline: none;
+    border-color: var(--cursos-primary);
+    box-shadow: 0 0 0 3px rgba(var(--cursos-primary-rgb,0,82,204),0.15);
+}
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85em;
+    margin-bottom: 25px;
+}
+.remember-me { color: var(--cursos-text-light); display: flex; align-items: center; }
+.remember-me input { margin-right: 6px; accent-color: var(--cursos-primary); }
+.forgot-password { color: var(--cursos-primary); text-decoration: none; }
+.forgot-password:hover { text-decoration: underline; }
+.btn-login { width: 100%; padding: 12px; font-size: 1.05em; }
+.login-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: var(--cursos-text-light);
+    font-size: 0.8em;
+}
+.login-separator span { padding: 0 10px; }
+.login-separator::before, .login-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--cursos-border);
+}
+.btn-social-login {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    border: 1px solid var(--cursos-border);
+    background-color: #fff;
+    color: var(--cursos-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-social-login i { margin-right: 10px; font-size: 1.2em; }
+.google-login i { color: #DB4437; }
+.btn-social-login:hover { background-color: var(--cursos-light); }
+.signup-link {
+    font-size: 0.9em;
+    color: var(--cursos-text-light);
+    margin-top: 20px;
+}
+.signup-link a { color: var(--cursos-primary); font-weight: 600; text-decoration: none; }
+.signup-link a:hover { text-decoration: underline; }
+.login-footer-text {
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--cursos-text-light);
+    margin-top: 25px;
+}
+
+
+/* --- Responsividade (combinada para landing e login) --- */
+@media (max-width: 992px) {
+    .hero-content-cursos h1 { font-size: 2.8em; }
+    .section-title-cursos { font-size: 2.3em; }
+    .cursos-nav-links { display: none; } /* Esconder para mobile, ativar com JS */
+    .mobile-menu-button-cursos { display: block; }
+    .cursos-header.active .cursos-nav-links { /* Estilo para menu mobile ativo */
+        display: flex; flex-direction: column;
+        position: absolute; top: 73px; /* Abaixo do header */
+        left: 0; right: 0;
+        background-color: #fff;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+    .cursos-header.active .cursos-nav-links li { width: 100%; text-align: center; }
+    .cursos-header.active .cursos-nav-links a { padding: 12px 20px; border-bottom: 1px solid var(--cursos-light); }
+    .cursos-header.active .cursos-nav-links a:hover::after { width: 0; } /* Remover sublinhado no mobile */
+    .cursos-header.active .cursos-nav-links li:last-child a { border-bottom: none; }
+    .cursos-nav-actions .btn-outline-cursos { display: none; } /* Esconder "Entrar" se precisar de espaço */
+
+    .planos-grid { grid-template-columns: 1fr; max-width: 450px; margin-left:auto; margin-right:auto;}
+    .plano-card.popular-plano { transform: scale(1); } /* Resetar destaque no mobile */
+}
+
+@media (max-width: 768px) {
+    .hero-content-cursos h1 { font-size: 2.4em; }
+    .section-title-cursos { font-size: 2em; }
+    .section-padding { padding: 60px 0; }
+    .why-grid-cursos { grid-template-columns: 1fr; }
+    .cursos-grid { grid-template-columns: 1fr; max-width: 400px; margin-left:auto; margin-right:auto;}
+    .footer-cursos-content { flex-direction: column; text-align: center; }
+    .footer-social-cursos { justify-content: center; display:flex; }
+}
+
+@media (max-width: 480px) {
+    .hero-content-cursos h1 { font-size: 2em; }
+    .hero-content-cursos p { font-size: 1.1em; }
+    .section-title-cursos { font-size: 1.7em; }
+    .btn-lg { padding: 12px 25px; font-size: 1em; }
+    .hero-cta-cursos { flex-direction: column; gap: 15px; }
+    .login-box { padding: 25px 20px; }
+    .login-box h2 { font-size: 1.6em; }
+}
+
+/* Adicionar ao final de style-cursos.css */
+
+/* === ESTILOS DA ÁREA DE MEMBROS (DASHBOARD) === */
+.area-membros-body, .player-page-body {
+    background-color: var(--cursos-light);
+    padding-top: 0; /* Área de membros não usa o header da landing page */
+}
+
+.dashboard-layout, .player-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar da Área de Membros */
+.dashboard-sidebar, .player-sidebar {
+    width: 260px;
+    background-color: var(--cursos-dark); /* Azul Escuro/Grafite */
+    color: #a9b4c8; /* Cinza azulado claro */
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s ease;
+}
+.sidebar-logo {
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 1.6em;
+}
+.sidebar-logo span { color: var(--cursos-secondary); } /* Laranja */
+
+.sidebar-nav ul { list-style: none; padding: 0; margin: 0; }
+.sidebar-nav li a {
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center;
+    padding: 14px 25px;
+    color: #a9b4c8;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-left: 3px solid transparent;
+}
+.sidebar-nav li a i {
+    margin-right: 15px;
+    width: 20px; /* Alinhamento dos ícones */
+    text-align: center;
+}
+.sidebar-nav li.active a, .sidebar-nav li a:hover {
+    background-color: rgba(var(--cursos-primary-rgb,0,82,204),0.15);
+    color: #fff;
+    border-left-color: var(--cursos-primary); /* Azul Médio */
+}
+.sidebar-footer {
+    margin-top: auto;
+    padding: 20px 25px;
+    text-align: center;
+    font-size: 0.8em;
+    border-top: 1px solid #2a3f5f; /* Linha sutil */
+}
+
+/* Conteúdo Principal da Área de Membros */
+.dashboard-main-content, .player-main-content {
+    flex: 1;
+    padding: 0; /* Padding será nas seções internas */
+    overflow-y: auto; /* Scroll para o conteúdo principal */
+    background-color: var(--cursos-light);
+}
+.dashboard-header {
+    background-color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--cursos-border);
+    position: sticky; /* Header do dashboard pode ser fixo */
+    top: 0;
+    z-index: 900;
+}
+.dashboard-header .header-left { display: flex; align-items: center; }
+.sidebar-toggle-btn {
+    background: none; border: none; font-size: 1.4em;
+    color: var(--cursos-text); cursor: pointer; margin-right: 20px;
+    display: none; /* Escondido por padrão, mostrar em telas menores */
+}
+.dashboard-header h2 {
+    font-family: var(--font-heading-cursos);
+    font-size: 1.5em;
+    color: var(--cursos-dark);
+    font-weight: 600;
+    margin: 0;
+}
+.user-avatar img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+
+.section-dashboard-padding { padding: 30px; }
+.section-dashboard-padding h3 {
+    font-family: var(--font-heading-cursos);
+    font-size: 1.6em;
+    color: var(--cursos-dark);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Grid de Cursos Inscritos */
+.cursos-inscritos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.curso-inscrito-card {
+    background-color: #fff;
+    border-radius: var(--border-radius-cursos);
+    box-shadow: 0 4px 15px rgba(var(--cursos-dark-rgb,23,43,77),0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.curso-inscrito-card img { width: 100%; height: 170px; object-fit: cover; }
+.curso-inscrito-info { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; }
+.curso-inscrito-info h4 {
+    font-family: var(--font-heading-cursos);
+    font-size: 1.15em;
+    color: var(--cursos-dark);
+    margin-bottom: 8px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.instrutor-curso {
+    font-size: 0.85em;
+    color: var(--cursos-text-light);
+    margin-bottom: 12px;
+}
+.instrutor-curso i { margin-right: 5px; }
+.progresso-curso {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 10px;
+    margin-bottom: 5px;
+    overflow: hidden; /* Para a barra de progresso */
+    position: relative;
+}
+.progresso-barra {
+    background-color: var(--cursos-success); /* Verde */
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+.progresso-curso span {
+    font-size: 0.75em;
+    color: var(--cursos-text-light);
+    display: block;
+    text-align: right;
+    margin-bottom: 12px;
+}
+.curso-inscrito-info .btn-sm { margin-top: auto; } /* Botão no final do card */
+.preco-curso-sugerido {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--cursos-primary);
+    margin-bottom: 10px;
+}
+
+/* === ESTILOS DA PÁGINA DO PLAYER DE CURSO === */
+.player-sidebar {
+    width: 320px; /* Sidebar do player um pouco maior */
+    position: sticky; /* Para manter os módulos visíveis */
+    top: 0;
+    height: 100vh; /* Ocupar toda a altura */
+    overflow-y: auto;
+}
+.player-sidebar-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #2a3f5f;
+}
+.player-sidebar-header .back-to-cursos {
+    display: inline-flex; align-items: center;
+    color: #a9b4c8; text-decoration: none;
+    font-size: 0.9em; margin-bottom: 15px;
+}
+.player-sidebar-header .back-to-cursos i { margin-right: 8px; }
+.player-sidebar-header .back-to-cursos:hover { color: #fff; }
+.player-sidebar-header h3 { /* Nome do curso */
+    font-family: var(--font-heading-cursos);
+    font-size: 1.25em;
+    color: #fff;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.course-modules-list { padding: 15px 0; }
+.module-item { border-bottom: 1px solid #2a3f5f; }
+.module-item:last-child { border-bottom: none; }
+.module-title {
+    background: none; border: none; width: 100%;
+    text-align: left; padding: 15px 25px;
+    font-family: var(--font-body-cursos); font-weight: 600;
+    font-size: 1em; color: #dde2e8;
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.module-title i { transition: transform 0.3s ease; }
+.module-item.open .module-title i { transform: rotate(180deg); }
+.lessons-list {
+    list-style: none; padding: 0; margin: 0;
+    background-color: rgba(0,0,0,0.1); /* Fundo sutil para aulas */
+    /* display: none; controlado por JS */
+}
+.lesson-item a {
+    display: block; padding: 12px 25px 12px 40px; /* Indentação para aulas */
+    color: #a9b4c8; text-decoration: none; font-size: 0.9em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    position: relative;
+}
+.lesson-item.active-lesson a, .lesson-item a:hover {
+    background-color: rgba(var(--cursos-primary-rgb,0,82,204),0.2);
+    color: #fff;
+}
+.lesson-item a i.fa-lock { /* Ícone de cadeado para aulas bloqueadas */
+    margin-right: 8px;
+    color: #777;
+    font-size: 0.8em;
+}
+.lesson-item.active-lesson a::before { /* Indicador da aula ativa */
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: var(--cursos-secondary); /* Laranja */
+    border-radius: 50%;
+}
+
+/* Conteúdo do Player */
+.player-video-header {
+    background-color: #fff;
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--cursos-border);
+}
+.player-video-header h2 { /* Título da aula */
+    font-family: var(--font-heading-cursos);
+    font-size: 1.4em;
+    color: var(--cursos-dark);
+    margin: 0;
+    font-weight: 600;
+}
+.video-nav-buttons button { margin-left: 10px; }
+.video-nav-buttons button i { margin: 0 5px; }
+
+.video-player-container {
+    background-color: #000; /* Fundo preto para o player */
+    padding: 0; /* Sem padding para o vídeo ocupar tudo */
+    line-height: 0; /* Remove espaço abaixo do vídeo */
+}
+.video-player-container video {
+    display: block; /* Remove espaço abaixo */
+    max-height: calc(100vh - 150px); /* Altura máxima, ajustável */
+    margin: 0 auto; /* Centralizar se o vídeo for menor que o container */
+}
+
+.video-info-tabs { padding: 25px 30px; }
+.tabs-nav {
+    display: flex;
+    border-bottom: 1px solid var(--cursos-border);
+    margin-bottom: 20px;
+}
+.tab-button {
+    background: none; border: none;
+    padding: 10px 20px;
+    font-family: var(--font-body-cursos); font-weight: 600;
+    font-size: 1em; color: var(--cursos-text-light);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px; /* Para sobrepor a borda do container */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+.tab-button.active, .tab-button:hover {
+    color: var(--cursos-primary);
+    border-bottom-color: var(--cursos-primary);
+}
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+.tab-pane h4 {
+    font-family: var(--font-heading-cursos);
+    font-size: 1.2em;
+    color: var(--cursos-dark);
+    margin-bottom: 15px;
+}
+.tab-pane p, .tab-pane ul li { font-size: 0.95em; color: var(--cursos-text); margin-bottom: 10px; }
+.tab-pane ul { list-style: none; padding: 0; }
+.tab-pane ul li a { color: var(--cursos-primary); text-decoration: none; }
+.tab-pane ul li a:hover { text-decoration: underline; }
+.tab-pane ul li i { margin-right: 8px; }
+
+/* Comentários */
+.comment-item { display: flex; align-items: flex-start; margin-bottom: 15px; }
+.comment-item img { width: 40px; height: 40px; border-radius: 50%; margin-right: 12px; }
+.comment-content strong { font-weight: 600; color: var(--cursos-dark); }
+.comment-content span { display: block; font-size: 0.95em; margin-bottom: 3px; }
+.comment-content small { font-size: 0.8em; color: var(--cursos-text-light); }
+.comment-input {
+    width: 100%; padding: 10px; border: 1px solid var(--cursos-border);
+    border-radius: var(--border-radius-cursos); font-family: var(--font-body-cursos);
+    min-height: 80px; margin-bottom: 10px; resize: vertical;
+}
+
+/* Responsividade para Dashboard e Player */
+@media (max-width: 992px) {
+    .dashboard-sidebar, .player-sidebar {
+        position: fixed; /* Ou absolute */
+        left: -260px; /* Escondido por padrão */
+        z-index: 1000;
+        height: 100%;
+        transition: left 0.3s ease; /* Ajuste para 'left' */
+    }
+    .dashboard-sidebar.open, .player-sidebar.open {
+        left: 0;
+    }
+    .sidebar-toggle-btn { display: inline-block; }
+    .dashboard-main-content, .player-main-content {
+        /* Se sidebar for fixed, adicionar margin-left para não sobrepor */
+    }
+    .player-layout { flex-direction: column; } /* Player acima dos módulos em telas menores */
+    .player-sidebar {
+        width: 100%; height: auto; position: static;
+        border-bottom: 1px solid #2a3f5f;
+        max-height: 40vh; /* Limitar altura do sidebar de aulas no mobile */
+    }
+    .video-player-container video { max-height: 50vh; }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header h2 { font-size: 1.3em; }
+    .cursos-inscritos-grid { grid-template-columns: 1fr; }
+    .player-video-header { flex-direction: column; gap: 10px; }
+    .player-video-header h2 { font-size: 1.2em; }
+    .video-nav-buttons { width: 100%; display: flex; justify-content: space-between; }
+}

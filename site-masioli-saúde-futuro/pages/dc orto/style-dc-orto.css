@@ -1,0 +1,373 @@
+/* style-dc-orto.css */
+
+/* --- Reset Básico e Estilos Globais (herdado ou copiado) --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Cores base da Masioli */
+    --main-blue: #007bff; 
+    --light-blue: #4A90E2;
+    --text-color-default: #333;
+    --light-text-color-default: #f8f9fa;
+    
+    /* Cores específicas DC Orto */
+    --dc-orto-primary: var(--main-blue); /* Mantendo o azul principal */
+    --dc-orto-secondary: #0056b3; /* Um azul mais escuro e sóbrio para contraste */
+    --dc-orto-accent: #17A2B8;   /* Azul ciano/turquesa para toques modernos */
+    --dc-orto-text: #212529;     /* Texto escuro padrão (Bootstrap-like) */
+    --dc-orto-bg-light: #f8f9fa; /* Cinza claro (Bootstrap-like) */
+    --dc-orto-border: #dee2e6;   /* Cor de borda sutil */
+
+    /* Fontes */
+    --heading-font-default: 'Merriweather', serif;
+    --body-font-default: 'Open Sans', sans-serif;
+    --dc-orto-font-main: 'Roboto', sans-serif; /* Fonte principal para DC Orto */
+    --border-radius-default: 8px;
+}
+
+body {
+    font-family: var(--dc-orto-font-main); /* Fonte principal para esta página */
+    line-height: 1.6;
+    color: var(--dc-orto-text);
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 48px; /* Espaço para o header fixo */
+}
+
+main { flex: 1; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+/* === HEADER (Estilos idênticos aos anteriores) === */
+.site-header { /* ... COPIE OS ESTILOS DO HEADER DA APPLE DAQUI ... */
+    background-color: rgba(40, 40, 40, 0.97); color: #f5f5f7; padding: 0 20px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.main-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; height: 48px; }
+.site-header .logo { font-size: 1.7em; font-weight: 600; color: #f5f5f7; margin-right: 25px; text-decoration: none; }
+.site-header .nav-links { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
+.site-header .nav-links li a { display: block; padding: 0 12px; font-size: 0.85em; color: #d2d2d7; line-height: 48px; text-decoration: none; transition: color 0.3s ease; }
+.site-header .nav-links li a:hover, .site-header .nav-links li a.active-nav-link { color: #fff; }
+.site-header .nav-icons { display: flex; }
+.site-header .nav-icons a { font-size: 1.2em; padding: 0 10px; color: #d2d2d7; text-decoration: none; transition: color 0.3s ease; line-height: 48px; }
+.site-header .nav-icons a:hover { color: #fff; }
+.mobile-menu-button { display: none; background: none; border: none; color: #f5f5f7; font-size: 1.5em; cursor: pointer; padding: 0 10px; }
+/* (COPIE TAMBÉM AS MEDIA QUERIES PARA O HEADER MOBILE) */
+@media (max-width: 768px) {
+    .site-header .nav-links { display: none; flex-direction: column; position: absolute; top: 48px; left: 0; right: 0; background-color: rgba(40, 40, 40, 0.99); padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow-y: auto; max-height: calc(100vh - 48px); }
+    .site-header .nav-links.active { display: flex; }
+    .site-header .nav-links li { width: 100%; text-align: center; }
+    .site-header .nav-links li a { padding: 15px 20px; line-height: 1.5; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .site-header .nav-links li:last-child a { border-bottom: none; }
+    .mobile-menu-button { display: block; margin-left: auto; }
+}
+
+/* --- Tipografia e Títulos DC Orto --- */
+.section-title-dc-orto {
+    font-family: var(--heading-font-default); /* Pode usar Merriweather ou Roboto mais pesado */
+    font-size: 2.6em;
+    color: var(--dc-orto-secondary); /* Azul escuro */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.section-title-dc-orto.text-left { text-align: left; } /* Para alinhar à esquerda onde necessário */
+
+.section-subtitle-dc-orto {
+    font-size: 1.1em;
+    color: #5a5a5a;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px auto;
+}
+
+/* --- Botões DC Orto --- */
+.btn {
+    display: inline-block; padding: 12px 30px; border-radius: var(--border-radius-default);
+    text-decoration: none; font-weight: 500; /* Roboto 500 */
+    transition: all 0.3s ease; cursor: pointer; font-size: 1.05em;
+    text-align: center; letter-spacing: 0.5px;
+}
+.btn-primary-dc-orto {
+    background-color: var(--dc-orto-primary);
+    color: #fff;
+    border: 2px solid var(--dc-orto-primary);
+}
+.btn-primary-dc-orto:hover {
+    background-color: var(--dc-orto-secondary);
+    border-color: var(--dc-orto-secondary);
+    transform: translateY(-2px);
+}
+.btn-secondary-dc-orto {
+    background-color: transparent;
+    color: var(--dc-orto-primary);
+    border: 2px solid var(--dc-orto-primary);
+}
+.btn-secondary-dc-orto:hover {
+    background-color: var(--dc-orto-primary);
+    color: #fff;
+}
+.btn-light-dc-orto { /* Para o botão de contato no final (fundo escuro) */
+    background-color: #fff;
+    color: var(--dc-orto-secondary);
+    border: 2px solid #fff;
+}
+.btn-light-dc-orto:hover {
+    background-color: var(--dc-orto-bg-light);
+    color: var(--dc-orto-secondary);
+    border-color: var(--dc-orto-bg-light);
+}
+
+
+/* --- Utilitários DC Orto --- */
+.section-padding { padding: 70px 0; }
+.bg-light-dc-orto { background-color: var(--dc-orto-bg-light); }
+.white-text { color: #fff !important; }
+
+/* --- Hero Section DC Orto --- */
+.hero-dc-orto {
+    background-image: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 40, 85, 0.85)), url('https://images.unsplash.com/photo-1606811598516-294798099553?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'); /* Imagem de fundo de sorrisos ou tecnologia dental */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+}
+/* .hero-overlay-dc-orto { ... } */
+.hero-content-dc-orto { position: relative; z-index: 1; }
+.dc-orto-icon-hero {
+    color: var(--dc-orto-accent); /* Azul ciano */
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+.hero-dc-orto h1 {
+    font-family: var(--heading-font-default);
+    font-weight: 700;
+    color: #fff;
+    font-size: 3.4em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+.hero-dc-orto p {
+    font-size: 1.2em;
+    margin-bottom: 35px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* --- Why DC Orto Section --- */
+.why-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.why-feature-item {
+    text-align: center;
+    padding: 25px;
+    border: 1px solid var(--dc-orto-border);
+    border-radius: var(--border-radius-default);
+    background-color: #fff;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.why-feature-item:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+}
+.feature-icon-dc-orto {
+    color: var(--dc-orto-accent); /* Azul ciano */
+    margin-bottom: 18px;
+}
+.why-feature-item h3 {
+    font-family: var(--dc-orto-font-main);
+    font-weight: 700; /* Roboto 700 */
+    color: var(--dc-orto-secondary); /* Azul escuro */
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+.why-feature-item p { font-size: 0.95em; color: #444; }
+
+/* --- Aparelhos DC Orto (Swiper) --- */
+.aparelhos-dc-orto .aparelhosSwiper {
+    padding-bottom: 40px; /* Espaço para paginação */
+}
+.aparelho-card {
+    background-color: #fff;
+    border-radius: var(--border-radius-default);
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Garante que todos os cards tenham a mesma altura no Swiper */
+}
+.aparelho-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+.aparelho-info {
+    padding: 20px;
+    flex-grow: 1; /* Faz o conteúdo de texto ocupar o espaço restante */
+}
+.aparelho-info h4 {
+    font-family: var(--dc-orto-font-main);
+    font-weight: 700; /* Roboto 700 */
+    color: var(--dc-orto-primary);
+    font-size: 1.25em;
+    margin-bottom: 10px;
+}
+.aparelho-info p { font-size: 0.9em; color: #555; line-height: 1.5; }
+
+.aparelhos-swiper-nav { color: var(--dc-orto-primary) !important; }
+.aparelhos-swiper-nav:after { font-size: 26px !important; }
+.aparelhos-swiper-pagination .swiper-pagination-bullet-active { background: var(--dc-orto-primary) !important; }
+
+/* --- Benefícios da Ortodontia --- */
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+.beneficio-item {
+    padding: 25px 20px;
+    text-align: center;
+    background-color: var(--dc-orto-bg-light);
+    border-radius: var(--border-radius-default);
+}
+.beneficio-item i {
+    font-size: 2.5em;
+    color: var(--dc-orto-accent); /* Azul ciano */
+    margin-bottom: 15px;
+    display: block;
+}
+.beneficio-item h5 {
+    font-family: var(--dc-orto-font-main);
+    font-weight: 700;
+    font-size: 1.15em;
+    color: var(--dc-orto-secondary); /* Azul escuro */
+    margin-bottom: 8px;
+}
+.beneficio-item p { font-size: 0.9em; color: #444; }
+
+/* --- Especialista DC Orto --- */
+.especialista-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.especialista-img {
+    flex-basis: 35%;
+    max-width: 350px;
+}
+.especialista-img img {
+    width: 100%;
+    border-radius: var(--border-radius-default);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.especialista-info {
+    flex: 1;
+}
+.especialista-info .section-title-dc-orto { margin-bottom: 10px; } /* Menos margem no título aqui */
+.especialista-info .especialidade-titulo {
+    font-size: 1.1em;
+    color: var(--dc-orto-primary);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+.especialista-info p {
+    margin-bottom: 1.2em;
+    line-height: 1.7;
+    color: #333;
+}
+.especialista-info p em { /* Citação */
+    display: block;
+    padding-left: 20px;
+    border-left: 3px solid var(--dc-orto-accent);
+    color: #555;
+    font-style: italic;
+}
+
+/* --- Contato Section DC Orto --- */
+.contato-section-dc-orto {
+    background-color: var(--dc-orto-secondary); /* Azul escuro de fundo */
+}
+.contato-section-dc-orto .section-title-dc-orto,
+.contato-section-dc-orto .section-subtitle-dc-orto { color: #fff; }
+.contato-info-dc-orto { text-align: center; margin-bottom: 30px; }
+.contato-info-dc-orto p { font-size: 1.1em; margin-bottom: 10px; color: #e0e0e0; }
+.contato-info-dc-orto i { margin-right: 10px; color: var(--dc-orto-accent); } /* Azul ciano para ícones */
+.contato-section-dc-orto .btn-light-dc-orto {
+    margin: 10px auto 0 auto; display: block; max-width: 300px;
+}
+.contato-section-dc-orto .btn-light-dc-orto i { margin-right: 10px; }
+
+
+/* === FOOTER (Estilos idênticos aos anteriores) === */
+.site-footer { /* ... COPIE OS ESTILOS DO FOOTER DAQUI ... */
+    background: linear-gradient(135deg, #2c5364, #203a43, #0f2027); color: #e0e0e0; padding-top: 60px; font-size: 0.95em; font-family: var(--body-font-default);
+}
+.footer-content { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+.footer-section { flex: 1; min-width: 280px; margin-bottom: 30px; }
+.footer-section .logo-text { font-size: 1.9em; margin-bottom: 20px; font-weight: 700; font-family: var(--heading-font-default); color: #fff; }
+.footer-section .logo-text span { color: #42a5f5; }
+.footer-section.about p { margin-bottom: 20px; line-height: 1.8; color: #b0b0b0; }
+.footer-section .contact span { display: block; margin-bottom: 12px; color: #c0c0c0; transition: color 0.3s ease; }
+.footer-section .contact span:hover { color: #ffffff; }
+.footer-section .contact span i { margin-right: 12px; color: #42a5f5; font-size: 1.1em; width: 20px; text-align: center; }
+.footer-section .socials a { color: #b0b0b0; margin-right: 18px; font-size: 1.5em; transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
+.footer-section .socials a:hover { color: #42a5f5; transform: translateY(-3px); }
+.footer-section .socials a:last-child { margin-right: 0; }
+.footer-section h2 { font-family: var(--heading-font-default); font-size: 1.4em; color: #ffffff; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+.footer-section h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; background-color: #42a5f5; border-radius: 2px; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 12px; }
+.footer-section ul li a { color: #b0b0b0; transition: color 0.3s ease, padding-left 0.3s ease; display: inline-block; text-decoration: none; }
+.footer-section ul li a:hover { color: #ffffff; padding-left: 5px; }
+.text-input.contact-input { width: 100%; padding: 12px 15px; margin-bottom: 15px; border: 1px solid #555; border-radius: 5px; background-color: #2a2f36; color: #e0e0e0; font-family: inherit; font-size: 0.95em; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.text-input.contact-input::placeholder { color: #888; }
+.text-input.contact-input:focus { outline: none; border-color: #42a5f5; box-shadow: 0 0 0 2px rgba(66, 165, 245, 0.3); }
+textarea.contact-input { resize: vertical; min-height: 80px; }
+.btn.contact-btn { display: inline-block; background-color: #42a5f5; color: #ffffff; padding: 12px 25px; border: none; border-radius: 5px; font-family: inherit; font-size: 1em; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; }
+.btn.contact-btn:hover { background-color: #1e88e5; transform: translateY(-2px); }
+.btn.contact-btn i { margin-right: 8px; }
+.footer-bottom { background-color: #0a1014; text-align: center; padding: 20px 15px; margin-top: 40px; font-size: 0.9em; color: #909090; border-top: 1px solid #303030; }
+.footer-bottom a { color: #a0a0a0; text-decoration: underline; }
+.footer-bottom a:hover { color: #42a5f5; }
+/* (COPIE TAMBÉM AS MEDIA QUERIES DO FOOTER) */
+@media (max-width: 992px) { .footer-content { gap: 30px; } .footer-section { min-width: calc(50% - 15px); } }
+@media (max-width: 768px) { .footer-content { flex-direction: column; align-items: center; text-align: center; } .footer-section { min-width: 100%; max-width: 450px; } .footer-section h2::after { left: 50%; transform: translateX(-50%); } .footer-section.links ul, .footer-section .socials { text-align: center; } .footer-section .socials a { margin: 0 10px; } }
+@media (max-width: 480px) { .footer-section .logo-text { font-size: 1.7em; } .footer-section h2 { font-size: 1.3em; } .btn.contact-btn { width: 100%; padding: 14px 20px; } }
+
+
+/* --- Responsividade específica DC Orto --- */
+@media (max-width: 992px) {
+    .hero-dc-orto h1 { font-size: 3em; }
+    .section-title-dc-orto { font-size: 2.3em; }
+    .especialista-wrapper { flex-direction: column; text-align: center; }
+    .especialista-info .section-title-dc-orto { text-align: center; }
+    .especialista-img { margin-bottom: 30px; max-width: 300px; margin-left:auto; margin-right:auto; }
+}
+
+@media (max-width: 768px) {
+    .hero-dc-orto { padding: 80px 0; }
+    .hero-dc-orto h1 { font-size: 2.5em; }
+    .section-title-dc-orto { font-size: 2em; }
+    .why-features-grid, .beneficios-grid { grid-template-columns: 1fr; }
+    .aparelho-card img { height: 200px; }
+}
+
+@media (max-width: 480px) {
+    .hero-dc-orto h1 { font-size: 2.1em; }
+    .section-title-dc-orto { font-size: 1.8em; }
+    .btn { padding: 10px 22px; font-size: 1em; }
+    .aparelho-card img { height: 180px; }
+}

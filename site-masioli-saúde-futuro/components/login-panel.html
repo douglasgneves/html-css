@@ -1,0 +1,24 @@
+<!-- components/login-panel.html -->
+<div id="login-side-panel" class="side-panel">
+    <button class="close-side-panel" id="close-login-panel">×</button>
+    <h2>Sua Sacola / Iniciar Sessão</h2>
+    <p>Seu carrinho está vazio.</p>
+    <hr>
+    <h3>Já é cliente?</h3>
+    <form id="login-form">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="cta-button">Entrar</button>
+        <a href="#" class="small-link">Esqueceu a senha?</a>
+    </form>
+    <hr>
+    <h3>Novo por aqui?</h3>
+    <a href="#" class="cta-link">Criar conta</a>
+</div>
+<div id="overlay" class="overlay"></div> <!-- O overlay está associado a este painel -->

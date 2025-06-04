@@ -1,0 +1,357 @@
+/* style-dr-marcos-daniel.css */
+
+/* --- Reset Básico e Estilos Globais (herdado ou copiado) --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    /* Cores base da Masioli */
+    --main-blue: #007bff; 
+    
+    /* Cores específicas Dr. Marcos Daniel - Confiável e Acolhedor */
+    --drmd-primary: #3498DB;   /* Azul Confiável (um pouco mais claro que o main-blue) */
+    --drmd-secondary: #2C3E50; /* Azul Escuro/Grafite (sério, profissional) */
+    --drmd-accent: #F39C12;    /* Laranja Suave (vitalidade, acolhimento) ou #2ECC71 (Verde Esmeralda para saúde) */
+    --drmd-text: #34495E;      /* Cinza Azulado para texto principal */
+    --drmd-text-light: #7F8C8D; /* Cinza mais claro para parágrafos e detalhes */
+    --drmd-bg-light: #ecf0f1;   /* Cinza muito claro, quase branco (fundo suave) */
+    --drmd-border: #bdc3c7;     /* Cor de borda sutil */
+
+    /* Fontes */
+    --font-heading-drmd: 'Roboto Slab', serif;
+    --font-body-drmd: 'Nunito Sans', sans-serif;
+    --border-radius-drmd: 6px; /* Bordas levemente arredondadas */
+}
+
+body {
+    font-family: var(--font-body-drmd);
+    line-height: 1.7;
+    color: var(--drmd-text);
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 48px; /* Espaço para o header fixo */
+}
+
+main { flex: 1; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+/* === HEADER (Estilos idênticos aos anteriores) === */
+.site-header { /* ... COPIE OS ESTILOS DO HEADER DA APPLE DAQUI ... */
+    background-color: rgba(44, 62, 80, 0.97); /* Azul Escuro/Grafite do header (var --drmd-secondary com alfa) */
+    color: #ecf0f1; /* Texto claro sobre o escuro */
+    padding: 0 20px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.main-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; height: 48px; }
+.site-header .logo { font-size: 1.7em; font-weight: 600; color: #ecf0f1; margin-right: 25px; text-decoration: none; }
+.site-header .nav-links { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
+.site-header .nav-links li a { display: block; padding: 0 12px; font-size: 0.85em; color: #bdc3c7; line-height: 48px; text-decoration: none; transition: color 0.3s ease; }
+.site-header .nav-links li a:hover, .site-header .nav-links li a.active-nav-link { color: #fff; }
+.site-header .nav-icons { display: flex; }
+.site-header .nav-icons a { font-size: 1.2em; padding: 0 10px; color: #bdc3c7; text-decoration: none; transition: color 0.3s ease; line-height: 48px; }
+.site-header .nav-icons a:hover { color: #fff; }
+.mobile-menu-button { display: none; background: none; border: none; color: #ecf0f1; font-size: 1.5em; cursor: pointer; padding: 0 10px; }
+/* (COPIE TAMBÉM AS MEDIA QUERIES PARA O HEADER MOBILE) */
+@media (max-width: 768px) {
+    .site-header .nav-links { display: none; flex-direction: column; position: absolute; top: 48px; left: 0; right: 0; background-color: rgba(44, 62, 80, 0.99); padding: 10px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow-y: auto; max-height: calc(100vh - 48px); }
+    .site-header .nav-links.active { display: flex; }
+    .site-header .nav-links li { width: 100%; text-align: center; }
+    .site-header .nav-links li a { padding: 15px 20px; line-height: 1.5; width: 100%; border-bottom: 1px solid rgba(236, 240, 241,0.15); }
+    .site-header .nav-links li:last-child a { border-bottom: none; }
+    .mobile-menu-button { display: block; margin-left: auto; }
+}
+
+/* --- Tipografia e Títulos Dr. Marcos Daniel --- */
+.section-title-dr-md {
+    font-family: var(--font-heading-drmd);
+    font-size: 2.6em;
+    color: var(--drmd-secondary); /* Azul Escuro/Grafite */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600; /* Roboto Slab mais pesado */
+}
+.section-title-dr-md.text-left { text-align: left; }
+.section-title-dr-md.white-text { color: #fff; }
+
+.section-subtitle-dr-md {
+    font-family: var(--font-body-drmd);
+    font-size: 1.15em;
+    color: var(--drmd-text-light);
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 45px auto;
+    font-weight: 400; /* Nunito Sans Regular */
+}
+.section-subtitle-dr-md.larger-subtitle { font-size: 1.2em; max-width: 780px; }
+.section-subtitle-dr-md.white-text { color: #d5dbdb; }
+
+
+/* --- Botões Dr. Marcos Daniel --- */
+.btn {
+    display: inline-block; padding: 12px 30px; 
+    border-radius: var(--border-radius-drmd);
+    text-decoration: none; font-weight: 600; /* Nunito Sans SemiBold */
+    transition: all 0.3s ease; cursor: pointer; font-size: 1.05em;
+    text-align: center; border: 2px solid transparent;
+}
+.btn-primary-dr-md {
+    background-color: var(--drmd-primary); /* Azul Confiável */
+    color: #fff;
+    border-color: var(--drmd-primary);
+}
+.btn-primary-dr-md:hover {
+    background-color: var(--drmd-secondary); /* Azul Escuro/Grafite */
+    border-color: var(--drmd-secondary);
+    transform: translateY(-2px);
+}
+.btn-light-dr-md { /* Para o botão de contato no final */
+    background-color: #fff;
+    color: var(--drmd-secondary); /* Azul Escuro/Grafite */
+    border: 2px solid #fff;
+}
+.btn-light-dr-md:hover {
+    background-color: var(--drmd-bg-light);
+    color: var(--drmd-secondary);
+    border-color: var(--drmd-bg-light);
+}
+
+/* --- Utilitários Dr. Marcos Daniel --- */
+.section-padding { padding: 70px 0; }
+.bg-light-dr-md { background-color: var(--drmd-bg-light); }
+.white-text { color: #fff !important; }
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+
+/* --- Hero Section Dr. Marcos Daniel --- */
+.hero-dr-md {
+    background-image: linear-gradient(rgba(52, 152, 219, 0.7), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'); /* Imagem de fundo: médico atencioso, ambiente clínico acolhedor */
+    background-size: cover;
+    background-position: center 60%; /* Ajustar foco da imagem */
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-eyebrow-dr-md {
+    display: block;
+    font-size: 0.95em;
+    font-weight: 600; /* Nunito Sans SemiBold */
+    letter-spacing: 0.5px;
+    color: #f0f8ff; /* Azul Alice bem claro */
+    margin-bottom: 15px;
+}
+.hero-dr-md h1 {
+    font-family: var(--font-heading-drmd);
+    color: #fff;
+    font-size: 3.4em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+.hero-dr-md p {
+    font-size: 1.25em;
+    margin-bottom: 35px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300; /* Nunito Sans Light */
+    opacity: 0.95;
+}
+
+/* --- Sobre Dr. Marcos Daniel --- */
+.about-dr-md { background-color: #fff; }
+.about-flex-dr-md { display: flex; align-items: center; gap: 50px; }
+.about-image-dr-md { flex-basis: 40%; max-width: 430px; }
+.about-image-dr-md img {
+    width: 100%; height: auto; border-radius: var(--border-radius-drmd);
+    box-shadow: 0 10px 28px rgba(var(--drmd-primary-rgb, 52, 152, 219), 0.18);
+}
+.about-text-dr-md { flex: 1; }
+.about-text-dr-md .section-title-dr-md { margin-bottom: 15px; }
+.specialty-dr-md {
+    font-size: 1.1em; font-weight: 600; /* Nunito Sans SemiBold */
+    color: var(--drmd-primary); /* Azul Confiável */
+    margin-bottom: 20px; display: block;
+}
+.about-text-dr-md p { margin-bottom: 1.2em; color: var(--drmd-text-light); font-size: 1.03em; }
+.values-dr-md { margin-top: 25px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.values-dr-md span {
+    font-size: 0.95em;
+    color: var(--drmd-text);
+    font-weight: 600;
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center;
+}
+.values-dr-md span i { margin-right: 10px; color: var(--drmd-accent); width: 20px; text-align: center;} /* Laranja/Verde */
+
+/* --- Serviços Clínica Médica --- */
+.services-grid-dr-md {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin-top: 25px;
+}
+.service-card-md {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius-drmd);
+    text-align: left; /* Alinhar texto à esquerda para mais profissionalismo */
+    box-shadow: 0 5px 18px rgba(var(--drmd-secondary-rgb, 44, 62, 80), 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Para alinhar ícone e conteúdo */
+    align-items: flex-start; /* Ícone no topo */
+    gap: 20px;
+}
+.service-card-md:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 9px 24px rgba(var(--drmd-secondary-rgb, 44, 62, 80), 0.1);
+}
+.service-icon-md {
+    font-size: 2.2em;
+    color: var(--drmd-primary); /* Azul Confiável */
+    line-height: 1;
+    margin-top: 5px; /* Pequeno ajuste vertical */
+    flex-shrink: 0;
+}
+.service-card-md-content h4 { /* Novo container para o texto */
+    font-family: var(--font-heading-drmd); /* Roboto Slab */
+    font-size: 1.35em;
+    color: var(--drmd-secondary); /* Azul Escuro/Grafite */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.service-card-md-content p { font-size: 0.95em; color: var(--drmd-text-light); line-height: 1.6; }
+
+/* --- Importância do Clínico Geral --- */
+.importance-clinico .importance-flex { display: flex; align-items: center; gap: 45px; }
+.importance-image { flex: 0.8; max-width: 480px; }
+.importance-image img { width: 100%; border-radius: var(--border-radius-drmd); box-shadow: 0 8px 22px rgba(0,0,0,0.09); }
+.importance-text { flex: 1.2; }
+.importance-text .section-title-dr-md { margin-bottom: 15px; }
+.importance-text p { margin-bottom: 1.5em; color: var(--drmd-text-light); }
+.importance-text ul { list-style: none; padding-left: 0; margin-top: 15px; }
+.importance-text ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: var(--drmd-text);
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: flex-start;
+}
+.importance-text ul li i {
+    color: var(--drmd-accent); /* Laranja/Verde */
+    margin-right: 12px;
+    margin-top: 4px; /* Ajuste para alinhar com o texto */
+    flex-shrink: 0;
+}
+
+/* --- Filosofia de Cuidado --- */
+.philosophy-icon-dr-md { color: var(--drmd-accent); margin-bottom: 20px; } /* Laranja/Verde */
+.philosophy-points-dr-md {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 30px auto 0 auto;
+}
+.point-item-md {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: var(--border-radius-drmd);
+    font-size: 1em;
+    color: var(--drmd-text);
+    border: 1px solid var(--drmd-border);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+}
+.point-item-md strong { color: var(--drmd-primary); display: block; margin-bottom: 5px; font-weight: 700; }
+
+
+/* --- Contato Dr. Marcos Daniel --- */
+.contato-section-dr-md { background-color: var(--drmd-secondary); } /* Azul Escuro/Grafite */
+.contato-info-dr-md { margin-top:30px; margin-bottom: 35px; }
+.contato-info-dr-md p {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    color: #dfe6e9; /* Cinza bem claro */
+}
+.contato-info-dr-md i {
+    margin-right: 12px;
+    color: var(--drmd-primary); /* Azul Confiável */
+    width: 20px;
+}
+.contato-section-dr-md .btn-light-dr-md i { margin-right: 10px; }
+
+
+/* === FOOTER (Estilos idênticos aos anteriores) === */
+.site-footer { /* ... COPIE OS ESTILOS DO FOOTER DAQUI ... */
+    background: linear-gradient(135deg, #34495e, #2c3e50, #233140); /* Gradiente com Azul Escuro/Grafite */
+    color: #e0e0e0; padding-top: 60px; font-size: 0.95em; font-family: var(--font-body-drmd);
+}
+/* (COPIE O RESTANTE DOS ESTILOS DO FOOTER E SUAS MEDIA QUERIES, AJUSTANDO CORES SE NECESSÁRIO) */
+.footer-content { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+.footer-section { flex: 1; min-width: 280px; margin-bottom: 30px; }
+.footer-section .logo-text { font-size: 1.9em; margin-bottom: 20px; font-weight: 700; font-family: var(--font-heading-drmd); color: #fff; }
+.footer-section .logo-text span { color: var(--drmd-primary); } /* Azul Confiável no logo do footer */
+.footer-section.about p { margin-bottom: 20px; line-height: 1.8; color: #b0b0b0; }
+.footer-section .contact span { display: block; margin-bottom: 12px; color: #c0c0c0; transition: color 0.3s ease; }
+.footer-section .contact span:hover { color: #ffffff; }
+.footer-section .contact span i { margin-right: 12px; color: var(--drmd-primary); font-size: 1.1em; width: 20px; text-align: center; }
+.footer-section .socials a { color: #b0b0b0; margin-right: 18px; font-size: 1.5em; transition: color 0.3s ease, transform 0.3s ease; display: inline-block; }
+.footer-section .socials a:hover { color: var(--drmd-primary); transform: translateY(-3px); }
+.footer-section .socials a:last-child { margin-right: 0; }
+.footer-section h2 { font-family: var(--font-heading-drmd); font-size: 1.4em; color: #ffffff; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+.footer-section h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; background-color: var(--drmd-primary); border-radius: 2px; }
+.footer-section ul { list-style: none; }
+.footer-section ul li { margin-bottom: 12px; }
+.footer-section ul li a { color: #b0b0b0; transition: color 0.3s ease, padding-left 0.3s ease; display: inline-block; text-decoration: none; }
+.footer-section ul li a:hover { color: #ffffff; padding-left: 5px; }
+.text-input.contact-input { width: 100%; padding: 12px 15px; margin-bottom: 15px; border: 1px solid #555; border-radius: 5px; background-color: #2a2f36; color: #e0e0e0; font-family: inherit; font-size: 0.95em; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.text-input.contact-input::placeholder { color: #888; }
+.text-input.contact-input:focus { outline: none; border-color: var(--drmd-primary); box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3); }
+textarea.contact-input { resize: vertical; min-height: 80px; }
+.btn.contact-btn { display: inline-block; background-color: var(--drmd-primary); color: #fff; padding: 12px 25px; border: none; border-radius: 5px; font-family: inherit; font-size: 1em; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+.btn.contact-btn:hover { background-color: var(--drmd-secondary); transform: translateY(-2px); }
+.btn.contact-btn i { margin-right: 8px; }
+.footer-bottom { background-color: #233140; text-align: center; padding: 20px 15px; margin-top: 40px; font-size: 0.9em; color: #95a5a6; border-top: 1px solid #2c3e50; }
+.footer-bottom a { color: #bdc3c7; text-decoration: underline; }
+.footer-bottom a:hover { color: var(--drmd-primary); }
+@media (max-width: 992px) { .footer-content { gap: 30px; } .footer-section { min-width: calc(50% - 15px); } }
+@media (max-width: 768px) { .footer-content { flex-direction: column; align-items: center; text-align: center; } .footer-section { min-width: 100%; max-width: 450px; } .footer-section h2::after { left: 50%; transform: translateX(-50%); } .footer-section.links ul, .footer-section .socials { text-align: center; } .footer-section .socials a { margin: 0 10px; } }
+@media (max-width: 480px) { .footer-section .logo-text { font-size: 1.7em; } .footer-section h2 { font-size: 1.3em; } .btn.contact-btn { width: 100%; padding: 14px 20px; } }
+
+
+/* --- Responsividade específica Dr. Marcos Daniel --- */
+@media (max-width: 992px) {
+    .hero-dr-md h1 { font-size: 3em; }
+    .section-title-dr-md { font-size: 2.3em; }
+    .about-flex-dr-md { flex-direction: column; text-align: center; }
+    .about-text-dr-md .section-title-dr-md { text-align: center; }
+    .about-image-dr-md { margin-bottom: 30px; max-width: 380px; margin-left:auto; margin-right:auto; }
+    .values-dr-md { grid-template-columns: 1fr; text-align: left; max-width: 350px; margin-left: auto; margin-right: auto;}
+    .importance-clinico .importance-flex { flex-direction: column; text-align: center; }
+    .importance-text .section-title-dr-md { text-align: center; }
+    .importance-image { order: -1; margin-bottom: 30px; max-width: 400px; } /* Imagem primeiro no mobile */
+    .importance-text ul { text-align: left; max-width: 400px; margin-left: auto; margin-right: auto;}
+}
+
+@media (max-width: 768px) {
+    .hero-dr-md { padding: 80px 0; min-height: auto; }
+    .hero-dr-md h1 { font-size: 2.6em; }
+    .section-title-dr-md { font-size: 2.1em; }
+    .section-padding { padding: 60px 0; }
+    .services-grid-dr-md { grid-template-columns: 1fr; }
+    .service-card-md { flex-direction: column; text-align: center; align-items: center; gap: 15px; }
+    .service-icon-md { margin-bottom: 10px; }
+    .philosophy-points-dr-md { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hero-dr-md h1 { font-size: 2.2em; }
+    .section-title-dr-md { font-size: 1.8em; }
+    .btn { padding: 12px 25px; font-size: 1em; }
+}

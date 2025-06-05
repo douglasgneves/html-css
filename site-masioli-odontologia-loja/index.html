@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masioli Odontologia</title>
+    <!-- Google Fonts: Manrope (para títulos) e Inter (para corpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container"> <!- Adicionado .container -->
+            <a href="#home" class="logo">Masioli Odontologia</a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div> <!-- Overlay para escurecer a imagem de fundo -->
+        <div class="container hero-content"> <!-- Adicionado .container -->
+            <h1 class="animate-on-load">Masioli Odontologia</h1>
+            <p class="animate-on-load animate-delay-1">Cuidando do seu sorriso com excelência, tecnologia e carinho. Sua saúde bucal é nossa prioridade.</p>
+            <a href="#contact" class="cta-button animate-on-load animate-delay-2">Agende sua consulta</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title reveal-on-scroll">Nossos Serviços</h2>
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card reveal-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Dentística Restauradora</h3>
+                    <p>Realiza a manutenção da saúde bucal, prevenção, procedimentos estéticos, diagnóstico e prognóstico das doenças dentárias. Focamos na conservação e manutenção da vitalidade pulpar.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card reveal-on-scroll animate-delay-1">
+                    <div class="service-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Ortodontia</h3>
+                    <p>Diagnóstico, prevenção e tratamento das maloclusões. Utilizamos aparelhos fixos, móveis e alinhadores invisíveis para obter harmonia funcional, estética e fisiológica.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card reveal-on-scroll animate-delay-2">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Periodontia</h3>
+                    <p>Avaliação diagnóstica e controle das doenças gengivais. Procedimentos preventivos, clínicos e cirúrgicos para regeneração dos tecidos periodontais e estética do sorriso.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card reveal-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Endodontia</h3>
+                    <p>Diagnósticos e tratamento das doenças que afetam a polpa e raiz dental. Especialidade que cuida da parte interna do elemento dental com precisão e cuidado.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="service-card reveal-on-scroll animate-delay-1">
+                    <div class="service-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Odontopediatria</h3>
+                    <p>Prevenção, diagnóstico, tratamento e controle da saúde bucal infantil. Cuidamos dos pequenos com carinho e técnicas especializadas.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="service-card reveal-on-scroll animate-delay-2">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Harmonização Facial</h3>
+                    <p>Tratamento estético que visa promover beleza e equilíbrio facial. Técnicas combinadas para proporcionar rejuvenescimento e harmonia natural.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text reveal-on-scroll">
+                    <h2 class="section-title">Sobre a Masioli</h2>
+                    <p>A Masioli Odontologia é uma clínica especializada em oferecer tratamentos odontológicos de alta qualidade, combinando tecnologia avançada com o cuidado humano que nossos pacientes merecem.</p>
+                    <p>Nossa equipe de profissionais altamente qualificados está comprometida em proporcionar a melhor experiência em saúde bucal, desde procedimentos preventivos até tratamentos estéticos complexos.</p>
+                    <p>Acreditamos que um sorriso saudável é fundamental para a qualidade de vida e autoestima de nossos pacientes.</p>
+                </div>
+                <div class="about-image-placeholder reveal-on-scroll animate-delay-1">
+                     <!-- Você pode colocar um <img src="images/sua-imagem-sobre.jpg" alt="Consultório Masioli"> aqui -->
+                    <i class="fas fa-clinic-medical"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title reveal-on-scroll">Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info reveal-on-scroll">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <span>Rua Exemplo, 123<br>Cidade, Estado - CEP 00000-000</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <span>(00) 1234-5678</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <span>contato@masioliodontologia.com.br</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horários</h4>
+                            <span>Segunda a Sexta: 8:00 - 18:00<br>Sábado: 8:00 - 12:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal-on-scroll animate-delay-1" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder=" ">
+                        <label for="name">Nome Completo</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" required placeholder=" ">
+                        <label for="phone">Telefone</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" required placeholder=" "></textarea>
+                        <label for="message">Mensagem</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                    
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>Enviando...</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>© <span id="currentYear"></span> Masioli Odontologia. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTopBtn" title="Voltar ao topo" class="back-to-top-btn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

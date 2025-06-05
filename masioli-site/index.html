@@ -14,9 +14,11 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <h1>MASIOLI</h1>
-                <p class="tagline">ODONTOLOGIA & ASSOCIADOS</p>
+                        <div class="logo">
+                <a href="index.html" aria-label="Página Inicial Masioli Odontologia">
+                    <img src="images/logo-masioli.png" alt="Logo Masioli Odontologia & Associados" id="header-logo">
+                    <!-- Ou se for PNG: <img src="images/logo-masioli.png" alt="Logo Masioli Odontologia & Associados" id="header-logo"> -->
+                </a>
             </div>
             <nav>
                 <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
@@ -25,7 +27,9 @@
                     <li><a href="#sobre">A Clínica</a></li>
                     <li><a href="#tratamentos">Tratamentos</a></li>
                     <li><a href="#equipe">Equipe</a></li>
+                    <li><a href="mídias.html">Mídias</a></li>
                     <li><a href="contato.html">Contato</a></li>
+                    <li><a href="loja.html">Loja</a></li>
                 </ul>
             </nav>
         </div>
@@ -70,7 +74,7 @@
                         <p>fundador da Masioli Odontologia, começou de uma forma muito simples, iniciou seu caminho aos 14 anos com fotografia junto com sua família. Mais tarde decidiu cursar odontologia e ingressou na Universidade Federal do Espírito Santo, em 1988. <br><br>Habilidoso, iniciou atendimento no seu consultório em Jardim da Penha e ao longo dos anos se mudou, até encontrar um lugar que ele pudesse oferecer exclusividade e conforto para seus pacientes, sendo assim o atual local da clínica. Como sempre planejou trabalhar em equipe, junto a ele há outros excelentes profissionais que buscam oferecer o melhor em prevenção, saúde, estética e qualidade de vida.
 
 </p>
-                        <a href="#contato" class="cta-button-secondary">Fale Conosco</a>
+                        <a href="contato.html" class="cta-button-secondary">Fale Conosco</a>
                     </div>
                     <div class="sobre-imagem">
                         <img src="images/Capa-home2.jpg" alt="Foto do Edifício Masi Empire">
@@ -96,29 +100,47 @@
     </div>
 </section>
 
-        <!-- SEÇÃO NOSSOS DIFERENCIAIS (Opcional, similar ao site de ref) -->
-        <section id="diferenciais" class="bg-azul-escuro">
-            <div class="container">
-                <h2 class="section-title light-text">Nossos Diferenciais</h2>
-                <div class="diferenciais-grid">
-                    <div class="diferencial-item">
-                        <img src="https://via.placeholder.com/80x80/A67955/FFFFFF?text=Icon1" alt="Ícone Tecnologia">
-                        <h3>Tecnologia de Ponta</h3>
-                        <p>Equipamentos modernos para diagnósticos precisos e tratamentos eficazes.</p>
-                    </div>
-                    <div class="diferencial-item">
-                        <img src="https://via.placeholder.com/80x80/A67955/FFFFFF?text=Icon2" alt="Ícone Atendimento">
-                        <h3>Atendimento Personalizado</h3>
-                        <p>Foco total nas suas necessidades e expectativas individuais.</p>
-                    </div>
-                    <div class="diferencial-item">
-                        <img src="images/Foto-Home-a-clinica2.jpg" alt="Ícone Conforto">
-                        <h3>Ambiente Acolhedor</h3>
-                        <p>Espaço projetado para seu conforto e tranquilidade durante o tratamento.</p>
-                    </div>
-                </div>
+<!-- SEÇÃO NOSSOS DIFERENCIAIS -->
+<section id="diferenciais" class="bg-azul-escuro">
+    <div class="container">
+        <h2 class="section-title light-text">Nossos Diferenciais</h2>
+        <div class="diferenciais-grid">
+            <!-- Diferencial 1: Tecnologia de Ponta -->
+            <div class="diferencial-item">
+                <!-- SUBSTITUA PELO SEU SVG DE TECNOLOGIA -->
+                <svg viewBox="0 0 24 24" class="diferencial-icon" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Exemplo de placeholder de SVG - COLOQUE O SEU CÓDIGO SVG AQUI -->
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                    <!-- FIM DO SEU SVG DE TECNOLOGIA -->
+                </svg>
+                <h3>Tecnologia de Ponta</h3>
+                <p>Equipamentos modernos para diagnósticos precisos e tratamentos eficazes.</p>
             </div>
-        </section>
+
+            <!-- Diferencial 2: Atendimento Personalizado -->
+            <div class="diferencial-item">
+                <!-- SUBSTITUA PELO SEU SVG DE ATENDIMENTO PERSONALIZADO -->
+                <svg viewBox="0 0 24 24" class="diferencial-icon" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Exemplo de placeholder de SVG - COLOQUE O SEU CÓDIGO SVG AQUI -->
+                    <path d="M12 5.5c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5zM12 1c-3.87 0-7 3.13-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                <h3>Atendimento Personalizado</h3>
+                <p>Foco total nas suas necessidades e expectativas individuais.</p>
+            </div>
+
+            <!-- Diferencial 3: Ambiente Acolhedor -->
+            <div class="diferencial-item">
+                <!-- SUBSTITUA PELO SEU SVG DE AMBIENTE ACOLHEDOR -->
+                <svg viewBox="0 0 24 24" class="diferencial-icon" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Exemplo de placeholder de SVG - COLOQUE O SEU CÓDIGO SVG AQUI -->
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+                <h3>Ambiente Acolhedor</h3>
+                <p>Espaço projetado para seu conforto e tranquilidade durante o tratamento.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- SEÇÃO TRATAMENTOS -->
 <section id="tratamentos">
@@ -127,7 +149,7 @@
         <div class="tratamentos-grid">
             <!-- Item Tratamento 1 -->
             <div class="tratamento-card">
-                <div class="tratamento-imagem" style="background-image: url('https://via.placeholder.com/400x300/253951/EDEDEE?text=Estética+Dental');"></div>
+                <div class="tratamento-imagem" style="background-image: url('images/dentistica-restauração.jpg');"></div>
                 <div class="tratamento-info">
                     <h3>Dentística Restauradora</h3>
                     <p>Clareamento, facetas, lentes de contato e design do sorriso.</p>
@@ -137,7 +159,7 @@
             </div>
             <!-- Item Tratamento 2 -->
             <div class="tratamento-card">
-                <div class="tratamento-imagem" style="background-image: url('https://via.placeholder.com/400x300/8D8D8D/EDEDEE?text=Ortodontia');"></div>
+                <div class="tratamento-imagem" style="background-image: url('images/ortodontia.jpg');"></div>
                 <div class="tratamento-info">
                     <h3>Ortodontia</h3>
                     <p>Alinhadores invisíveis e aparelhos convencionais.</p>
@@ -146,7 +168,7 @@
             </div>
             <!-- Item Tratamento 4-->
              <div class="tratamento-card">
-                <div class="tratamento-imagem" style="background-image: url('https://via.placeholder.com/400x300/8D8D8D/EDEDEE?text=Ortodontia');"></div>
+                <div class="tratamento-imagem" style="background-image: url('images/endodontia.webp');"></div>
                 <div class="tratamento-info">
                     <h3>Endodontia</h3>
                     <p>Canal</p>
@@ -155,7 +177,7 @@
             </div>
             <!-- Item Tratamento 5-->
              <div class="tratamento-card">
-                <div class="tratamento-imagem" style="background-image: url('https://via.placeholder.com/400x300/8D8D8D/EDEDEE?text=Ortodontia');"></div>
+                <div class="tratamento-imagem" style="background-image: url('images/odontopediatria.jpg');"></div>
                 <div class="tratamento-info">
                     <h3>Odontopediatria</h3>
                     <p>Alinhadores invisíveis e aparelhos convencionais.</p>
@@ -164,7 +186,7 @@
             </div>
             <!-- Item Tratamento 6-->
              <div class="tratamento-card">
-                <div class="tratamento-imagem" style="background-image: url('https://via.placeholder.com/400x300/8D8D8D/EDEDEE?text=Ortodontia');"></div>
+                <div class="tratamento-imagem" style="background-image: url('images/harmonização\ oroacial.jpg');"></div>
                 <div class="tratamento-info">
                     <h3>Harmonização Facial</h3>
                     <p>Alinhadores invisíveis e aparelhos convencionais.</p>
@@ -173,7 +195,7 @@
             </div>
             <!-- Item Tratamento 7-->
              <div class="tratamento-card">
-                <div class="tratamento-imagem" style="background-image: url('https://via.placeholder.com/400x300/8D8D8D/EDEDEE?text=Ortodontia');"></div>
+                <div class="tratamento-imagem" style="background-image: url('images/periodontia.jpg');"></div>
                 <div class="tratamento-info">
                     <h3>Periodontia</h3>
                     <p>Alinhadores invisíveis e aparelhos convencionais.</p>
@@ -194,70 +216,70 @@
                     <div class="profissional-card" data-profissional-id="dr-masioli">
                         <img src="images/dr-masioli-nova-mini.jpg" alt="Dra. Masioli">
                         <h3>Dr. Prof. PhD Marco A. Masioli</h3>
-                        <p>CRO 2344 ES - Dentística</p>
+                        <p>CRO 2344 ES<br>Dentística</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
                     <!-- Profissional 2 -->
                     <div class="profissional-card" data-profissional-id="dr-associado1">
                         <img src="images/dra-bianca-nova-mini.jpg" alt="Dr. Associado">
                         <h3>Dra. Profª PhD Bianca M. Vimercati</h3>
-                        <p>CRO 3882 ES - Dentística</p>
+                        <p>CRO 3882 ES<Br> Dentística</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
                         <img src="images/dr-hindra-nova-mini.jpg" alt="Dr. Associado">
                         <h3>Dra. Hindra Colodetti Masioli</h3>
-                        <p>CRO 5551 ES - Dentística</p>
+                        <p>CRO 5551 ES <br> Dentística</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
                         <img src="images/miniatura_0000_Dra-Quezia-Godinho.jpg" alt="Dr. Associado">
                         <h3>Dra. Quezia Godinho de Oliveira</h3>
-                        <p>CRO 5653 ES - Dentística</p>
+                        <p>CRO 5653 ES <br> Dentística</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
                         <img src="images/dra-deise-nova-mini.png" alt="Dr. Associado">
                         <h3>Dra. Deise Lima Cunha</h3>
-                        <p>CRO 3908 ES - Ortodontia</p>
+                        <p>CRO 3908 ES <br> Ortodontia</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
                         <img src="images/miniatura_0007_Dr-Kleber-Borgo-Kill.jpg" alt="Dr. Associado">
                         <h3>Dr. Kleber Borgo Kill</h3>
-                        <p>CRO 2349 ES - Endodontia</p>
+                        <p>CRO 2349 ES <br> Endodontia</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
                         <img src="images/dra-carol-nova-mini.jpg" alt="Dr. Associado">
                         <h3>Dra. Ana Carolina Capetini</h3>
-                        <p>CRO 11423 ES - Clínico Geral</p>
+                        <p>CRO 11423 ES<br>Clínico Geral</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
                         <img src="images/dr-douglas-nova-mini.jpg" alt="Dr. Associado">
                         <h3>Dr. Douglas Neves</h3>
-                        <p>CRO 8209 ES - Dentística</p>
+                        <p>CRO 8209 ES <br> Dentística</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
                         <img src="images/dra-thalita-nova-mini.jpg" alt="Dr. Associado">
                         <h3>Dra. Thalita Zardo Januth</h3>
-                        <p>CRO 11467 ES - Clínica Geral</p>
+                        <p>CRO 11467 ES <br> Clínica Geral</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
                         <img src="images/dra-gabriela-nova-mini.jpg" alt="Dr. Associado">
                         <h3>Dra. Gabriela Furlan Furtado</h3>
-                        <p>CRO 5773 - Odontopediatra</p>
+                        <p>CRO 5773 <br> Odontopediatra</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
@@ -292,36 +314,60 @@
         
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
+        <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html" aria-label="Página Inicial Masioli Odontologia">
                     <h3>MASIOLI</h3>
                     <p>ODONTOLOGIA & ASSOCIADOS</p>
-                </div>
-                <div class="footer-nav">
-                    <h4>Navegue</h4>
-                    <ul>
-                        <li><a href="#inicio">Início</a></li>
-                        <li><a href="#sobre">A Clínica</a></li>
-                        <li><a href="#tratamentos">Tratamentos</a></li>
-                        <li><a href="#equipe">Equipe</a></li>
-                        <li><a href="contato.html">Contato</a></li>
+                </a>
+            </div>
+            <div class="footer-nav">
+                <h4>Navegue</h4>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#sobre">A Clínica</a></li>
+                    <li><a href="index.html#tratamentos">Tratamentos</a></li>
+                    <li><a href="index.html#equipe">Equipe</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-contato">
+                <h4>Contato Rápido</h4>
+                <p>(XX) XXXX-XXXX</p>
+                <p>contato@masioliodontologia.com.br</p>
+                
+                <div class="footer-social">
+                    <h4>Siga-nos</h4>
+                    <ul class="social-icons">
+                        <!-- Seus ícones de redes sociais aqui -->
+                        <li><a href="..." aria-label="Instagram"><svg class="social-icon">...</svg></a></li>
+                        <li><a href="..." aria-label="Facebook"><svg class="social-icon">...</svg></a></li>
+                        <li><a href="..." aria-label="TikTok"><svg class="social-icon">...</svg></a></li>
+                        <li><a href="..." aria-label="YouTube"><svg class="social-icon">...</svg></a></li>
                     </ul>
                 </div>
-                <div class="footer-contato">
-                    <h4>Contato Rápido</h4>
-                    <p>(XX) XXXX-XXXX</p>
-                    <p>contato@masioliodontologia.com.br</p>
-                    {/* Adicionar Ícones de Redes Sociais aqui */}
-                </div>
             </div>
-            <div class="copyright">
-                <p>© <span id="currentYear"></span> Masioli Odontologia & Associados. Todos os direitos reservados. Desenvolvido com 🩶.</p>
-            </div>
-        </div>
-    </footer>
 
+            <!-- NOVA DIV PARA HORÁRIO DE FUNCIONAMENTO -->
+            <div class="footer-horario">
+                <h4>Horário de Funcionamento</h4>
+                <p>Segunda a Sexta: 08h às 18h</p>
+                <p>Sábado: 08h às 12h</p>
+                <p class="urgencias">Urgências: Atendemos aos finais de semana e feriados. <a href="27999603444">Ligue!</a></p>
+                <!-- Ou se não houver um número específico para urgência, apenas a informação:
+                <p class="urgencias">Atendemos urgências aos finais de semana e feriados.</p>
+                -->
+            </div>
+            <!-- FIM DA NOVA DIV -->
+
+        </div>
+        <div class="copyright">
+            <p>© <span id="currentYear"></span> Masioli Odontologia & Associados. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
     <!-- Modal para Detalhes do Profissional -->
     <div id="profissionalModal" class="modal">
         <div class="modal-content">

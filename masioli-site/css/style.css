@@ -1,12 +1,10 @@
-/* Importação de Fontes (Exemplo - substitua pelas suas fontes reais) */
-/*
+
 @font-face {
-    font-family: 'Lawrence'; src: url('../fonts/Lawrence-Regular.woff2') format('woff2');
+    font-family: 'Lawrence'; src: url('../fonts/DEMO-lawrence_regular.otf') format('woff2');
 }
 @font-face {
-    font-family: 'Peugeot'; src: url('../fonts/Peugeot-Regular.woff2') format('woff2');
+    font-family: 'Peugeot'; src: url('../fonts/Peugeot-Light.otf') format('woff2');
 }
-*/
 
 :root {
     --azul-escuro: #253951;
@@ -16,8 +14,8 @@
     --branco: #FFFFFF;
     --preto: #000000;
 
-    --font-principal: 'Times New Roman', Times, serif; /* Fallback para Lawrence */
-    --font-secundaria: Arial, Helvetica, sans-serif;   /* Fallback para Peugeot */
+    --font-principal: 'Lawrence','Times New Roman', Times, serif; /* Fallback para Lawrence */
+    --font-secundaria: 'Peugeot', 'Arial', 'Helvetica', 'sans-serif';   /* Fallback para Peugeot */
 
     --header-height: 85px;
     --border-radius-padrao: 8px;
@@ -82,8 +80,24 @@ header {
     align-items: center; /* Para centralizar verticalmente */
 }
 header .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.logo h1 { font-size: 2.2rem; color: var(--bronze); margin: 0; line-height: 1; }
-.logo .tagline { font-family: var(--font-secundaria); font-size: 0.65rem; color: var(--azul-escuro); margin: 2px 0 0 0; letter-spacing: 1.5px; text-transform: uppercase; }
+/* Novo CSS para a imagem do logo */
+.logo {
+    display: flex; /* Ajuda no alinhamento vertical se necessário */
+    align-items: center;
+}
+
+#header-logo {
+    height: 50px; /* Defina a ALTURA desejada para o seu logo no header */
+    width: auto;   /* Deixe a largura automática para manter a proporção */
+    display: block; /* Para evitar espaços extras abaixo da imagem */
+}
+
+/* Ajuste responsivo para o logo, se necessário */
+@media (max-width: 768px) {
+    #header-logo {
+        height: 40px; /* Logo um pouco menor em telas pequenas */
+    }
+}
 /* Estilo para o link ativo no menu de navegação */
 header nav ul li a.active-link {
     color: var(--bronze); /* Ou a cor que você usa para hover/active */
@@ -168,9 +182,44 @@ section { padding: 80px 0; }
 .sobre-imagem img { border-radius: var(--border-radius-padrao); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
 /* Seção Diferenciais */
-.diferenciais-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; text-align: center; }
-.diferencial-item img { margin: 0 auto 20px auto; width: 70px; height: 70px; } /* Ícones */
-.diferencial-item h3 { color: var(--bronze); font-size: 1.4rem; }
+.diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+/* Remova ou comente a regra antiga para img, se existir:
+.diferencial-item img {
+    margin: 0 auto 20px auto;
+    width: 70px;
+    height: 70px;
+}
+*/
+
+/* Nova regra para os SVGs dos diferenciais */
+.diferencial-icon {
+    width: 70px;  /* Largura desejada para o ícone */
+    height: 70px; /* Altura desejada para o ícone */
+    margin: 0 auto 25px auto; /* Centraliza e adiciona espaço abaixo */
+    display: block; /* Garante que margin auto funcione para centralizar */
+    fill: var(--bronze); /* Cor dos ícones. Pode ser var(--cinza-claro) ou var(--branco) também */
+    /* Se os ícones forem baseados em linha, você pode usar: */
+    /* stroke: var(--bronze); */
+    /* fill: none; */ /* Se for apenas contorno */
+}
+
+.diferencial-item h3 {
+    color: var(--bronze); /* Mantém a cor do título do diferencial */
+    font-size: 1.4rem; /* ou 1.5rem se quiser maior */
+    margin-bottom: 10px;
+}
+
+.diferenciais-grid p { /* Parágrafo dentro dos diferenciais */
+    color: var(--cinza-claro); /* Garante que o texto do parágrafo seja claro sobre o fundo azul */
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
 
 /* Seção Tratamentos */
 .tratamentos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
@@ -261,6 +310,66 @@ footer { background-color: #1e2b3a; /* Azul um pouco mais escuro que o principal
 .footer-nav ul li a:hover { color: var(--bronze); }
 .footer-contato p { font-size: 0.9rem; margin-bottom: 8px; }
 .copyright { text-align: center; padding-top: 30px; border-top: 1px solid #334252; font-size: 0.85rem; }
+/* css/style.css */
+
+/* ... seus outros estilos ... */
+
+/* Estilos para Redes Sociais no Footer */
+.footer-social {
+    margin-top: 20px; /* Espaço acima dos ícones */
+}
+
+.footer-social h4 {
+    color: var(--cinza-claro); /* Cor do título "Siga-nos" */
+    font-family: var(--font-principal);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    /* Se o footer-content for text-align: center, este título também será.
+       Ajuste text-align aqui se necessário para esta seção específica. */
+}
+
+.social-icons {
+    list-style: none; /* Remove marcadores da lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alinha os ícones horizontalmente */
+    justify-content: flex-start; /* Alinha à esquerda por padrão dentro de .footer-contato */
+    /* Se .footer-contato for text-align: center, use: */
+    /* justify-content: center; */
+    gap: 15px; /* Espaço entre os ícones */
+}
+
+.social-icons li {
+    /* Nenhum estilo específico necessário aqui por enquanto */
+}
+
+.social-icons a {
+    display: inline-block; /* Permite definir tamanho e padding */
+    color: var(--cinza-medio); /* Cor inicial do ícone SVG (se usar fill: currentColor) */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: var(--bronze); /* Cor do ícone no hover */
+    transform: translateY(-2px); /* Leve efeito de subir no hover */
+}
+
+.social-icon { /* Classe para os seus SVGs */
+    width: 24px;  /* Tamanho desejado para os ícones */
+    height: 24px;
+    fill: currentColor; /* Faz o SVG herdar a cor do elemento <a> pai */
+}
+
+/* Se você optar por usar <img> para os ícones em vez de SVG inline:
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+.social-icons a:hover img {
+    filter: brightness(0.8); // Exemplo de efeito no hover para img
+}
+*/
 
 /* Modal (Pop-up) */
 .modal {

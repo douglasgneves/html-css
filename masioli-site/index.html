@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Adicionar link para biblioteca de carrossel, ex: Swiper.js ou Slick Carousel -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="icon" href="images/favicon_Prancheta-1.png" type="logo clínica">
     <!-- <link rel="icon" href="images/favicon.png" type="image/png"> -->
 </head>
 <body>
@@ -78,22 +79,22 @@
             </div>
         </section>
 
-        <!-- SEÇÃO SOBRE A CLÍNICA -->
-        <section id="sobre">
-            <div class="container">
-                <h2 class="section-title">A Clínica</h2>
-                <div class="sobre-grid">
-                    <div class="sobre-texto">
-                        <h3>A Masioli Odontologia</h3>
-                        <p>É uma clínica que está localizada em um dos melhores lugares da capital do Espírito Santo. Conta com estacionamento próprio e com vista para o cartão postal da cidade, Convento da Penha, Terceira Ponte e a Baía de Vitória.<br><br>Nosso objetivo é promover excelência nos procedimentos clínicos e uma experiência única em nosso espaço.</p>
-                        <a href="#contato" class="cta-button-secondary">Venha nos conhecer!</a>
-                    </div>
-                    <div class="sobre-imagem">
-                        <img src="images/Foto-Home-a-clinica2.jpg" alt="Ambiente da Clínica Masioli">
-                    </div>
-                </div>
+        <!-- SEÇÃO SOBRE A CLÍNICA (COM ORDEM INVERTIDA NO HTML) -->
+<section id="sobre">
+    <div class="container">
+        <h2 class="section-title">A Clínica</h2>
+        <div class="sobre-grid">
+            <div class="sobre-imagem"> <!-- IMAGEM PRIMEIRO (ESQUERDA) -->
+                <img src="images/Foto-Home-a-clinica2.jpg" alt="Ambiente da Clínica Masioli">
             </div>
-        </section>
+            <div class="sobre-texto"> <!-- TEXTO DEPOIS (DIREITA) -->
+                <h3>A Masioli Odontologia</h3>
+                <p>É uma clínica que está localizada em um dos melhores lugares da capital do Espírito Santo. Conta com estacionamento próprio e com vista para o cartão postal da cidade, Convento da Penha, Terceira Ponte e a Baía de Vitória.<br><br>Nosso objetivo é promover excelência nos procedimentos clínicos e uma experiência única em nosso espaço.</p>
+                <a href="contato.html" class="cta-button-secondary">Venha nos conhecer!</a> <!-- ATENÇÃO: Link para contato.html -->
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- SEÇÃO NOSSOS DIFERENCIAIS (Opcional, similar ao site de ref) -->
         <section id="diferenciais" class="bg-azul-escuro">
@@ -198,65 +199,65 @@
                     </div>
                     <!-- Profissional 2 -->
                     <div class="profissional-card" data-profissional-id="dr-associado1">
-                        <img src="https://via.placeholder.com/300x300/253951/FFFFFF?text=Dr.+Associado" alt="Dr. Associado">
+                        <img src="images/dra-bianca-nova-mini.jpg" alt="Dr. Associado">
                         <h3>Dra. Profª PhD Bianca M. Vimercati</h3>
                         <p>CRO 3882 ES - Dentística</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
-                        <img src="https://via.placeholder.com/300x300/253951/FFFFFF?text=Dr.+Associado" alt="Dr. Associado">
+                        <img src="images/dr-hindra-nova-mini.jpg" alt="Dr. Associado">
                         <h3>Dra. Hindra Colodetti Masioli</h3>
                         <p>CRO 5551 ES - Dentística</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
-                        <img src="https://via.placeholder.com/300x300/253951/FFFFFF?text=Dr.+Associado" alt="Dr. Associado">
+                        <img src="images/miniatura_0000_Dra-Quezia-Godinho.jpg" alt="Dr. Associado">
                         <h3>Dra. Quezia Godinho de Oliveira</h3>
                         <p>CRO 5653 ES - Dentística</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
-                        <img src="https://via.placeholder.com/300x300/253951/FFFFFF?text=Dr.+Associado" alt="Dr. Associado">
+                        <img src="images/dra-deise-nova-mini.png" alt="Dr. Associado">
                         <h3>Dra. Deise Lima Cunha</h3>
                         <p>CRO 3908 ES - Ortodontia</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
-                        <img src="https://via.placeholder.com/300x300/253951/FFFFFF?text=Dr.+Associado" alt="Dr. Associado">
-                        <h3>Dr. Nome Associado</h3>
-                        <p>CRO YYYYY - Especialidade</p>
+                        <img src="images/miniatura_0007_Dr-Kleber-Borgo-Kill.jpg" alt="Dr. Associado">
+                        <h3>Dr. Kleber Borgo Kill</h3>
+                        <p>CRO 2349 ES - Endodontia</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
-                        <img src="https://via.placeholder.com/300x300/253951/FFFFFF?text=Dr.+Associado" alt="Dr. Associado">
-                        <h3>Dr. Nome Associado</h3>
-                        <p>CRO YYYYY - Especialidade</p>
+                        <img src="images/dra-carol-nova-mini.jpg" alt="Dr. Associado">
+                        <h3>Dra. Ana Carolina Capetini</h3>
+                        <p>CRO 11423 ES - Clínico Geral</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
-                        <img src="https://via.placeholder.com/300x300/253951/FFFFFF?text=Dr.+Associado" alt="Dr. Associado">
-                        <h3>Dr. Nome Associado</h3>
-                        <p>CRO YYYYY - Especialidade</p>
+                        <img src="images/dr-douglas-nova-mini.jpg" alt="Dr. Associado">
+                        <h3>Dr. Douglas Neves</h3>
+                        <p>CRO 8209 ES - Dentística</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
-                        <img src="https://via.placeholder.com/300x300/253951/FFFFFF?text=Dr.+Associado" alt="Dr. Associado">
-                        <h3>Dr. Nome Associado</h3>
-                        <p>CRO YYYYY - Especialidade</p>
+                        <img src="images/dra-thalita-nova-mini.jpg" alt="Dr. Associado">
+                        <h3>Dra. Thalita Zardo Januth</h3>
+                        <p>CRO 11467 ES - Clínica Geral</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
                     <div class="profissional-card" data-profissional-id="dr-associado1">
-                        <img src="https://via.placeholder.com/300x300/253951/FFFFFF?text=Dr.+Associado" alt="Dr. Associado">
-                        <h3>Dr. Nome Associado</h3>
-                        <p>CRO YYYYY - Especialidade</p>
+                        <img src="images/dra-gabriela-nova-mini.jpg" alt="Dr. Associado">
+                        <h3>Dra. Gabriela Furlan Furtado</h3>
+                        <p>CRO 5773 - Odontopediatra</p>
                         <button class="ver-mais-profissional">Ver Mais</button>
                     </div>
 
@@ -351,6 +352,12 @@
         </div>
     </div>
 </div>
+    <!-- ... seu footer e modais ... -->
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5527999603444" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Entre em contato pelo WhatsApp">
+      <img class="whatsapp-icon-img" src="images/icone-whatsapp.svg">
+    </a>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>

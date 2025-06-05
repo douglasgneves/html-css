@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com a Masioli Odontologia & Associados. Agende sua consulta ou tire suas dúvidas.">
+    <title>Contato - Masioli Odontologia & Associados</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Se você usa Swiper.js em outras páginas e o CSS dele é global, mantenha. Caso contrário, pode remover se não for usado aqui. -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+    <!-- <link rel="icon" href="images/favicon.png" type="image/png"> -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <!-- Link para a página inicial -->
+                <a href="index.html" aria-label="Página Inicial Masioli Odontologia">
+                    <h1>MASIOLI</h1>
+                    <p class="tagline">ODONTOLOGIA & ASSOCIADOS</p>
+                </a>
+            </div>
+            <nav>
+                <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#sobre">A Clínica</a></li>
+                    <li><a href="index.html#tratamentos">Tratamentos</a></li>
+                    <li><a href="index.html#equipe">Equipe</a></li>
+                    <li><a href="contato.html" class="active-link">Contato</a></li> <!-- Link para esta página, marcado como ativo -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SEÇÃO CONTATO -->
+        <section id="contato-pagina" class="contato-section-standalone"> <!-- Nova classe para estilização específica se necessário -->
+            <div class="container">
+                <h2 class="section-title">Fale Conosco</h2>
+                <p class="subtitulo-contato">Estamos à sua disposição para agendamentos, dúvidas ou qualquer outra informação. Preencha o formulário abaixo ou utilize nossos outros canais de atendimento.</p>
+                
+                <div class="contato-wrapper">
+                    <form id="contactFormPage"> <!-- ID do formulário pode ser diferente se o JS for específico -->
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Seu nome aqui">
+
+                        <label for="email">Seu Melhor Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+
+                        <label for="telefone">Telefone (com DDD):</label>
+                        <input type="tel" id="telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX">
+                        
+                        <label for="assunto">Assunto:</label>
+                        <select id="assunto" name="assunto">
+                            <option value="agendamento">Solicitar Agendamento</option>
+                            <option value="duvida_tratamento">Dúvida sobre Tratamento</option>
+                            <option value="informacoes">Informações Gerais</option>
+                            <option value="outro">Outro Assunto</option>
+                        </select>
+
+                        <label for="mensagem">Sua Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Digite sua mensagem detalhada aqui..."></textarea>
+
+                        <button type="submit" class="cta-button">Enviar Mensagem</button>
+                    </form>
+
+                    <div class="contato-info">
+                        <h3>Masioli Odontologia & Associados</h3>
+                        <p><img src="https://via.placeholder.com/20x20/A67955/FFFFFF?text=L" alt="Ícone Localização" class="contact-icon"> Rua Exemplo, 123 - Bairro Elegante, Cidade - UF</p>
+                        <p><img src="https://via.placeholder.com/20x20/A67955/FFFFFF?text=T" alt="Ícone Telefone" class="contact-icon"> (XX) XXXX-XXXX</p>
+                        <p><img src="https://via.placeholder.com/20x20/A67955/FFFFFF?text=W" alt="Ícone WhatsApp" class="contact-icon"> (XX) 9XXXX-XXXX (WhatsApp)</p>
+                        <p><img src="https://via.placeholder.com/20x20/A67955/FFFFFF?text=E" alt="Ícone Email" class="contact-icon"> contato@masioliodontologia.com.br</p>
+                        
+                        <h4>Horário de Atendimento:</h4>
+                        <p><img src="https://via.placeholder.com/20x20/A67955/FFFFFF?text=H" alt="Ícone Horário" class="contact-icon"> Segunda a Sexta: 09h às 19h</p>
+                        <p><img src="https://via.placeholder.com/20x20/A67955/FFFFFF?text=H" alt="Ícone Horário" class="contact-icon"> Sábados: 09h às 13h</p>
+                        
+                        <div class="mapa-container">
+                            <h4>Nossa Localização</h4>
+                            <!-- Substitua pelo iframe do Google Maps ou uma imagem clicável -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1230000000003!2d-46.65653538440691!3d-23.56407466740986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f213599c!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1678886400000!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0; border-radius: var(--border-radius-padrao);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                     <!-- Link para a página inicial -->
+                    <a href="index.html" aria-label="Página Inicial Masioli Odontologia">
+                        <h3>MASIOLI</h3>
+                        <p>ODONTOLOGIA & ASSOCIADOS</p>
+                    </a>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navegue</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html#sobre">A Clínica</a></li>
+                        <li><a href="index.html#tratamentos">Tratamentos</a></li>
+                        <li><a href="index.html#equipe">Equipe</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contato">
+                    <h4>Contato Rápido</h4>
+                    <p>(XX) XXXX-XXXX</p>
+                    <p>contato@masioliodontologia.com.br</p>
+                    {/* Adicionar Ícones de Redes Sociais aqui */}
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© <span id="currentYear"></span> Masioli Odontologia & Associados. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Se o script.js for comum a todas as páginas, mantenha. -->
+    <!-- Se tiver JS específico para esta página, pode criar um contato.js -->
+    <script src="js/script.js"></script>
+    <!--
+    <script>
+        // JS específico para a página de contato, se necessário (ex: validação do formulário contactFormPage)
+        // Se a lógica do formulário em script.js já for genérica, pode não precisar disto.
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactFormPage = document.getElementById('contactFormPage');
+            if (contactFormPage) {
+                contactFormPage.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const nome = document.getElementById('nome').value;
+                    alert(`Página de Contato: Obrigado, ${nome}! Sua mensagem foi enviada. (Simulação)`);
+                    contactFormPage.reset();
+                });
+            }
+        });
+    </script>
+    -->
+</body>
+</html>

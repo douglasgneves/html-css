@@ -85,6 +85,12 @@ header {
 header .container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 .logo h1 { font-size: 2.2rem; color: var(--bronze); margin: 0; line-height: 1; }
 .logo .tagline { font-family: var(--font-secundaria); font-size: 0.65rem; color: var(--azul-escuro); margin: 2px 0 0 0; letter-spacing: 1.5px; text-transform: uppercase; }
+/* Estilo para o link ativo no menu de navegação */
+header nav ul li a.active-link {
+    color: var(--bronze); /* Ou a cor que você usa para hover/active */
+    border-bottom-color: var(--bronze); /* Se você usa borda inferior */
+    /* Adicione outros estilos se desejar, como font-weight: bold; */
+}
 header nav ul { list-style: none; display: flex; }
 header nav ul li { margin-left: 30px; }
 header nav ul li a { font-family: var(--font-secundaria); color: var(--azul-escuro); font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.8px; padding-bottom: 5px; border-bottom: 2px solid transparent; transition: color 0.3s ease, border-bottom-color 0.3s ease; }
@@ -110,7 +116,7 @@ section { padding: 80px 0; }
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(37, 57, 81, 0.5); /* Azul escuro com transparência */
+    background-color: (37, 57, 81, 0.5); /* Azul escuro com transparência */
 }
 .slide-content {
     position: relative; /* Para ficar acima do overlay */
@@ -168,7 +174,7 @@ section { padding: 80px 0; }
 .diferencial-item h3 { color: var(--bronze); font-size: 1.4rem; }
 
 /* Seção Tratamentos */
-.tratamentos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.tratamentos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
 .tratamento-card {
     background-color: var(--branco);
     border-radius: var(--border-radius-padrao);
@@ -188,10 +194,10 @@ section { padding: 80px 0; }
 .ler-mais:hover { text-decoration: underline; }
 
 /* Seção Equipe */
-.equipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.equipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
 .profissional-card {
     background-color: var(--branco);
-    padding: 20px;
+    padding: 10px;
     border-radius: var(--border-radius-padrao);
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
@@ -286,6 +292,60 @@ footer { background-color: #1e2b3a; /* Azul um pouco mais escuro que o principal
 #modalProfissionalInfo h4 { font-size: 1.1rem; color: var(--azul-escuro); margin-bottom: 15px; font-family: var(--font-secundaria); }
 #modalProfissionalInfo p { margin-bottom: 10px; font-size: 0.95rem; clear: right; } /* clear para texto fluir abaixo da imagem */
 
+/* Estilos para o Modal de Tratamento (pode herdar muito do .modal e .modal-content) */
+.tratamento-modal-content {
+    /* Se precisar de estilos específicos para o modal de tratamento, adicione aqui */
+    /* Exemplo: talvez um max-width diferente ou padding */
+    max-width: 800px; /* Um pouco maior para mais texto */
+}
+
+#modalTratamentoInfo .modal-tratamento-imagem {
+    width: 100%; /* Imagem ocupa toda a largura do modal ou uma % */
+    max-width: 400px; /* Ou um tamanho fixo */
+    height: auto;
+    border-radius: var(--border-radius-padrao);
+    margin: 0 auto 25px auto; /* Centraliza se for menor que o modal */
+    display: block; /* Para centralizar com margin auto */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#modalTratamentoInfo .modal-tratamento-titulo {
+    font-size: 2rem; /* Título maior no modal */
+    color: var(--bronze);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#modalTratamentoInfo .modal-tratamento-descricao {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify; /* Ou left, conforme preferir */
+}
+
+#modalTratamentoInfo ul {
+    list-style-position: inside;
+    margin-bottom: 25px;
+    padding-left: 5px; /* Pequeno recuo */
+}
+
+#modalTratamentoInfo ul li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+#modalTratamentoInfo .modal-cta {
+    display: block;
+    width: fit-content; /* Para o botão não ocupar 100% */
+    margin: 30px auto 0 auto; /* Centraliza o botão */
+    text-align: center;
+}
+
+/* Garanta que o .close-modal também funcione para este modal */
+.close-tratamento-modal {
+    /* Se precisar de posicionamento diferente, ajuste aqui */
+    /* Herda de .close-modal */
+}
 
 /* Responsividade */
 @media (max-width: 992px) {
@@ -348,4 +408,92 @@ footer { background-color: #1e2b3a; /* Azul um pouco mais escuro que o principal
 }
 #modalProfissionalInfo::-webkit-scrollbar-thumb:hover {
     background: var(--bronze);
+}
+
+/* No final do seu style.css ou em uma seção apropriada */
+
+/* Estilos específicos para a página de contato standalone (que estavam no <style>) */
+.contato-section-standalone {
+    background-color: var(--cinza-claro);
+    padding-top: 60px; /* Ajuste conforme preferir */
+    padding-bottom: 60px;
+}
+
+.contato-section-standalone .section-title {
+    /* Se precisar de algo diferente para o título aqui */
+}
+
+.subtitulo-contato {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--cinza-medio);
+    max-width: 700px;
+    margin: -30px auto 40px auto;
+}
+
+.mapa-container {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+}
+.mapa-container h4 {
+    font-size: 1.4rem;
+    color: var(--azul-escuro);
+    margin-bottom: 20px;
+    text-align: left;
+}
+ .contato-section-standalone .contato-info h3 {
+    font-size: 1.8rem;
+    text-align: left;
+}
+.contato-section-standalone .contato-info h4 { /* Título "Horário de Atendimento" */
+     font-size: 1.3rem;
+     color: var(--azul-escuro);
+     margin-top: 25px;
+     margin-bottom: 10px;
+     text-align: left;
+}
+
+/* Estilos para o formulário com ID 'contactFormPage' */
+/* Se os estilos forem IDÊNTICOS aos de #contactForm, você pode simplesmente
+   renomear #contactForm para #contactFormPage no CSS ou mudar o ID no HTML */
+#contactFormPage {
+    background-color: var(--branco); /* Fundo branco para o formulário dentro da seção cinza */
+    padding: 35px;
+    border-radius: var(--border-radius-padrao);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+#contactFormPage label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--azul-escuro);
+    font-size: 0.9rem;
+}
+
+#contactFormPage input,
+#contactFormPage select,
+#contactFormPage textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-secundaria);
+    font-size: 0.95rem;
+    background-color: var(--branco);
+}
+#contactFormPage input:focus,
+#contactFormPage select:focus,
+#contactFormPage textarea:focus {
+    border-color: var(--bronze);
+    box-shadow: 0 0 0 2px rgba(166, 121, 85, 0.2);
+    outline: none;
+}
+
+#contactFormPage button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 15px;
 }
